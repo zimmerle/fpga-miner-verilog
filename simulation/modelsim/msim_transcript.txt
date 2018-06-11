@@ -1,0 +1,94 @@
+# Reading C:/altera/13.1/modelsim_ase/tcl/vsim/pref.tcl 
+# do miner_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/miner-core {C:/miner-core/miner.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module miner
+# 
+# Top level modules:
+# 	miner
+# vlog -vlog01compat -work work +incdir+C:/miner-core/sha2 {C:/miner-core/sha2/sha256_w_mem.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module sha256_w_mem
+# 
+# Top level modules:
+# 	sha256_w_mem
+# vlog -vlog01compat -work work +incdir+C:/miner-core/sha2 {C:/miner-core/sha2/sha256_k_constants.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module sha256_k_constants
+# 
+# Top level modules:
+# 	sha256_k_constants
+# vlog -vlog01compat -work work +incdir+C:/miner-core/sha2 {C:/miner-core/sha2/sha256_core.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module sha256_core
+# 
+# Top level modules:
+# 	sha256_core
+# 
+# vlog -vlog01compat -work work +incdir+C:/miner-core/tb {C:/miner-core/tb/tb_miner.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module miner
+# -- Compiling module sha256_w_mem
+# -- Compiling module sha256_stream
+# -- Compiling module sha256_k_constants
+# -- Compiling module sha256_core
+# -- Compiling module sha256
+# -- Compiling module tb_miner
+# 
+# Top level modules:
+# 	sha256_stream
+# 	sha256
+# 	tb_miner
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs="+acc"  tb_miner
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps tb_miner 
+# Loading work.tb_miner
+# Loading work.miner
+# Loading work.sha256_core
+# Loading work.sha256_k_constants
+# Loading work.sha256_w_mem
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: zimmerle  Hostname: DESKTOP-KFSFPGQ  ProcessID: 8772
+# 
+#           Attempting to use alternate WLF file "./wlft1btzif".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlft1btzif
+# 
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+#    -- Testbench for miner started --
+# Simulating data from uart.
+#  ** computing frist block....
+# Got first  block: 0x85e655d6417a17953363376a624cde5c76e09589cac5f811cc4b32c1f20e533a
+#  ** computing second block....
+# Got second block: 0x85e655d6417a17953363376a624cde5c76e09589cac5f811cc4b32c1f20e533a
+#  ** computing second hash....
+# Got second hash: 0x248d6a61d20638b8e5c026930c3e6039a33ce45964ff2167f6ecedd419db06c1
+# Got hash of hash...
+# Simulating data from uart.
+#  ** computing frist block....
+# Got first  block: 0x248d6a61d20638b8e5c026930c3e6039a33ce45964ff2167f6ecedd419db06c1
+#  ** computing second block....
+# Got second block: 0x85e655d6417a17953363376a624cde5c76e09589cac5f811cc4b32c1f20e533a
+#  ** computing second hash....
+# Got second hash: 0x85e655d6417a17953363376a624cde5c76e09589cac5f811cc4b32c1f20e533a
+# Got hash of hash...
+# Break key hit 
+# Simulation stop requested.

@@ -1,0 +1,4 @@
+[Dolphin]
+Timestamp=2018,6,11,0,52,50
+Version=4
+ViewMode=2

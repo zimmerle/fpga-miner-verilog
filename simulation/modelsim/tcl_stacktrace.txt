@@ -1,0 +1,25 @@
+Sun Jun 10 22:09:03 Hora oficial do Brasil 2018
+Trace back: invalid command name ""
+    while executing
+"$treeView configure -sortstate $dir $col"
+    (procedure "sort" line 3)
+    invoked from within
+"sort .main_pane.structure 0 descending"
+    (in namespace inscope "::QStructure" script line 1)
+    invoked from within
+"namespace inscope ::QStructure {sort .main_pane.structure} 0 descending"
+    ("eval" body line 1)
+    invoked from within
+"eval $itk_option(-sortcommand) $column $dir"
+    (object "::.main_pane.structure.interior.cs.body.struct" method "::vsimwidgets::Hierarchy::sort" body line 26)
+    invoked from within
+"sort $sortIdx $dir"
+    (object "::.main_pane.structure.interior.cs.body.struct" method "::vsimwidgets::Hierarchy::_initializeSortColumn" body line 10)
+    invoked from within
+"::.main_pane.structure.interior.cs.body.struct _initializeSortColumn"
+    (in namespace inscope "::vsimwidgets::Hierarchy" script line 1)
+    invoked from within
+"namespace inscope ::vsimwidgets::Hierarchy {::.main_pane.structure.interior.cs.body.struct _initializeSortColumn}"
+    ("after" script)
+  <2: ::tkerror {invalid command name ""}
+  <1: ::bgerror {invalid command name ""}

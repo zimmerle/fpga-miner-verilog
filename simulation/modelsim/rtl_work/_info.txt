@@ -1,0 +1,151 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\miner-core\simulation\modelsim
+vminer
+!i10b 1
+!s100 eeEUDfXT[BTJM;SlW5oj>2
+I2Y[`@OXPPD6>;49g9?S^L3
+V]=2AP?;mCa<n=^UdC=XAm0
+Z1 dC:\miner-core\simulation\modelsim
+w1528688836
+FC:/miner-core/tb/../miner.v
+Z2 8C:/miner-core/tb/tb_miner.v
+Z3 FC:/miner-core/tb/tb_miner.v
+L0 4
+Z4 OV;L;10.1d;51
+r1
+!s85 0
+31
+Z5 !s108 1528688897.916000
+Z6 !s107 C:/miner-core/tb/../sha2/sha256.v|C:/miner-core/tb/../sha2/sha256_core.v|C:/miner-core/tb/../sha2/sha256_k_constants.v|C:/miner-core/tb/../sha2/sha256_stream.v|C:/miner-core/tb/../sha2/sha256_w_mem.v|C:/miner-core/tb/../miner.v|C:/miner-core/tb/tb_miner.v|
+Z7 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/miner-core/tb|C:/miner-core/tb/tb_miner.v|
+!s101 -O0
+Z8 o-vlog01compat -work work -O0
+Z9 !s92 -vlog01compat -work work +incdir+C:/miner-core/tb -O0
+vsha256
+!i10b 1
+!s100 `dXdY1YMR1=JBIFS52@o:3
+I<@f2zXo2nGLJ=NQR=0mz=1
+VL?7JX_nLOA]=EYA]Y?5H10
+R1
+Z10 w1528656012
+FC:/miner-core/tb/../sha2/sha256.v
+R2
+R3
+L0 40
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!s101 -O0
+R8
+R9
+vsha256_core
+!i10b 1
+!s100 bOao=WOBARMkzmIB=Y>LH2
+INlPK==MSUXm2Bgjb3jT>B0
+VcC5@]WH5DjBSX]5L@1b?e3
+R1
+R10
+FC:/miner-core/tb/../sha2/sha256_core.v
+R2
+R3
+L0 40
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!s101 -O0
+R8
+R9
+vsha256_k_constants
+!i10b 1
+!s100 >Ejd4Z_Pk8b6a1ONeoUdc0
+IL]VUDA^fzjP9e8ffEFkL@3
+Va^dIeF57PzaolD^KbYn^O3
+R1
+R10
+FC:/miner-core/tb/../sha2/sha256_k_constants.v
+R2
+R3
+L0 39
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!s101 -O0
+R8
+R9
+vsha256_stream
+!i10b 1
+!s100 GRO=AA[OAcgKZ?6EiK2SM1
+I=T[:3fkRc0=YnC7Wm_>6C3
+VAHOzXA@_3```B[3V;[5PU2
+R1
+R10
+FC:/miner-core/tb/../sha2/sha256_stream.v
+R2
+R3
+L0 40
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!s101 -O0
+R8
+R9
+vsha256_w_mem
+!i10b 1
+!s100 1W:8^NGdGYUSK`d^E:^]f3
+IRWch]3:HYWiZEXWhKmo>_1
+VNA;0`dK?<>;RkQAE_:@3L2
+R1
+R10
+FC:/miner-core/tb/../sha2/sha256_w_mem.v
+R2
+R3
+L0 40
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!s101 -O0
+R8
+R9
+vtb_miner
+!i10b 1
+!s100 ;l=I?UHKQafDb[agnaQgM3
+IE7UJF@On9Fj0NnE=99D8W3
+VZiQC4gQJ>cP]`am0GN8VP1
+R1
+R10
+R2
+R3
+L0 11
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!s101 -O0
+R8
+R9

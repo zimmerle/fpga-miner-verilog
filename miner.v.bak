@@ -1,0 +1,51 @@
+
+
+
+module miner (
+    clock,
+	 reset,
+	 counter_out
+);
+
+
+input clock;
+input reset;
+
+output [3:0] counter_out;
+
+wire clock;
+wire reset;
+
+
+// Testbench uses a 10 MHz clock
+// Want to interface to 115200 baud UART
+// 10000000 / 115200 = 87 Clocks Per Bit.
+parameter c_CLOCK_PERIOD_NS = 100;
+parameter c_CLKS_PER_BIT    = 87;
+parameter c_BIT_PERIOD      = 8600;
+   
+reg r_Clock = 0;
+reg r_Tx_DV = 0;
+wire w_Tx_Done;
+reg [7:0] r_Tx_Byte = 0;
+reg r_Rx_Serial = 1;
+wire [7:0] w_Rx_Byte;
+  
+reg [3:0] counter_out;
+
+
+ 
+ 
+always @ (posedge clock)
+begin : COUNTER
+  if (reset == 1'b1) begin
+    counter_out <= #1 4'b0000;
+  end
+  else begin
+    counter_out <= #1 counter_out + 1;
+  end
+
+end
+	
+	  
+endmodule

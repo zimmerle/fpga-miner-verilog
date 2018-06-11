@@ -1,0 +1,16 @@
+vendor_name = ModelSim
+source_file = 1, C:/miner-core/miner.v
+source_file = 1, C:/miner-core/sha2/sha256_w_mem.v
+source_file = 1, C:/miner-core/sha2/sha256_stream.v
+source_file = 1, C:/miner-core/sha2/sha256_k_constants.v
+source_file = 1, C:/miner-core/sha2/sha256_core.v
+source_file = 1, C:/miner-core/sha2/sha256.v
+source_file = 1, C:/miner-core/sha2/tb/tb_sha256_w_mem.v
+source_file = 1, C:/miner-core/sha2/tb/tb_sha256_stream.v
+source_file = 1, C:/miner-core/sha2/tb/tb_sha256_core.v
+source_file = 1, C:/miner-core/sha2/tb/tb_sha256.v
+source_file = 1, C:/miner-core/tb/tb_miner.v
+source_file = 1, C:/miner-core/db/miner.cbx.xml
+design_name = miner
+instance = comp, \reset~input\, reset~input, miner, 1
+instance = comp, \clock~input\, clock~input, miner, 1
