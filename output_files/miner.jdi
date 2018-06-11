@@ -1,8 +1,8 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="e0b4e221e87791663ea3"/>
+    <hash md5_digest_80b="5c2ed20ef036ab21d1db"/>
   </project>
   <file_info>
-    <file device="EP4CGX15BF14C6" path="miner.sof" usercode="0xFFFFFFFF"/>
+    <file device="EP4CE22F17C6" path="miner.sof" usercode="0xFFFFFFFF"/>
   </file_info>
 </sld_project_info>

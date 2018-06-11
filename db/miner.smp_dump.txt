@@ -1,10 +1,11 @@
 
-State Machine - |miner|global_state2
-Name global_state2.STATE_HASH_OF_HASH global_state2.STATE_SECOND_BLOCK global_state2.STATE_FIRST_BLOCK global_state2.STATE_IDLE 
-global_state2.STATE_IDLE 0 0 0 0 
-global_state2.STATE_FIRST_BLOCK 0 0 1 1 
-global_state2.STATE_SECOND_BLOCK 0 1 0 1 
-global_state2.STATE_HASH_OF_HASH 1 0 0 1 
+State Machine - |miner|global_state
+Name global_state.STATE_IDLE global_state.STATE_HASH_OF_HASH global_state.STATE_SECOND_BLOCK global_state.STATE_FIRST_BLOCK global_state.STATE_COMPARING_HASHES 
+global_state.STATE_COMPARING_HASHES 0 0 0 0 0 
+global_state.STATE_FIRST_BLOCK 0 0 0 1 1 
+global_state.STATE_SECOND_BLOCK 0 0 1 0 1 
+global_state.STATE_HASH_OF_HASH 0 1 0 0 1 
+global_state.STATE_IDLE 1 0 0 0 1 
 
 State Machine - |miner|sha256_core:SHA_INST1|sha256_ctrl_reg
 Name sha256_ctrl_reg.CTRL_IDLE sha256_ctrl_reg.CTRL_DONE sha256_ctrl_reg.CTRL_ROUNDS 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for miner
-Mon Jun 11 00:49:44 2018
+Mon Jun 11 18:00:12 2018
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -10,8 +10,21 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
-  6. Analysis & Synthesis Suppressed Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |miner|global_state
+  9. State Machine - |miner|sha256_core:SHA_INST1|sha256_ctrl_reg
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: Top-level Entity: |miner
+ 15. Parameter Settings for User Entity Instance: sha256_core:SHA_INST1
+ 16. Parameter Settings for User Entity Instance: sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+ 19. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -37,24 +50,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Jun 11 00:49:44 2018          ;
+; Analysis & Synthesis Status        ; Successful - Mon Jun 11 18:00:12 2018      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; miner                                      ;
 ; Top-level Entity Name              ; miner                                      ;
-; Family                             ; Cyclone IV GX                              ;
-; Total logic elements               ; N/A until Partition Merge                  ;
-;     Total combinational functions  ; N/A until Partition Merge                  ;
-;     Dedicated logic registers      ; N/A until Partition Merge                  ;
-; Total registers                    ; N/A until Partition Merge                  ;
-; Total pins                         ; N/A until Partition Merge                  ;
-; Total virtual pins                 ; N/A until Partition Merge                  ;
-; Total memory bits                  ; N/A until Partition Merge                  ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
-; Total GXB Receiver Channel PCS     ; N/A until Partition Merge                  ;
-; Total GXB Receiver Channel PMA     ; N/A until Partition Merge                  ;
-; Total GXB Transmitter Channel PCS  ; N/A until Partition Merge                  ;
-; Total GXB Transmitter Channel PMA  ; N/A until Partition Merge                  ;
-; Total PLLs                         ; N/A until Partition Merge                  ;
+; Family                             ; Cyclone IV E                               ;
+; Total logic elements               ; 0                                          ;
+;     Total combinational functions  ; 0                                          ;
+;     Dedicated logic registers      ; 0                                          ;
+; Total registers                    ; 0                                          ;
+; Total pins                         ; 3                                          ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
 +------------------------------------+--------------------------------------------+
 
 
@@ -63,8 +72,9 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE22F17C6       ;                    ;
 ; Top-level entity name                                                      ; miner              ; miner              ;
-; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -161,13 +171,249 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
++---------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                          ;
++----------------------------------+-----------------+------------------------+-----------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path            ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------+---------+
+; miner.v                          ; yes             ; User Verilog HDL File  ; C:/miner-core/miner.v                   ;         ;
+; sha2/sha256_w_mem.v              ; yes             ; User Verilog HDL File  ; C:/miner-core/sha2/sha256_w_mem.v       ;         ;
+; sha2/sha256_k_constants.v        ; yes             ; User Verilog HDL File  ; C:/miner-core/sha2/sha256_k_constants.v ;         ;
+; sha2/sha256_core.v               ; yes             ; User Verilog HDL File  ; C:/miner-core/sha2/sha256_core.v        ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------+---------+
+
+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+;                                             ;            ;
+; Total combinational functions               ; 0          ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 0          ;
+;     -- 3 input functions                    ; 0          ;
+;     -- <=2 input functions                  ; 0          ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 0          ;
+;     -- arithmetic mode                      ; 0          ;
+;                                             ;            ;
+; Total registers                             ; 0          ;
+;     -- Dedicated logic registers            ; 0          ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 3          ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+; Maximum fan-out node                        ; led~output ;
+; Maximum fan-out                             ; 1          ;
+; Total fan-out                               ; 3          ;
+; Average fan-out                             ; 0.50       ;
++---------------------------------------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |miner                     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 3    ; 0            ; |miner              ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |miner|global_state                                                                                                                                                                      ;
++-------------------------------------+-------------------------+---------------------------------+---------------------------------+--------------------------------+-------------------------------------+
+; Name                                ; global_state.STATE_IDLE ; global_state.STATE_HASH_OF_HASH ; global_state.STATE_SECOND_BLOCK ; global_state.STATE_FIRST_BLOCK ; global_state.STATE_COMPARING_HASHES ;
++-------------------------------------+-------------------------+---------------------------------+---------------------------------+--------------------------------+-------------------------------------+
+; global_state.STATE_COMPARING_HASHES ; 0                       ; 0                               ; 0                               ; 0                              ; 0                                   ;
+; global_state.STATE_FIRST_BLOCK      ; 0                       ; 0                               ; 0                               ; 1                              ; 1                                   ;
+; global_state.STATE_SECOND_BLOCK     ; 0                       ; 0                               ; 1                               ; 0                              ; 1                                   ;
+; global_state.STATE_HASH_OF_HASH     ; 0                       ; 1                               ; 0                               ; 0                              ; 1                                   ;
+; global_state.STATE_IDLE             ; 1                       ; 0                               ; 0                               ; 0                              ; 1                                   ;
++-------------------------------------+-------------------------+---------------------------------+---------------------------------+--------------------------------+-------------------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------+
+; State Machine - |miner|sha256_core:SHA_INST1|sha256_ctrl_reg                                                      ;
++-----------------------------+---------------------------+---------------------------+-----------------------------+
+; Name                        ; sha256_ctrl_reg.CTRL_IDLE ; sha256_ctrl_reg.CTRL_DONE ; sha256_ctrl_reg.CTRL_ROUNDS ;
++-----------------------------+---------------------------+---------------------------+-----------------------------+
+; sha256_ctrl_reg.CTRL_IDLE   ; 0                         ; 0                         ; 0                           ;
+; sha256_ctrl_reg.CTRL_ROUNDS ; 1                         ; 0                         ; 1                           ;
+; sha256_ctrl_reg.CTRL_DONE   ; 1                         ; 1                         ; 0                           ;
++-----------------------------+---------------------------+---------------------------+-----------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                         ;
++---------------------------------------------------+----------------------------------------+
+; Register name                                     ; Reason for Removal                     ;
++---------------------------------------------------+----------------------------------------+
+; sha_reset                                         ; Stuck at VCC due to stuck port data_in ;
+; sha_next                                          ; Stuck at GND due to stuck port data_in ;
+; sha_init                                          ; Stuck at GND due to stuck port data_in ;
+; sha256_core:SHA_INST1|digest_valid_reg            ; Stuck at VCC due to stuck port data_in ;
+; global_state~7                                    ; Lost fanout                            ;
+; global_state~8                                    ; Lost fanout                            ;
+; global_state~10                                   ; Lost fanout                            ;
+; global_state~11                                   ; Lost fanout                            ;
+; global_state~12                                   ; Lost fanout                            ;
+; global_state~13                                   ; Lost fanout                            ;
+; global_state~14                                   ; Lost fanout                            ;
+; global_state~15                                   ; Lost fanout                            ;
+; global_state~16                                   ; Lost fanout                            ;
+; global_state~17                                   ; Lost fanout                            ;
+; global_state~18                                   ; Lost fanout                            ;
+; global_state~19                                   ; Lost fanout                            ;
+; global_state~20                                   ; Lost fanout                            ;
+; global_state~21                                   ; Lost fanout                            ;
+; global_state~22                                   ; Lost fanout                            ;
+; global_state~23                                   ; Lost fanout                            ;
+; global_state~24                                   ; Lost fanout                            ;
+; global_state~25                                   ; Lost fanout                            ;
+; global_state~26                                   ; Lost fanout                            ;
+; global_state~27                                   ; Lost fanout                            ;
+; global_state~28                                   ; Lost fanout                            ;
+; global_state~29                                   ; Lost fanout                            ;
+; global_state~30                                   ; Lost fanout                            ;
+; global_state~31                                   ; Lost fanout                            ;
+; global_state~32                                   ; Lost fanout                            ;
+; global_state~33                                   ; Lost fanout                            ;
+; global_state~34                                   ; Lost fanout                            ;
+; global_state~35                                   ; Lost fanout                            ;
+; global_state~36                                   ; Lost fanout                            ;
+; global_state~37                                   ; Lost fanout                            ;
+; global_state~38                                   ; Lost fanout                            ;
+; counter_out[0..31]                                ; Lost fanout                            ;
+; sha256_core:SHA_INST1|t_ctr_reg[0..5]             ; Lost fanout                            ;
+; global_state.STATE_COMPARING_HASHES               ; Lost fanout                            ;
+; global_state.STATE_FIRST_BLOCK                    ; Lost fanout                            ;
+; global_state.STATE_SECOND_BLOCK                   ; Lost fanout                            ;
+; global_state.STATE_HASH_OF_HASH                   ; Lost fanout                            ;
+; global_state.STATE_IDLE                           ; Lost fanout                            ;
+; sha256_core:SHA_INST1|sha256_ctrl_reg.CTRL_ROUNDS ; Lost fanout                            ;
+; sha256_core:SHA_INST1|sha256_ctrl_reg.CTRL_DONE   ; Lost fanout                            ;
+; sha256_core:SHA_INST1|sha256_ctrl_reg.CTRL_IDLE   ; Lost fanout                            ;
+; Total Number of Removed Registers = 81            ;                                        ;
++---------------------------------------------------+----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                          ;
++----------------+---------------------------+-------------------------------------------------------------------------+
+; Register name  ; Reason for Removal        ; Registers Removed due to This Register                                  ;
++----------------+---------------------------+-------------------------------------------------------------------------+
+; sha_reset      ; Stuck at VCC              ; sha256_core:SHA_INST1|digest_valid_reg, counter_out[0], counter_out[1], ;
+;                ; due to stuck port data_in ; sha256_core:SHA_INST1|t_ctr_reg[5], sha256_core:SHA_INST1|t_ctr_reg[4], ;
+;                ;                           ; sha256_core:SHA_INST1|t_ctr_reg[3],                                     ;
+;                ;                           ; sha256_core:SHA_INST1|sha256_ctrl_reg.CTRL_ROUNDS                       ;
+; global_state~7 ; Lost Fanouts              ; global_state.STATE_FIRST_BLOCK, global_state.STATE_HASH_OF_HASH,        ;
+;                ;                           ; sha256_core:SHA_INST1|sha256_ctrl_reg.CTRL_IDLE                         ;
++----------------+---------------------------+-------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |miner|global_state        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |miner ;
++--------------------------+-------+------------------------------------+
+; Parameter Name           ; Value ; Type                               ;
++--------------------------+-------+------------------------------------+
+; CLK_HALF_PERIOD          ; 2     ; Signed Integer                     ;
+; CLK_PERIOD               ; 4     ; Signed Integer                     ;
+; STATE_IDLE               ; 0     ; Signed Integer                     ;
+; STATE_FIRST_BLOCK        ; 1     ; Signed Integer                     ;
+; STATE_SECOND_BLOCK       ; 2     ; Signed Integer                     ;
+; STATE_HASH_OF_HASH       ; 3     ; Signed Integer                     ;
+; STATE_COMPARING_HASHES   ; 4     ; Signed Integer                     ;
+; STATE_INCREASE_NONCE     ; 5     ; Signed Integer                     ;
+; STATE_GOLDEN_NONCE_FOUND ; 6     ; Signed Integer                     ;
++--------------------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sha256_core:SHA_INST1  ;
++----------------+----------------------------------+-----------------+
+; Parameter Name ; Value                            ; Type            ;
++----------------+----------------------------------+-----------------+
+; SHA224_H0_0    ; 11000001000001011001111011011000 ; Unsigned Binary ;
+; SHA224_H0_1    ; 00110110011111001101010100000111 ; Unsigned Binary ;
+; SHA224_H0_2    ; 00110000011100001101110100010111 ; Unsigned Binary ;
+; SHA224_H0_3    ; 11110111000011100101100100111001 ; Unsigned Binary ;
+; SHA224_H0_4    ; 11111111110000000000101100110001 ; Unsigned Binary ;
+; SHA224_H0_5    ; 01101000010110000001010100010001 ; Unsigned Binary ;
+; SHA224_H0_6    ; 01100100111110011000111110100111 ; Unsigned Binary ;
+; SHA224_H0_7    ; 10111110111110100100111110100100 ; Unsigned Binary ;
+; SHA256_H0_0    ; 01101010000010011110011001100111 ; Unsigned Binary ;
+; SHA256_H0_1    ; 10111011011001111010111010000101 ; Unsigned Binary ;
+; SHA256_H0_2    ; 00111100011011101111001101110010 ; Unsigned Binary ;
+; SHA256_H0_3    ; 10100101010011111111010100111010 ; Unsigned Binary ;
+; SHA256_H0_4    ; 01010001000011100101001001111111 ; Unsigned Binary ;
+; SHA256_H0_5    ; 10011011000001010110100010001100 ; Unsigned Binary ;
+; SHA256_H0_6    ; 00011111100000111101100110101011 ; Unsigned Binary ;
+; SHA256_H0_7    ; 01011011111000001100110100011001 ; Unsigned Binary ;
+; SHA256_ROUNDS  ; 63                               ; Signed Integer  ;
+; CTRL_IDLE      ; 0                                ; Signed Integer  ;
+; CTRL_ROUNDS    ; 1                                ; Signed Integer  ;
+; CTRL_DONE      ; 2                                ; Signed Integer  ;
++----------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; CTRL_IDLE      ; 0     ; Signed Integer                                                    ;
+; CTRL_UPDATE    ; 1     ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Jun 11 00:49:43 2018
+    Info: Processing started: Mon Jun 11 18:00:10 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off miner -c miner
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file miner.v
@@ -183,18 +429,29 @@ Info (12021): Found 1 design units, including 1 entities, in source file sha2/sh
 Info (12021): Found 1 design units, including 1 entities, in source file sha2/sha256.v
     Info (12023): Found entity 1: sha256
 Info (12127): Elaborating entity "miner" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at miner.v(14): object "sha_clk" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at miner.v(25): object "sha_1_state" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at miner.v(45): object "global_state_change" assigned a value but never read
-Error (10028): Can't resolve multiple constant drivers for net "sha_done" at miner.v(167) File: C:/miner-core/miner.v Line: 167
-Error (10029): Constant driver at miner.v(148) File: C:/miner-core/miner.v Line: 148
-Error (12153): Can't elaborate top-level user hierarchy
+Warning (10036): Verilog HDL or VHDL warning at miner.v(42): object "sha_1_state" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at miner.v(43): object "sha_done" assigned a value but never read
+Warning (10034): Output port "led" at miner.v(11) has no driver
+Info (12128): Elaborating entity "sha256_core" for hierarchy "sha256_core:SHA_INST1"
+Info (12128): Elaborating entity "sha256_k_constants" for hierarchy "sha256_core:SHA_INST1|sha256_k_constants:k_constants_inst"
+Info (12128): Elaborating entity "sha256_w_mem" for hierarchy "sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "led" is stuck at GND
+Info (17049): 77 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/miner-core/output_files/miner.map.smsg
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 3 errors, 3 warnings
-    Error: Peak virtual memory: 4678 megabytes
-    Error: Processing ended: Mon Jun 11 00:49:44 2018
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "reset"
+    Warning (15610): No output dependent on input pin "clock"
+Info (21057): Implemented 3 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 1 output pins
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4660 megabytes
+    Info: Processing ended: Mon Jun 11 18:00:12 2018
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 
 +------------------------------------------+

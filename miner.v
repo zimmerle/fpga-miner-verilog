@@ -11,7 +11,7 @@ input reset;
 output led;
 wire clock;
 wire reset;
-wire led;
+wire led; /* if golden nonce is found */
 
 /* clock related fixed parameter */
 parameter CLK_HALF_PERIOD = 2;
@@ -86,6 +86,7 @@ endtask
 task reset_all();
 begin
   reset_sha();
+  global_state = STATE_IDLE;
 end
 endtask
 
@@ -170,7 +171,6 @@ begin : COUNTER
   if (reset == 1'b1) begin
     counter_out <= #1 0;
     reset_all();
-    global_state = STATE_IDLE;
   end
   else begin
     counter_out <= #1 counter_out + 1;
@@ -181,22 +181,25 @@ begin : COUNTER
     $display("Simulating data from uart.");
     blk1 = 512'h6162636462636465636465666465666765666768666768696768696A68696A6B696A6B6C6A6B6C6D6B6C6D6E6C6D6E6F6D6E6F706E6F70718000000000000000;
     blk2 = 512'h000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001C0;
-	 compute_sha_1st_block();
+    compute_sha_1st_block();
   end
-  if (sha_done && sha_1_ready && sha_1_digest_valid && global_state == STATE_FIRST_BLOCK) begin
+  if (sha_1_ready && sha_1_digest_valid && global_state == STATE_FIRST_BLOCK) begin
     $display("Got first  block: 0x%064x", sha_1_digest);
-	 sha_done = 0;
     compute_sha_2nd_block();
+    #(CLK_PERIOD * 2);
   end
-  if (sha_done && sha_1_ready && sha_1_digest_valid && global_state == STATE_SECOND_BLOCK) begin
+  if (sha_1_ready && sha_1_digest_valid && global_state == STATE_SECOND_BLOCK) begin
     $display("Got second block: 0x%064x", sha_1_digest);
     compute_hash_of_hash();
+    #(CLK_PERIOD * 2);
   end
-  if (sha_done && sha_1_ready && sha_1_digest_valid && global_state == STATE_HASH_OF_HASH) begin
+  if (sha_1_ready && sha_1_digest_valid && global_state == STATE_HASH_OF_HASH) begin
     $display("Got second hash: 0x%064x", sha_1_digest);
-    $display("Got hash of hash...");
-	 global_state = STATE_IDLE;
-	 counter_out <= #1 0;
+    compare_hashes();
+  end
+  if (sha_1_ready && sha_1_digest_valid && global_state == STATE_HASH_OF_HASH) begin
+    $display("Got second hash: 0x%064x", sha_1_digest);
+    compare_hashes();
   end
 
   //$display("Counter: 0x%04x", counter_out); 

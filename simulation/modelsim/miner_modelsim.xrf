@@ -12,5 +12,6 @@ source_file = 1, C:/miner-core/sha2/tb/tb_sha256.v
 source_file = 1, C:/miner-core/tb/tb_miner.v
 source_file = 1, C:/miner-core/db/miner.cbx.xml
 design_name = miner
+instance = comp, \led~output\, led~output, miner, 1
 instance = comp, \reset~input\, reset~input, miner, 1
 instance = comp, \clock~input\, clock~input, miner, 1

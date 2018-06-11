@@ -17,10 +17,12 @@ reg           tb_reset_n;
 parameter CLK_HALF_PERIOD = 2;
 parameter CLK_PERIOD = 2 * CLK_HALF_PERIOD;
 
+wire tb_led;
 
 miner dut(
   .clock(tb_clk),
-  .reset(tb_reset_n)
+  .reset(tb_reset_n),
+  .led(tb_led)
 );
 
 

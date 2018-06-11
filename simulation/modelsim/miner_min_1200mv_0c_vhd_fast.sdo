@@ -14,11 +14,11 @@
 
 
 // 
-// Device: Altera EP4CGX15BF14C6 Package FBGA169
+// Device: Altera EP4CE22F17C6 Package FBGA256
 // 
 
 //
-// This file contains Fast Corner delays for the design using part EP4CGX15BF14C6,
+// This file contains Fast Corner delays for the design using part EP4CE22F17C6,
 // with speed grade M, core voltage 1.2V, and temperature 0 Celsius
 //
 
@@ -29,7 +29,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "miner")
-  (DATE "06/11/2018 00:47:40")
+  (DATE "06/11/2018 18:00:29")
   (VENDOR "Altera")
   (PROGRAM "Quartus II 64-Bit")
   (VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition")

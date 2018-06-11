@@ -16,31 +16,33 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "06/11/2018 00:47:40"
+-- DATE "06/11/2018 18:00:29"
 
 -- 
--- Device: Altera EP4CGX15BF14C6 Package FBGA169
+-- Device: Altera EP4CE22F17C6 Package FBGA256
 -- 
 
 -- 
 -- This VHDL file should be used for ModelSim-Altera (VHDL) only
 -- 
 
-LIBRARY CYCLONEIV;
+LIBRARY CYCLONEIVE;
 LIBRARY IEEE;
-USE CYCLONEIV.CYCLONEIV_COMPONENTS.ALL;
+USE CYCLONEIVE.CYCLONEIVE_COMPONENTS.ALL;
 USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY 	miner IS
     PORT (
 	clock : IN std_logic;
-	reset : IN std_logic
+	reset : IN std_logic;
+	led : OUT std_logic
 	);
 END miner;
 
 -- Design Ports Information
--- reset	=>  Location: PIN_J13,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- clock	=>  Location: PIN_A7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- led	=>  Location: PIN_A2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- reset	=>  Location: PIN_J16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- clock	=>  Location: PIN_B3,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 ARCHITECTURE structure OF miner IS
@@ -55,19 +57,34 @@ SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
 SIGNAL ww_clock : std_logic;
 SIGNAL ww_reset : std_logic;
+SIGNAL ww_led : std_logic;
 SIGNAL \reset~input_o\ : std_logic;
 SIGNAL \clock~input_o\ : std_logic;
+SIGNAL \led~output_o\ : std_logic;
 
 BEGIN
 
 ww_clock <= clock;
 ww_reset <= reset;
+led <= ww_led;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
 
--- Location: IOIBUF_X33_Y15_N8
-\reset~input\ : cycloneiv_io_ibuf
+-- Location: IOOBUF_X7_Y34_N9
+\led~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \led~output_o\);
+
+-- Location: IOIBUF_X53_Y14_N8
+\reset~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -77,8 +94,8 @@ PORT MAP (
 	i => ww_reset,
 	o => \reset~input_o\);
 
--- Location: IOIBUF_X12_Y31_N1
-\clock~input\ : cycloneiv_io_ibuf
+-- Location: IOIBUF_X3_Y34_N1
+\clock~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -87,6 +104,8 @@ GENERIC MAP (
 PORT MAP (
 	i => ww_clock,
 	o => \clock~input_o\);
+
+ww_led <= \led~output_o\;
 END structure;
 
 
