@@ -1,51 +1,220 @@
 
 
-
 module miner (
     clock,
-	 reset,
-	 counter_out
+    reset,
+    led
 );
-
 
 input clock;
 input reset;
-
-output [3:0] counter_out;
-
+output led;
 wire clock;
 wire reset;
+wire led; /* if golden nonce is found */
+
+/* clock related fixed parameter */
+parameter CLK_HALF_PERIOD = 2;
+parameter CLK_PERIOD = 2 * CLK_HALF_PERIOD;
+
+/* definition of the state for the state machine */
+parameter STATE_IDLE = 0;
+parameter STATE_FIRST_BLOCK = 1;
+parameter STATE_SECOND_BLOCK = 2;
+parameter STATE_HASH_OF_HASH = 3;
+parameter STATE_COMPARING_HASHES = 4;
+parameter STATE_INCREASE_NONCE = 5;
+parameter STATE_GOLDEN_NONCE_FOUND = 6;
+
+/* sha global definition */
+reg sha_init;
+reg sha_mode;
+reg sha_next;
+reg sha_reset;
+
+/* sha instance #1 */
+reg [511:0] sha_1_block;
+wire [255:0] sha_1_digest;
+wire sha_1_digest_valid;
+wire sha_1_ready;
+
+/* attempt to make somthing dummy */
+reg [1:0] sha_1_state;
+reg sha_done = 0;
+
+/* global machine state */
+reg [31:0] global_state = STATE_IDLE;
+
+/* hard coded blocks to be computed */
+reg [511:0] blk1;
+reg [511:0] blk2;
+
+/* counter to be used as part of developer process */
+reg [31:0] counter_out;
+
+ 
+sha256_core SHA_INST1 (
+  .clk(clock),
+  .reset_n(sha_reset),
+  .init(sha_init),
+  .next(sha_next),
+  .mode(sha_mode),
+  .block(sha_1_block),
+  .ready(sha_1_ready),
+  .digest(sha_1_digest),
+  .digest_valid(sha_1_digest_valid)
+);
 
 
-// Testbench uses a 10 MHz clock
-// Want to interface to 115200 baud UART
-// 10000000 / 115200 = 87 Clocks Per Bit.
-parameter c_CLOCK_PERIOD_NS = 100;
-parameter c_CLKS_PER_BIT    = 87;
-parameter c_BIT_PERIOD      = 8600;
-   
-reg r_Clock = 0;
-reg r_Tx_DV = 0;
-wire w_Tx_Done;
-reg [7:0] r_Tx_Byte = 0;
-reg r_Rx_Serial = 1;
-wire [7:0] w_Rx_Byte;
+task reset_sha();
+begin
+  /* reset sha #n */
+  sha_mode = 1;
+
+  /* reset sha #1 */
+  sha_reset = 1;
+  sha_init = 0;
+  sha_next = 0;
+  sha_1_block = 512'h00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+  sha_reset = 0;
+  #(4 * CLK_HALF_PERIOD);
+  sha_reset = 1;
+end
+endtask
+
+
+task reset_all();
+begin
+  reset_sha();
+  global_state = STATE_IDLE;
+end
+endtask
+
+
+task compute_hash_of_hash();
+begin
+  $display(" ** computing second hash....");
+  global_state = STATE_HASH_OF_HASH;
   
-reg [3:0] counter_out;
+  sha_1_block = {sha_1_digest, 256'h80000000000000000000000000000000000000000000000000000000000001C0};
+  sha_init = 1;
+  #(CLK_PERIOD);
+  sha_init = 0;
+  sha_1_state = 2'b10;
+end
+endtask
 
 
- 
- 
+task compute_sha_1st_block();
+begin
+  $display(" ** computing frist block....");
+  global_state = STATE_FIRST_BLOCK;
+  sha_1_block = blk1;
+  sha_init = 1;
+  #(CLK_PERIOD);
+  sha_init = 0;
+  sha_1_state = 2'b00;
+end
+endtask
+
+
+task compute_sha_2nd_block();
+begin
+  $display(" ** computing second block....");
+  global_state = STATE_SECOND_BLOCK;
+  sha_1_block = blk2;
+  sha_next = 1;
+  #(CLK_PERIOD);
+  sha_next = 0;
+  sha_1_state = 2'b01;
+end
+endtask
+
+
+task compare_hashes();
+begin
+  global_state = STATE_COMPARING_HASHES;
+  //global_state = 5;
+  $display(" ** comparing hashes.... ");
+end
+endtask
+
+
+task increase_nonces();
+begin
+  //global_state = 2;
+end
+endtask
+
+
+always @ (posedge sha_1_ready)
+begin
+sha_done = 1;
+//  if (sha_1_state == 2'b00) begin
+    ///* first block done */
+//    $display("Got first  block: 0x%064x", sha_1_digest);
+//  end
+//  if (sha_1_state == 2'b01) begin
+    /* second block done */
+//    $display("Got second block: 0x%064x", sha_1_digest);
+//  end
+//  if (sha_1_state == 2'b10) begin
+    /* second hash done */
+//    $display("Got second hash: 0x%064x", sha_1_digest);
+//  end
+end
+
+
+
 always @ (posedge clock)
 begin : COUNTER
   if (reset == 1'b1) begin
-    counter_out <= #1 4'b0000;
+    counter_out <= #1 0;
+    reset_all();
   end
   else begin
     counter_out <= #1 counter_out + 1;
   end
 
+  /* reset on start */
+  if (counter_out == 10) begin
+    $display("Simulating data from uart.");
+	 //blk1 = 512'h00000020EBF4509DE449F2004D605B4127B90C7A4C4560AFA7C815000000000000000000C53A27A5F119733ACEF88F69CA5AA5927EDCB3DAA169FA1F008B1C44;
+	 //blk1 = 512'h61626380000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000018;
+	 //blk1 = 512'h0100000000000000000000000000000000000000000000000000000000000000000000003ba3edfd7a7b12b27ac72c3e67768f617fc81bc3888a51323a9fb8aa;
+	 blk1 = 512'h0100000000000000000000000000000000000000000000000000000000000000000000003BA3EDFD7A7B12B27AC72C3E67768F617FC81BC3888A51323A9FB8AA;
+	 blk2 = 512'h4B1E5E4A29AB5F49FFFF001D1DAC2B7C8000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000A0;
+
+	 //blk2 = 512'h4bh1e5e4a29ab5f49ffff001d1dac2b7c180000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001C0;
+
+    //blk2 = 512'h00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+	 //blk2 = 512'hE849F32FD3E61E5B41F838170F75A4A38000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001C0;
+    //blk1 = 512'h6162636462636465636465666465666765666768666768696768696A68696A6B696A6B6C6A6B6C6D6B6C6D6E6C6D6E6F6D6E6F706E6F70718000000000000000;
+    //blk2 = 512'h000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001C0;
+    compute_sha_1st_block();
+  end
+  if (sha_1_ready && sha_1_digest_valid && global_state == STATE_FIRST_BLOCK) begin
+    $display("Got first  block: 0x%064x", sha_1_digest);
+    compute_sha_2nd_block();
+    #(CLK_PERIOD * 2);
+  end
+  if (sha_1_ready && sha_1_digest_valid && global_state == STATE_SECOND_BLOCK) begin
+    $display("Got second block: 0x%064x", sha_1_digest);
+    compute_hash_of_hash();
+    #(CLK_PERIOD * 2);
+  end
+  if (sha_1_ready && sha_1_digest_valid && global_state == STATE_HASH_OF_HASH) begin
+    $display("Got second hash: 0x%064x", sha_1_digest);
+    compare_hashes();
+  end
+  if (sha_1_ready && sha_1_digest_valid && global_state == STATE_HASH_OF_HASH) begin
+    $display("Got second hash: 0x%064x", sha_1_digest);
+    compare_hashes();
+  end
+
+  //$display("Counter: 0x%04x", counter_out); 
 end
-	
-	  
+
+
+
 endmodule

@@ -6,13 +6,13 @@ vlib rtl_work
 vmap work rtl_work
 
 vlog -vlog01compat -work work +incdir+C:/miner-core {C:/miner-core/miner.v}
+vlog -vlog01compat -work work +incdir+C:/miner-core/sha2 {C:/miner-core/sha2/sha256_w_mem.v}
+vlog -vlog01compat -work work +incdir+C:/miner-core/sha2 {C:/miner-core/sha2/sha256_k_constants.v}
+vlog -vlog01compat -work work +incdir+C:/miner-core/sha2 {C:/miner-core/sha2/sha256_core.v}
 
-vlog -vlog01compat -work work +incdir+C:/miner-core/sha2/tb {C:/miner-core/sha2/tb/tb_sha256.v}
-vlog -vlog01compat -work work +incdir+C:/miner-core/sha2/tb {C:/miner-core/sha2/tb/tb_sha256_core.v}
-vlog -vlog01compat -work work +incdir+C:/miner-core/sha2/tb {C:/miner-core/sha2/tb/tb_sha256_stream.v}
-vlog -vlog01compat -work work +incdir+C:/miner-core/sha2/tb {C:/miner-core/sha2/tb/tb_sha256_w_mem.v}
+vlog -vlog01compat -work work +incdir+C:/miner-core/tb {C:/miner-core/tb/tb_miner.v}
 
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs="+acc"  tb_sha256
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  tb_miner
 
 add wave *
 view structure
