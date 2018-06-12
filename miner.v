@@ -43,10 +43,6 @@ wire [255:0] sha_1_digest;
 wire sha_1_digest_valid;
 wire sha_1_ready;
 
-/* attempt to make somthing dummy */
-reg [1:0] sha_1_state;
-reg sha_done = 0;
-
 /* global machine state */
 reg [31:0] global_state = STATE_IDLE;
 
@@ -105,7 +101,6 @@ begin
   sha_init = 1;
   #(CLK_PERIOD);
   sha_init = 0;
-  sha_1_state = 2'b10;
 end
 endtask
 
@@ -118,7 +113,6 @@ begin
   sha_init = 1;
   #(CLK_PERIOD);
   sha_init = 0;
-  sha_1_state = 2'b00;
 end
 endtask
 
@@ -131,7 +125,6 @@ begin
   sha_next = 1;
   #(CLK_PERIOD);
   sha_next = 0;
-  sha_1_state = 2'b01;
 end
 endtask
 
