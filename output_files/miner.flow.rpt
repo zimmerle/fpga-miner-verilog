@@ -1,5 +1,5 @@
 Flow report for miner
-Mon Jun 11 18:00:29 2018
+Tue Jun 12 00:24:28 2018
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Mon Jun 11 18:00:29 2018      ;
+; Flow Status                        ; Successful - Tue Jun 12 00:24:28 2018      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; miner                                      ;
 ; Top-level Entity Name              ; miner                                      ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/11/2018 18:00:11 ;
+; Start date & time ; 06/12/2018 00:24:05 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; miner               ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +--------------------------------------+--------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                          ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 90520744783209.152875081006124 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 90520744783209.152877384501052 ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                             ; --            ; --          ; tb_sha256      ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                             ; --            ; --          ; tb_miner       ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_miner                       ; --            ; --          ; eda_simulation ;
@@ -105,12 +105,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4649 MB             ; 00:00:02                           ;
-; Fitter                    ; 00:00:06     ; 1.2                     ; 5175 MB             ; 00:00:06                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 4613 MB             ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 4649 MB             ; 00:00:02                           ;
+; Fitter                    ; 00:00:09     ; 1.1                     ; 5174 MB             ; 00:00:07                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4613 MB             ; 00:00:02                           ;
 ; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4686 MB             ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4561 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:12     ; --                      ; --                  ; 00:00:12                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4564 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:16     ; --                      ; --                  ; 00:00:14                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

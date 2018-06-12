@@ -3,12 +3,17 @@
 module miner (
     clock,
     reset,
+	 tx,
+	 rx,
     led
 );
 
 input clock;
 input reset;
 output led;
+output tx;
+input rx;
+
 wire clock;
 wire reset;
 wire led; /* if golden nonce is found */
@@ -96,7 +101,7 @@ begin
   $display(" ** computing second hash....");
   global_state = STATE_HASH_OF_HASH;
   
-  sha_1_block = {sha_1_digest, 256'h80000000000000000000000000000000000000000000000000000000000001C0};
+  sha_1_block = {sha_1_digest, 256'h8000000000000000000000000000000000000000000000000000000000000100};
   sha_init = 1;
   #(CLK_PERIOD);
   sha_init = 0;
@@ -147,25 +152,6 @@ end
 endtask
 
 
-always @ (posedge sha_1_ready)
-begin
-sha_done = 1;
-//  if (sha_1_state == 2'b00) begin
-    ///* first block done */
-//    $display("Got first  block: 0x%064x", sha_1_digest);
-//  end
-//  if (sha_1_state == 2'b01) begin
-    /* second block done */
-//    $display("Got second block: 0x%064x", sha_1_digest);
-//  end
-//  if (sha_1_state == 2'b10) begin
-    /* second hash done */
-//    $display("Got second hash: 0x%064x", sha_1_digest);
-//  end
-end
-
-
-
 always @ (posedge clock)
 begin : COUNTER
   if (reset == 1'b1) begin
@@ -179,8 +165,8 @@ begin : COUNTER
   /* reset on start */
   if (counter_out == 10) begin
     $display("Simulating data from uart.");
-    blk1 = 512'h6162636462636465636465666465666765666768666768696768696A68696A6B696A6B6C6A6B6C6D6B6C6D6E6C6D6E6F6D6E6F706E6F70718000000000000000;
-    blk2 = 512'h000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001C0;
+	 blk1 = 512'h0100000000000000000000000000000000000000000000000000000000000000000000003BA3EDFD7A7B12B27AC72C3E67768F617FC81BC3888A51323A9FB8AA;
+	 blk2 = 512'h4B1E5E4A29AB5F49FFFF001D1DAC2B7C800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000280;
     compute_sha_1st_block();
   end
   if (sha_1_ready && sha_1_digest_valid && global_state == STATE_FIRST_BLOCK) begin

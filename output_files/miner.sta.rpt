@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for miner
-Mon Jun 11 18:00:27 2018
+Tue Jun 12 00:24:25 2018
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -352,7 +352,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Jun 11 18:00:25 2018
+    Info: Processing started: Tue Jun 12 00:24:23 2018
 Info: Command: quartus_sta miner -c miner
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -400,7 +400,7 @@ Info (332101): Design is fully constrained for setup requirements
 Info (332101): Design is fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 4694 megabytes
-    Info: Processing ended: Mon Jun 11 18:00:27 2018
+    Info: Processing ended: Tue Jun 12 00:24:25 2018
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
