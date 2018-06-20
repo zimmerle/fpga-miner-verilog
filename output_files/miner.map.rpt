@@ -1,5 +1,5 @@
 Analysis & Synthesis report for miner
-Tue Jun 19 21:35:59 2018
+Tue Jun 19 22:24:04 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -65,13 +65,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 19 21:35:59 2018       ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 19 22:24:04 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; miner                                       ;
 ; Top-level Entity Name              ; miner                                       ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 5,268                                       ;
-;     Total combinational functions  ; 5,095                                       ;
+; Total logic elements               ; 5,236                                       ;
+;     Total combinational functions  ; 5,046                                       ;
 ;     Dedicated logic registers      ; 2,547                                       ;
 ; Total registers                    ; 2547                                        ;
 ; Total pins                         ; 12                                          ;
@@ -184,7 +184,7 @@ refer to the applicable agreement for further details.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.2%      ;
-;     Processor 3            ;   0.1%      ;
+;     Processor 3            ;   0.2%      ;
 ;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
 
@@ -218,16 +218,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 5,268       ;
+; Estimated Total logic elements              ; 5,236       ;
 ;                                             ;             ;
-; Total combinational functions               ; 5095        ;
+; Total combinational functions               ; 5046        ;
 ; Logic element usage by number of LUT inputs ;             ;
 ;     -- 4 input functions                    ; 1569        ;
-;     -- 3 input functions                    ; 2393        ;
-;     -- <=2 input functions                  ; 1133        ;
+;     -- 3 input functions                    ; 2360        ;
+;     -- <=2 input functions                  ; 1117        ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 3288        ;
+;     -- normal mode                          ; 3239        ;
 ;     -- arithmetic mode                      ; 1807        ;
 ;                                             ;             ;
 ; Total registers                             ; 2547        ;
@@ -240,8 +240,8 @@ refer to the applicable agreement for further details.
 ;                                             ;             ;
 ; Maximum fan-out node                        ; reset~input ;
 ; Maximum fan-out                             ; 2021        ;
-; Total fan-out                               ; 25536       ;
-; Average fan-out                             ; 3.31        ;
+; Total fan-out                               ; 25469       ;
+; Average fan-out                             ; 3.32        ;
 +---------------------------------------------+-------------+
 
 
@@ -250,7 +250,7 @@ refer to the applicable agreement for further details.
 +------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                              ; Entity Name        ; Library Name ;
 +------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+--------------------+--------------+
-; |miner                                         ; 5095 (1)            ; 2547 (0)                  ; 0           ; 56           ; 0       ; 28        ; 12   ; 0            ; |miner                                                                           ; miner              ; work         ;
+; |miner                                         ; 5046 (1)            ; 2547 (0)                  ; 0           ; 56           ; 0       ; 28        ; 12   ; 0            ; |miner                                                                           ; miner              ; work         ;
 ;    |clk_div:CLK2|                              ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|clk_div:CLK2                                                              ; clk_div            ; work         ;
 ;    |clk_div:CLK3|                              ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|clk_div:CLK3                                                              ; clk_div            ; work         ;
 ;    |clk_div:CLK|                               ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|clk_div:CLK                                                               ; clk_div            ; work         ;
@@ -263,7 +263,7 @@ refer to the applicable agreement for further details.
 ;    |led:LED0|                                  ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|led:LED0                                                                  ; led                ; work         ;
 ;    |led:LED5|                                  ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|led:LED5                                                                  ; led                ; work         ;
 ;    |led:LED6|                                  ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|led:LED6                                                                  ; led                ; work         ;
-;    |miner_core:CORE|                           ; 4384 (1593)         ; 1978 (944)                ; 0           ; 56           ; 0       ; 28        ; 0    ; 0            ; |miner|miner_core:CORE                                                           ; miner_core         ; work         ;
+;    |miner_core:CORE|                           ; 4335 (1544)         ; 1978 (944)                ; 0           ; 56           ; 0       ; 28        ; 0    ; 0            ; |miner|miner_core:CORE                                                           ; miner_core         ; work         ;
 ;       |lpm_mult:Mult0|                         ; 696 (0)             ; 0 (0)                     ; 0           ; 56           ; 0       ; 28        ; 0    ; 0            ; |miner|miner_core:CORE|lpm_mult:Mult0                                            ; lpm_mult           ; work         ;
 ;          |mult_kgt:auto_generated|             ; 696 (696)           ; 0 (0)                     ; 0           ; 56           ; 0       ; 28        ; 0    ; 0            ; |miner|miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated                    ; mult_kgt           ; work         ;
 ;       |sha256_core:SHA_INST1|                  ; 2095 (873)          ; 1034 (516)                ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|miner_core:CORE|sha256_core:SHA_INST1                                     ; sha256_core        ; work         ;
@@ -579,7 +579,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Total registers                              ; 2547  ;
 ; Number of registers using Synchronous Clear  ; 103   ;
-; Number of registers using Synchronous Load   ; 498   ;
+; Number of registers using Synchronous Load   ; 530   ;
 ; Number of registers using Asynchronous Clear ; 1439  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 1926  ;
@@ -637,8 +637,6 @@ Encoding Type:  One-Hot
 ; conn_core:CONN|blk2[4]                         ; 1       ;
 ; conn_core:CONN|async_receiver:RX|Filter_cnt[0] ; 3       ;
 ; conn_core:CONN|async_receiver:RX|Filter_cnt[1] ; 3       ;
-; miner_core:CORE|sha_1_nonce[8]                 ; 3       ;
-; miner_core:CORE|sha_1_nonce[16]                ; 3       ;
 ; conn_core:CONN|blk1[199]                       ; 1       ;
 ; conn_core:CONN|blk1[49]                        ; 1       ;
 ; conn_core:CONN|blk1[198]                       ; 1       ;
@@ -651,13 +649,11 @@ Encoding Type:  One-Hot
 ; conn_core:CONN|blk1[44]                        ; 1       ;
 ; conn_core:CONN|blk1[51]                        ; 1       ;
 ; conn_core:CONN|blk1[192]                       ; 1       ;
-; miner_core:CORE|sha_1_nonce[7]                 ; 3       ;
 ; conn_core:CONN|blk1[167]                       ; 1       ;
 ; conn_core:CONN|blk1[71]                        ; 1       ;
 ; conn_core:CONN|blk1[7]                         ; 1       ;
 ; conn_core:CONN|blk1[102]                       ; 1       ;
 ; conn_core:CONN|blk1[70]                        ; 1       ;
-; miner_core:CORE|sha_1_nonce[6]                 ; 3       ;
 ; conn_core:CONN|blk1[133]                       ; 1       ;
 ; conn_core:CONN|blk1[101]                       ; 1       ;
 ; conn_core:CONN|blk1[37]                        ; 1       ;
@@ -666,12 +662,10 @@ Encoding Type:  One-Hot
 ; conn_core:CONN|blk1[36]                        ; 1       ;
 ; conn_core:CONN|blk1[132]                       ; 1       ;
 ; conn_core:CONN|blk1[164]                       ; 1       ;
-; miner_core:CORE|sha_1_nonce[3]                 ; 3       ;
 ; conn_core:CONN|blk1[131]                       ; 1       ;
 ; conn_core:CONN|blk1[3]                         ; 1       ;
 ; conn_core:CONN|blk1[130]                       ; 1       ;
 ; conn_core:CONN|blk1[33]                        ; 1       ;
-; miner_core:CORE|sha_1_nonce[1]                 ; 3       ;
 ; conn_core:CONN|blk1[129]                       ; 1       ;
 ; conn_core:CONN|blk1[161]                       ; 1       ;
 ; conn_core:CONN|blk1[65]                        ; 1       ;
@@ -686,13 +680,19 @@ Encoding Type:  One-Hot
 ; conn_core:CONN|blk1[202]                       ; 1       ;
 ; conn_core:CONN|blk1[59]                        ; 1       ;
 ; conn_core:CONN|blk1[200]                       ; 1       ;
-; miner_core:CORE|sha_1_nonce[15]                ; 3       ;
 ; conn_core:CONN|blk1[111]                       ; 1       ;
 ; conn_core:CONN|blk1[15]                        ; 1       ;
 ; conn_core:CONN|blk1[141]                       ; 1       ;
 ; conn_core:CONN|blk1[13]                        ; 1       ;
-; miner_core:CORE|sha_1_nonce[12]                ; 3       ;
-; Total number of inverted registers = 186*      ;         ;
+; conn_core:CONN|blk1[76]                        ; 1       ;
+; conn_core:CONN|blk1[172]                       ; 1       ;
+; conn_core:CONN|blk1[12]                        ; 1       ;
+; conn_core:CONN|blk1[139]                       ; 1       ;
+; conn_core:CONN|blk1[107]                       ; 1       ;
+; conn_core:CONN|blk1[75]                        ; 1       ;
+; conn_core:CONN|blk1[11]                        ; 1       ;
+; conn_core:CONN|blk1[106]                       ; 1       ;
+; Total number of inverted registers = 169*      ;         ;
 +------------------------------------------------+---------+
 * Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
 
@@ -704,81 +704,80 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
 ; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |miner|conn_core:CONN|async_transmitter:TX|TxD_shift[1]                            ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |miner|miner_core:CORE|msg[10]                                                     ;
-; 3:1                ; 512 bits  ; 1024 LEs      ; 1024 LEs             ; 0 LEs                  ; Yes        ; |miner|miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[15][15] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk2[1]                                                      ;
+; 3:1                ; 512 bits  ; 1024 LEs      ; 1024 LEs             ; 0 LEs                  ; Yes        ; |miner|miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[13][15] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk2[6]                                                      ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[223]                                                    ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[214]                                                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[210]                                                    ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[201]                                                    ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[53]                                                     ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[43]                                                     ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[35]                                                     ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[56]                                                     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[248]                                                    ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[52]                                                     ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[45]                                                     ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[39]                                                     ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[62]                                                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[251]                                                    ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[186]                                                    ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[152]                                                    ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[124]                                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[159]                                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[123]                                                    ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[26]                                                     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[240]                                                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[247]                                                    ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[178]                                                    ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[147]                                                    ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[119]                                                    ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[85]                                                     ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[22]                                                     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[239]                                                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[235]                                                    ;
 ; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[173]                                                    ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[140]                                                    ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[109]                                                    ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[77]                                                     ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[9]                                                      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[231]                                                    ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[166]                                                    ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[135]                                                    ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[99]                                                     ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[66]                                                     ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[2]                                                      ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |miner|miner_core:CORE|sha_1_nonce[5]                                              ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[137]                                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[110]                                                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[79]                                                     ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[8]                                                      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[226]                                                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[160]                                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[128]                                                    ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[97]                                                     ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[68]                                                     ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[6]                                                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |miner|miner_core:CORE|sha_1_nonce[21]                                             ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |miner|conn_core:CONN|to_be_sent[4]                                                ;
 ; 4:1                ; 19 bits   ; 38 LEs        ; 38 LEs               ; 0 LEs                  ; Yes        ; |miner|conn_core:CONN|to_be_sent[24]                                               ;
-; 4:1                ; 124 bits  ; 248 LEs       ; 248 LEs              ; 0 LEs                  ; Yes        ; |miner|miner_core:CORE|sha256_core:SHA_INST1|g_reg[31]                             ;
-; 4:1                ; 132 bits  ; 264 LEs       ; 264 LEs              ; 0 LEs                  ; Yes        ; |miner|miner_core:CORE|sha256_core:SHA_INST1|a_reg[7]                              ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |miner|conn_core:CONN|offset[0]                                                    ;
-; 5:1                ; 224 bits  ; 672 LEs       ; 448 LEs              ; 224 LEs                ; Yes        ; |miner|miner_core:CORE|sha_1_block[372]                                            ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |miner|miner_core:CORE|sha_1_block[396]                                            ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |miner|miner_core:CORE|sha_1_block[8]                                              ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |miner|conn_core:CONN|offset_send[16]                                              ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk2[0]                                                      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk2[31]                                                     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk2[19]                                                     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk2[14]                                                     ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[219]                                                    ;
+; 4:1                ; 124 bits  ; 248 LEs       ; 248 LEs              ; 0 LEs                  ; Yes        ; |miner|miner_core:CORE|sha256_core:SHA_INST1|c_reg[24]                             ;
+; 4:1                ; 132 bits  ; 264 LEs       ; 264 LEs              ; 0 LEs                  ; Yes        ; |miner|miner_core:CORE|sha256_core:SHA_INST1|c_reg[0]                              ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |miner|conn_core:CONN|offset[24]                                                   ;
+; 5:1                ; 224 bits  ; 672 LEs       ; 448 LEs              ; 224 LEs                ; Yes        ; |miner|miner_core:CORE|sha_1_block[429]                                            ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |miner|miner_core:CORE|sha_1_block[399]                                            ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |miner|miner_core:CORE|sha_1_block[255]                                            ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |miner|conn_core:CONN|offset_send[28]                                              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk2[4]                                                      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk2[24]                                                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk2[21]                                                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk2[9]                                                      ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[217]                                                    ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[213]                                                    ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[206]                                                    ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[194]                                                    ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[51]                                                     ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[205]                                                    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[195]                                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[55]                                                     ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[46]                                                     ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[33]                                                     ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[63]                                                     ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[187]                                                    ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[155]                                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[36]                                                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[59]                                                     ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[189]                                                    ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[153]                                                    ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[121]                                                    ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[91]                                                     ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[89]                                                     ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[29]                                                     ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[176]                                                    ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[144]                                                    ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[179]                                                    ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[145]                                                    ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[116]                                                    ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[86]                                                     ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[23]                                                     ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[169]                                                    ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[138]                                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[83]                                                     ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[17]                                                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[172]                                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[141]                                                    ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[105]                                                    ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[76]                                                     ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[73]                                                     ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[15]                                                     ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[161]                                                    ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[133]                                                    ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[129]                                                    ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[102]                                                    ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[71]                                                     ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[1]                                                      ;
-; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |miner|miner_core:CORE|sha_1_nonce[7]                                              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[70]                                                     ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[3]                                                      ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |miner|conn_core:CONN|to_be_sent[100]                                              ;
 ; 4:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; Yes        ; |miner|conn_core:CONN|to_be_sent[21]                                               ;
 ; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |miner|miner_core:CORE|ShiftLeft0                                                  ;
@@ -1008,28 +1007,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; cycloneiii_ff         ; 2547                        ;
 ;     CLR               ; 42                          ;
 ;     CLR SLD           ; 1                           ;
-;     ENA               ; 465                         ;
+;     ENA               ; 433                         ;
 ;     ENA CLR           ; 882                         ;
 ;     ENA CLR SCLR      ; 38                          ;
 ;     ENA CLR SLD       ; 476                         ;
 ;     ENA SCLR          ; 65                          ;
+;     ENA SLD           ; 32                          ;
 ;     SLD               ; 21                          ;
 ;     plain             ; 557                         ;
-; cycloneiii_lcell_comb ; 5095                        ;
+; cycloneiii_lcell_comb ; 5046                        ;
 ;     arith             ; 1807                        ;
 ;         2 data inputs ; 439                         ;
 ;         3 data inputs ; 1368                        ;
-;     normal            ; 3288                        ;
+;     normal            ; 3239                        ;
 ;         0 data inputs ; 5                           ;
-;         1 data inputs ; 175                         ;
-;         2 data inputs ; 514                         ;
-;         3 data inputs ; 1025                        ;
+;         1 data inputs ; 158                         ;
+;         2 data inputs ; 515                         ;
+;         3 data inputs ; 992                         ;
 ;         4 data inputs ; 1569                        ;
 ; cycloneiii_mac_mult   ; 28                          ;
 ; cycloneiii_mac_out    ; 28                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 28.50                       ;
-; Average LUT depth     ; 9.58                        ;
+; Average LUT depth     ; 9.54                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1048,7 +1048,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Tue Jun 19 21:35:41 2018
+    Info: Processing started: Tue Jun 19 22:23:46 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off miner -c miner
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
 Info (12021): Found 4 design units, including 4 entities, in source file uart/async.v
@@ -1085,13 +1085,13 @@ Info (12128): Elaborating entity "BaudTickGen" for hierarchy "conn_core:CONN|asy
 Info (12128): Elaborating entity "async_receiver" for hierarchy "conn_core:CONN|async_receiver:RX" File: /home/zimmerle/core-cin/abel/miner/conn_core.v Line: 81
 Info (12128): Elaborating entity "BaudTickGen" for hierarchy "conn_core:CONN|async_receiver:RX|BaudTickGen:tickgen" File: /home/zimmerle/core-cin/abel/miner/uart/async.v Line: 108
 Info (12128): Elaborating entity "miner_core" for hierarchy "miner_core:CORE" File: /home/zimmerle/core-cin/abel/miner/miner.v Line: 88
-Info (12128): Elaborating entity "sha256_core" for hierarchy "miner_core:CORE|sha256_core:SHA_INST1" File: /home/zimmerle/core-cin/abel/miner/miner_core.v Line: 64
+Info (12128): Elaborating entity "sha256_core" for hierarchy "miner_core:CORE|sha256_core:SHA_INST1" File: /home/zimmerle/core-cin/abel/miner/miner_core.v Line: 65
 Info (12128): Elaborating entity "sha256_k_constants" for hierarchy "miner_core:CORE|sha256_core:SHA_INST1|sha256_k_constants:k_constants_inst" File: /home/zimmerle/core-cin/abel/miner/sha2/sha256_core.v Line: 167
 Info (12128): Elaborating entity "sha256_w_mem" for hierarchy "miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst" File: /home/zimmerle/core-cin/abel/miner/sha2/sha256_core.v Line: 179
 Info (278001): Inferred 1 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "miner_core:CORE|Mult0" File: /home/zimmerle/core-cin/abel/miner/miner_core.v Line: 125
-Info (12130): Elaborated megafunction instantiation "miner_core:CORE|lpm_mult:Mult0" File: /home/zimmerle/core-cin/abel/miner/miner_core.v Line: 125
-Info (12133): Instantiated megafunction "miner_core:CORE|lpm_mult:Mult0" with the following parameter: File: /home/zimmerle/core-cin/abel/miner/miner_core.v Line: 125
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "miner_core:CORE|Mult0" File: /home/zimmerle/core-cin/abel/miner/miner_core.v Line: 126
+Info (12130): Elaborated megafunction instantiation "miner_core:CORE|lpm_mult:Mult0" File: /home/zimmerle/core-cin/abel/miner/miner_core.v Line: 126
+Info (12133): Instantiated megafunction "miner_core:CORE|lpm_mult:Mult0" with the following parameter: File: /home/zimmerle/core-cin/abel/miner/miner_core.v Line: 126
     Info (12134): Parameter "LPM_WIDTHA" = "24"
     Info (12134): Parameter "LPM_WIDTHB" = "249"
     Info (12134): Parameter "LPM_WIDTHP" = "273"
@@ -1115,14 +1115,14 @@ Info (17049): 44 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file /home/zimmerle/core-cin/abel/miner/output_files/miner.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 5344 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5312 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 9 output pins
-    Info (21061): Implemented 5276 logic cells
+    Info (21061): Implemented 5244 logic cells
     Info (21062): Implemented 56 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 1067 megabytes
-    Info: Processing ended: Tue Jun 19 21:35:59 2018
+    Info: Peak virtual memory: 1062 megabytes
+    Info: Processing ended: Tue Jun 19 22:24:04 2018
     Info: Elapsed time: 00:00:18
     Info: Total CPU time (on all processors): 00:00:29
 

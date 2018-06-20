@@ -40,7 +40,8 @@ wire [255:0] hash_i;
 
 /* nonces */
 //reg [31:0] sha_1_nonce;
-integer sha_1_nonce = 49782218; /* 49782288 */
+integer sha_1_nonce = 0; /* 49782288 */
+
 
 /* dificult */
 reg [255:0] dificult;

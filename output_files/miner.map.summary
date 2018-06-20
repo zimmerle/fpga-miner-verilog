@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Tue Jun 19 21:35:59 2018
+Analysis & Synthesis Status : Successful - Tue Jun 19 22:24:04 2018
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 Revision Name : miner
 Top-level Entity Name : miner
 Family : Cyclone IV E
-Total logic elements : 5,268
-    Total combinational functions : 5,095
+Total logic elements : 5,236
+    Total combinational functions : 5,046
     Dedicated logic registers : 2,547
 Total registers : 2547
 Total pins : 12

@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue Jun 19 21:36:38 2018
+Fitter Status : Successful - Tue Jun 19 22:24:43 2018
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 Revision Name : miner
 Top-level Entity Name : miner
 Family : Cyclone IV E
 Device : EP4CE22F17C6
 Timing Models : Final
-Total logic elements : 5,383 / 22,320 ( 24 % )
-    Total combinational functions : 5,096 / 22,320 ( 23 % )
+Total logic elements : 5,328 / 22,320 ( 24 % )
+    Total combinational functions : 5,047 / 22,320 ( 23 % )
     Dedicated logic registers : 2,541 / 22,320 ( 11 % )
 Total registers : 2541
 Total pins : 12 / 154 ( 8 % )

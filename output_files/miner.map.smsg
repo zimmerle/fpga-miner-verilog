@@ -1,2 +1,2 @@
-Warning (10268): Verilog HDL information at miner_core.v(93): always construct contains both blocking and non-blocking assignments File: /home/zimmerle/core-cin/abel/miner/miner_core.v Line: 93
+Warning (10268): Verilog HDL information at miner_core.v(94): always construct contains both blocking and non-blocking assignments File: /home/zimmerle/core-cin/abel/miner/miner_core.v Line: 94
 Warning (10268): Verilog HDL information at conn_core.v(84): always construct contains both blocking and non-blocking assignments File: /home/zimmerle/core-cin/abel/miner/conn_core.v Line: 84
