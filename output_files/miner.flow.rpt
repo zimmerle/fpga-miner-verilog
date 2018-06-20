@@ -1,5 +1,5 @@
 Flow report for miner
-Tue Jun 19 21:27:34 2018
+Tue Jun 19 21:36:49 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Jun 19 21:27:34 2018       ;
+; Flow Status                        ; Successful - Tue Jun 19 21:36:49 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; miner                                       ;
 ; Top-level Entity Name              ; miner                                       ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 5,356 / 22,320 ( 24 % )                     ;
-;     Total combinational functions  ; 5,084 / 22,320 ( 23 % )                     ;
-;     Dedicated logic registers      ; 2,536 / 22,320 ( 11 % )                     ;
-; Total registers                    ; 2536                                        ;
+; Total logic elements               ; 5,383 / 22,320 ( 24 % )                     ;
+;     Total combinational functions  ; 5,096 / 22,320 ( 23 % )                     ;
+;     Dedicated logic registers      ; 2,541 / 22,320 ( 11 % )                     ;
+; Total registers                    ; 2541                                        ;
 ; Total pins                         ; 12 / 154 ( 8 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 608,256 ( 0 % )                         ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/19/2018 21:26:25 ;
+; Start date & time ; 06/19/2018 21:35:41 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; miner               ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 128454786064912.152945438517545        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 128454786064912.152945494119664        ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_miner       ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_sha256      ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_miner_core  ;
@@ -113,12 +113,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:17     ; 1.0                     ; 1032 MB             ; 00:00:29                           ;
-; Fitter               ; 00:00:40     ; 1.1                     ; 1734 MB             ; 00:01:30                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 832 MB              ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.3                     ; 953 MB              ; 00:00:04                           ;
+; Analysis & Synthesis ; 00:00:17     ; 1.0                     ; 1033 MB             ; 00:00:29                           ;
+; Fitter               ; 00:00:39     ; 1.1                     ; 1681 MB             ; 00:01:28                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 830 MB              ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:04     ; 1.3                     ; 961 MB              ; 00:00:05                           ;
 ; EDA Netlist Writer   ; 00:00:04     ; 1.0                     ; 1102 MB             ; 00:00:04                           ;
-; Total                ; 00:01:05     ; --                      ; --                  ; 00:02:08                           ;
+; Total                ; 00:01:05     ; --                      ; --                  ; 00:02:07                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

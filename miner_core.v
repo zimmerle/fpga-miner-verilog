@@ -40,7 +40,7 @@ wire [255:0] hash_i;
 
 /* nonces */
 //reg [31:0] sha_1_nonce;
-integer sha_1_nonce = 49772288; /* 49782288 */
+integer sha_1_nonce = 49782218; /* 49782288 */
 
 /* dificult */
 reg [255:0] dificult;
@@ -102,7 +102,7 @@ begin : CORE
     sha_next = 0;
     //sha_1_nonce = 32'h1DAC2B7C;
 	 //sha_1_nonce = 32'h00000000;
-	 sha_1_nonce <= 497722588;
+	 sha_1_nonce <= 49782218;
 	 dificult = 255'h0000000000000000000000000000000000000000000000000000000000000000;
 	 led_processing <= 0;
   end
@@ -207,7 +207,7 @@ begin : CORE
     hash_i[7:0] = sha_1_digest[255:248];
 
     if (hash_i < dificult) begin
-      msg = {"^!!", sha_1_nonce, "!!"};	
+      msg = {"^--", sha_1_nonce, "--"};	
       delivery_msg <= 1;
       global_state <= STATE_FOUND;
 		led_found <= 1;

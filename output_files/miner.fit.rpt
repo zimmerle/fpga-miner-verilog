@@ -1,5 +1,5 @@
 Fitter report for miner
-Tue Jun 19 21:27:23 2018
+Tue Jun 19 21:36:38 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -70,17 +70,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Tue Jun 19 21:27:23 2018       ;
+; Fitter Status                      ; Successful - Tue Jun 19 21:36:38 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; miner                                       ;
 ; Top-level Entity Name              ; miner                                       ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 5,356 / 22,320 ( 24 % )                     ;
-;     Total combinational functions  ; 5,084 / 22,320 ( 23 % )                     ;
-;     Dedicated logic registers      ; 2,536 / 22,320 ( 11 % )                     ;
-; Total registers                    ; 2536                                        ;
+; Total logic elements               ; 5,383 / 22,320 ( 24 % )                     ;
+;     Total combinational functions  ; 5,096 / 22,320 ( 23 % )                     ;
+;     Dedicated logic registers      ; 2,541 / 22,320 ( 11 % )                     ;
+; Total registers                    ; 2541                                        ;
 ; Total pins                         ; 12 / 154 ( 8 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 608,256 ( 0 % )                         ;
@@ -164,7 +164,7 @@ refer to the applicable agreement for further details.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   3.0%      ;
-;     Processor 3            ;   2.6%      ;
+;     Processor 3            ;   2.7%      ;
 ;     Processor 4            ;   2.5%      ;
 +----------------------------+-------------+
 
@@ -345,8 +345,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 7719 ) ; 0.00 % ( 0 / 7719 )        ; 0.00 % ( 0 / 7719 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 7719 ) ; 0.00 % ( 0 / 7719 )        ; 0.00 % ( 0 / 7719 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 7736 ) ; 0.00 % ( 0 / 7736 )        ; 0.00 % ( 0 / 7736 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 7736 ) ; 0.00 % ( 0 / 7736 )        ; 0.00 % ( 0 / 7736 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -369,7 +369,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 7709 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 7726 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -385,26 +385,26 @@ The pin-out file can be found in /home/zimmerle/core-cin/abel/miner/output_files
 +---------------------------------------------+-------------------------+
 ; Resource                                    ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Total logic elements                        ; 5,356 / 22,320 ( 24 % ) ;
-;     -- Combinational with no register       ; 2820                    ;
-;     -- Register only                        ; 272                     ;
-;     -- Combinational with a register        ; 2264                    ;
+; Total logic elements                        ; 5,383 / 22,320 ( 24 % ) ;
+;     -- Combinational with no register       ; 2842                    ;
+;     -- Register only                        ; 287                     ;
+;     -- Combinational with a register        ; 2254                    ;
 ;                                             ;                         ;
 ; Logic element usage by number of LUT inputs ;                         ;
-;     -- 4 input functions                    ; 1559                    ;
-;     -- 3 input functions                    ; 2392                    ;
-;     -- <=2 input functions                  ; 1133                    ;
-;     -- Register only                        ; 272                     ;
+;     -- 4 input functions                    ; 1569                    ;
+;     -- 3 input functions                    ; 2393                    ;
+;     -- <=2 input functions                  ; 1134                    ;
+;     -- Register only                        ; 287                     ;
 ;                                             ;                         ;
 ; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 3277                    ;
+;     -- normal mode                          ; 3289                    ;
 ;     -- arithmetic mode                      ; 1807                    ;
 ;                                             ;                         ;
-; Total registers*                            ; 2,536 / 23,018 ( 11 % ) ;
-;     -- Dedicated logic registers            ; 2,536 / 22,320 ( 11 % ) ;
+; Total registers*                            ; 2,541 / 23,018 ( 11 % ) ;
+;     -- Dedicated logic registers            ; 2,541 / 22,320 ( 11 % ) ;
 ;     -- I/O registers                        ; 0 / 698 ( 0 % )         ;
 ;                                             ;                         ;
-; Total LABs:  partially or completely used   ; 404 / 1,395 ( 29 % )    ;
+; Total LABs:  partially or completely used   ; 412 / 1,395 ( 30 % )    ;
 ; Virtual pins                                ; 0                       ;
 ; I/O pins                                    ; 12 / 154 ( 8 % )        ;
 ;     -- Clock pins                           ; 3 / 7 ( 43 % )          ;
@@ -422,11 +422,11 @@ The pin-out file can be found in /home/zimmerle/core-cin/abel/miner/output_files
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )           ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )           ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )           ;
-; Average interconnect usage (total/H/V)      ; 9.6% / 9.0% / 10.4%     ;
-; Peak interconnect usage (total/H/V)         ; 35.7% / 35.1% / 36.6%   ;
-; Maximum fan-out                             ; 1443                    ;
+; Average interconnect usage (total/H/V)      ; 9.8% / 9.4% / 10.2%     ;
+; Peak interconnect usage (total/H/V)         ; 35.0% / 34.9% / 38.0%   ;
+; Maximum fan-out                             ; 1447                    ;
 ; Highest non-global fan-out                  ; 582                     ;
-; Total fan-out                               ; 25746                   ;
+; Total fan-out                               ; 25783                   ;
 ; Average fan-out                             ; 3.24                    ;
 +---------------------------------------------+-------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
@@ -440,26 +440,26 @@ The pin-out file can be found in /home/zimmerle/core-cin/abel/miner/output_files
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 5356 / 22320 ( 24 % ) ; 0 / 22320 ( 0 % )              ;
-;     -- Combinational with no register       ; 2820                  ; 0                              ;
-;     -- Register only                        ; 272                   ; 0                              ;
-;     -- Combinational with a register        ; 2264                  ; 0                              ;
+; Total logic elements                        ; 5383 / 22320 ( 24 % ) ; 0 / 22320 ( 0 % )              ;
+;     -- Combinational with no register       ; 2842                  ; 0                              ;
+;     -- Register only                        ; 287                   ; 0                              ;
+;     -- Combinational with a register        ; 2254                  ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 1559                  ; 0                              ;
-;     -- 3 input functions                    ; 2392                  ; 0                              ;
-;     -- <=2 input functions                  ; 1133                  ; 0                              ;
-;     -- Register only                        ; 272                   ; 0                              ;
+;     -- 4 input functions                    ; 1569                  ; 0                              ;
+;     -- 3 input functions                    ; 2393                  ; 0                              ;
+;     -- <=2 input functions                  ; 1134                  ; 0                              ;
+;     -- Register only                        ; 287                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 3277                  ; 0                              ;
+;     -- normal mode                          ; 3289                  ; 0                              ;
 ;     -- arithmetic mode                      ; 1807                  ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 2536                  ; 0                              ;
-;     -- Dedicated logic registers            ; 2536 / 22320 ( 11 % ) ; 0 / 22320 ( 0 % )              ;
+; Total registers                             ; 2541                  ; 0                              ;
+;     -- Dedicated logic registers            ; 2541 / 22320 ( 11 % ) ; 0 / 22320 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 404 / 1395 ( 29 % )   ; 0 / 1395 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 412 / 1395 ( 30 % )   ; 0 / 1395 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 12                    ; 0                              ;
@@ -475,8 +475,8 @@ The pin-out file can be found in /home/zimmerle/core-cin/abel/miner/output_files
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 26721                 ; 5                              ;
-;     -- Registered Connections               ; 9243                  ; 0                              ;
+;     -- Total Connections                    ; 26758                 ; 5                              ;
+;     -- Registered Connections               ; 9262                  ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 0                              ;
@@ -509,7 +509,7 @@ The pin-out file can be found in /home/zimmerle/core-cin/abel/miner/output_files
 ; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; CLOCK_50 ; R8    ; 3        ; 27           ; 0            ; 21           ; 1035                  ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; reset    ; E1    ; 1        ; 0            ; 16           ; 7            ; 2025                  ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; reset    ; E1    ; 1        ; 0            ; 16           ; 7            ; 2029                  ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; rx       ; A8    ; 8        ; 25           ; 34           ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
@@ -857,12 +857,12 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                     ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                              ; Entity Name        ; Library Name ;
 +------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------+--------------------+--------------+
-; |miner                                         ; 5356 (1)    ; 2536 (0)                  ; 0 (0)         ; 0           ; 0    ; 56           ; 0       ; 28        ; 12   ; 0            ; 2820 (1)     ; 272 (0)           ; 2264 (0)         ; |miner                                                                           ; miner              ; work         ;
+; |miner                                         ; 5383 (1)    ; 2541 (0)                  ; 0 (0)         ; 0           ; 0    ; 56           ; 0       ; 28        ; 12   ; 0            ; 2842 (1)     ; 287 (0)           ; 2254 (0)         ; |miner                                                                           ; miner              ; work         ;
 ;    |clk_div:CLK2|                              ; 2 (2)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 1 (1)             ; 0 (0)            ; |miner|clk_div:CLK2                                                              ; clk_div            ; work         ;
 ;    |clk_div:CLK3|                              ; 2 (2)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 1 (1)             ; 0 (0)            ; |miner|clk_div:CLK3                                                              ; clk_div            ; work         ;
 ;    |clk_div:CLK|                               ; 2 (2)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 1 (1)             ; 0 (0)            ; |miner|clk_div:CLK                                                               ; clk_div            ; work         ;
-;    |conn_core:CONN|                            ; 838 (704)   ; 553 (437)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 285 (267)    ; 129 (126)         ; 424 (317)        ; |miner|conn_core:CONN                                                            ; conn_core          ; work         ;
-;       |async_receiver:RX|                      ; 49 (28)     ; 42 (21)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 2 (2)             ; 40 (19)          ; |miner|conn_core:CONN|async_receiver:RX                                          ; async_receiver     ; work         ;
+;    |conn_core:CONN|                            ; 852 (718)   ; 557 (441)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 292 (274)    ; 137 (129)         ; 423 (316)        ; |miner|conn_core:CONN                                                            ; conn_core          ; work         ;
+;       |async_receiver:RX|                      ; 49 (28)     ; 42 (21)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 7 (7)             ; 35 (14)          ; |miner|conn_core:CONN|async_receiver:RX                                          ; async_receiver     ; work         ;
 ;          |BaudTickGen:tickgen|                 ; 21 (21)     ; 21 (21)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 21 (21)          ; |miner|conn_core:CONN|async_receiver:RX|BaudTickGen:tickgen                      ; BaudTickGen        ; work         ;
 ;       |async_transmitter:TX|                   ; 44 (23)     ; 33 (12)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 33 (12)          ; |miner|conn_core:CONN|async_transmitter:TX                                       ; async_transmitter  ; work         ;
 ;          |BaudTickGen:tickgen|                 ; 21 (21)     ; 21 (21)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 21 (21)          ; |miner|conn_core:CONN|async_transmitter:TX|BaudTickGen:tickgen                   ; BaudTickGen        ; work         ;
@@ -870,12 +870,12 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ;    |led:LED0|                                  ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |miner|led:LED0                                                                  ; led                ; work         ;
 ;    |led:LED5|                                  ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |miner|led:LED5                                                                  ; led                ; work         ;
 ;    |led:LED6|                                  ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |miner|led:LED6                                                                  ; led                ; work         ;
-;    |miner_core:CORE|                           ; 4517 (1599) ; 1977 (943)                ; 0 (0)         ; 0           ; 0    ; 56           ; 0       ; 28        ; 0    ; 0            ; 2531 (655)   ; 137 (10)          ; 1849 (933)       ; |miner|miner_core:CORE                                                           ; miner_core         ; work         ;
-;       |lpm_mult:Mult0|                         ; 696 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 56           ; 0       ; 28        ; 0    ; 0            ; 694 (0)      ; 0 (0)             ; 2 (0)            ; |miner|miner_core:CORE|lpm_mult:Mult0                                            ; lpm_mult           ; work         ;
-;          |mult_kgt:auto_generated|             ; 696 (696)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 56           ; 0       ; 28        ; 0    ; 0            ; 694 (694)    ; 0 (0)             ; 2 (2)            ; |miner|miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated                    ; mult_kgt           ; work         ;
-;       |sha256_core:SHA_INST1|                  ; 2223 (998)  ; 1034 (516)                ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1182 (481)   ; 127 (124)         ; 914 (393)        ; |miner|miner_core:CORE|sha256_core:SHA_INST1                                     ; sha256_core        ; work         ;
+;    |miner_core:CORE|                           ; 4531 (1613) ; 1978 (944)                ; 0 (0)         ; 0           ; 0    ; 56           ; 0       ; 28        ; 0    ; 0            ; 2546 (665)   ; 144 (17)          ; 1841 (931)       ; |miner|miner_core:CORE                                                           ; miner_core         ; work         ;
+;       |lpm_mult:Mult0|                         ; 696 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 56           ; 0       ; 28        ; 0    ; 0            ; 696 (0)      ; 0 (0)             ; 0 (0)            ; |miner|miner_core:CORE|lpm_mult:Mult0                                            ; lpm_mult           ; work         ;
+;          |mult_kgt:auto_generated|             ; 696 (696)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 56           ; 0       ; 28        ; 0    ; 0            ; 696 (696)    ; 0 (0)             ; 0 (0)            ; |miner|miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated                    ; mult_kgt           ; work         ;
+;       |sha256_core:SHA_INST1|                  ; 2222 (998)  ; 1034 (516)                ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1185 (482)   ; 127 (125)         ; 910 (391)        ; |miner|miner_core:CORE|sha256_core:SHA_INST1                                     ; sha256_core        ; work         ;
 ;          |sha256_k_constants:k_constants_inst| ; 189 (189)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 189 (189)    ; 0 (0)             ; 0 (0)            ; |miner|miner_core:CORE|sha256_core:SHA_INST1|sha256_k_constants:k_constants_inst ; sha256_k_constants ; work         ;
-;          |sha256_w_mem:w_mem_inst|             ; 1036 (1036) ; 518 (518)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 512 (512)    ; 3 (3)             ; 521 (521)        ; |miner|miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst             ; sha256_w_mem       ; work         ;
+;          |sha256_w_mem:w_mem_inst|             ; 1035 (1035) ; 518 (518)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 514 (514)    ; 2 (2)             ; 519 (519)        ; |miner|miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst             ; sha256_w_mem       ; work         ;
 +------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -911,81 +911,81 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+-------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                                                                      ;
-+------------------------------------------------------------------------------+--------------------+---------+-------------------------+--------+----------------------+------------------+---------------------------+
-; Name                                                                         ; Location           ; Fan-Out ; Usage                   ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+------------------------------------------------------------------------------+--------------------+---------+-------------------------+--------+----------------------+------------------+---------------------------+
-; CLOCK_50                                                                     ; PIN_R8             ; 1035    ; Clock                   ; yes    ; Global Clock         ; GCLK18           ; --                        ;
-; clk_div:CLK2|clk_out                                                         ; FF_X52_Y16_N21     ; 2       ; Clock                   ; no     ; --                   ; --               ; --                        ;
-; clk_div:CLK3|clk_out                                                         ; FF_X52_Y16_N23     ; 943     ; Clock                   ; yes    ; Global Clock         ; GCLK9            ; --                        ;
-; clk_div:CLK|clk_out                                                          ; FF_X27_Y1_N29      ; 571     ; Clock                   ; yes    ; Global Clock         ; GCLK16           ; --                        ;
-; conn_core:CONN|LessThan0~10                                                  ; LCCOMB_X38_Y7_N18  ; 33      ; Sync. clear             ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|Selector39~1                                                  ; LCCOMB_X28_Y9_N6   ; 2       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|Selector40~0                                                  ; LCCOMB_X29_Y9_N26  ; 33      ; Sync. clear             ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|async_receiver:RX|BaudTickGen:tickgen|Acc[20]                 ; FF_X36_Y6_N19      ; 9       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|async_receiver:RX|always4~0                                   ; LCCOMB_X38_Y9_N22  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|async_transmitter:TX|Equal0~0                                 ; LCCOMB_X30_Y11_N14 ; 36      ; Sync. load              ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|async_transmitter:TX|TxD_shift[4]~9                           ; LCCOMB_X30_Y10_N30 ; 7       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[103]~30                                                  ; LCCOMB_X40_Y9_N6   ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[105]~39                                                  ; LCCOMB_X39_Y9_N28  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[112]~44                                                  ; LCCOMB_X39_Y10_N4  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[123]~51                                                  ; LCCOMB_X39_Y9_N20  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[135]~29                                                  ; LCCOMB_X43_Y13_N24 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[13]~41                                                   ; LCCOMB_X38_Y10_N14 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[142]~38                                                  ; LCCOMB_X43_Y11_N18 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[150]~46                                                  ; LCCOMB_X39_Y14_N12 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[159]~52                                                  ; LCCOMB_X39_Y11_N20 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[161]~34                                                  ; LCCOMB_X44_Y13_N18 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[16]~48                                                   ; LCCOMB_X39_Y9_N22  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[173]~40                                                  ; LCCOMB_X40_Y10_N18 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[183]~43                                                  ; LCCOMB_X40_Y11_N4  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[184]~49                                                  ; LCCOMB_X39_Y11_N10 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[197]~54                                                  ; LCCOMB_X41_Y9_N28  ; 7       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[207]~57                                                  ; LCCOMB_X40_Y12_N28 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[209]~42                                                  ; LCCOMB_X43_Y14_N16 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[223]~60                                                  ; LCCOMB_X40_Y9_N26  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[224]~55                                                  ; LCCOMB_X40_Y12_N22 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[234]~58                                                  ; LCCOMB_X43_Y11_N4  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[246]~45                                                  ; LCCOMB_X40_Y12_N0  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[253]~61                                                  ; LCCOMB_X34_Y12_N28 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[31]~53                                                   ; LCCOMB_X38_Y10_N16 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[35]~31                                                   ; LCCOMB_X40_Y11_N30 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[41]~25                                                   ; LCCOMB_X39_Y9_N10  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[48]~23                                                   ; LCCOMB_X44_Y11_N26 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[59]~24                                                   ; LCCOMB_X39_Y10_N6  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[70]~56                                                   ; LCCOMB_X41_Y12_N10 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[78]~59                                                   ; LCCOMB_X41_Y9_N22  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[7]~37                                                    ; LCCOMB_X41_Y9_N0   ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[87]~47                                                   ; LCCOMB_X41_Y9_N14  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk1[92]~62                                                   ; LCCOMB_X40_Y12_N6  ; 7       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk2[13]~3                                                    ; LCCOMB_X32_Y9_N10  ; 16      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk2[18]~2                                                    ; LCCOMB_X32_Y9_N6   ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk2[28]~1                                                    ; LCCOMB_X37_Y9_N26  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|blk2[4]~4                                                     ; LCCOMB_X32_Y9_N24  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|counter[24]~82                                                ; LCCOMB_X37_Y9_N28  ; 32      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|offset[31]~4                                                  ; LCCOMB_X37_Y9_N30  ; 32      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|offset_send[27]~36                                            ; LCCOMB_X28_Y9_N14  ; 32      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|r_SM_Main.s_IDLE                                              ; FF_X28_Y9_N23      ; 14      ; Sync. load              ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|read_state~12                                                 ; LCCOMB_X32_Y9_N8   ; 2       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|to_be_sent[0]~0                                               ; LCCOMB_X28_Y9_N28  ; 38      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; conn_core:CONN|tx_data[0]~32                                                 ; LCCOMB_X29_Y9_N4   ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; miner_core:CORE|LessThan1~10                                                 ; LCCOMB_X19_Y7_N24  ; 33      ; Sync. clear             ; no     ; --                   ; --               ; --                        ;
-; miner_core:CORE|Selector0~4                                                  ; LCCOMB_X27_Y10_N22 ; 2       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; miner_core:CORE|counter_perf[16]~0                                           ; LCCOMB_X19_Y8_N18  ; 97      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; miner_core:CORE|global_state.STATE_START                                     ; FF_X19_Y6_N5       ; 8       ; Sync. clear             ; no     ; --                   ; --               ; --                        ;
-; miner_core:CORE|msg[16]~0                                                    ; LCCOMB_X25_Y8_N16  ; 32      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; miner_core:CORE|sha256_core:SHA_INST1|H_we~0                                 ; LCCOMB_X28_Y16_N18 ; 256     ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; miner_core:CORE|sha256_core:SHA_INST1|Selector2~1                            ; LCCOMB_X27_Y15_N26 ; 3       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; miner_core:CORE|sha256_core:SHA_INST1|sha256_ctrl_reg.CTRL_DONE              ; FF_X27_Y15_N25     ; 258     ; Sync. load              ; no     ; --                   ; --               ; --                        ;
-; miner_core:CORE|sha256_core:SHA_INST1|sha256_ctrl_reg.CTRL_ROUNDS            ; FF_X27_Y15_N27     ; 266     ; Sync. clear, Sync. load ; no     ; --                   ; --               ; --                        ;
-; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_ctr_we~0     ; LCCOMB_X28_Y16_N24 ; 262     ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][29]~0 ; LCCOMB_X28_Y16_N22 ; 512     ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; miner_core:CORE|sha_1_block[314]~0                                           ; LCCOMB_X27_Y10_N8  ; 512     ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; miner_core:CORE|sha_1_nonce[30]~0                                            ; LCCOMB_X21_Y8_N18  ; 32      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; reset                                                                        ; PIN_E1             ; 583     ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; reset                                                                        ; PIN_E1             ; 1443    ; Async. clear            ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-+------------------------------------------------------------------------------+--------------------+---------+-------------------------+--------+----------------------+------------------+---------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                                                       ;
++-------------------------------------------------------------------------------+--------------------+---------+-------------------------+--------+----------------------+------------------+---------------------------+
+; Name                                                                          ; Location           ; Fan-Out ; Usage                   ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-------------------------------------------------------------------------------+--------------------+---------+-------------------------+--------+----------------------+------------------+---------------------------+
+; CLOCK_50                                                                      ; PIN_R8             ; 1035    ; Clock                   ; yes    ; Global Clock         ; GCLK18           ; --                        ;
+; clk_div:CLK2|clk_out                                                          ; FF_X25_Y32_N23     ; 2       ; Clock                   ; no     ; --                   ; --               ; --                        ;
+; clk_div:CLK3|clk_out                                                          ; FF_X25_Y32_N29     ; 944     ; Clock                   ; yes    ; Global Clock         ; GCLK11           ; --                        ;
+; clk_div:CLK|clk_out                                                           ; FF_X27_Y1_N29      ; 575     ; Clock                   ; yes    ; Global Clock         ; GCLK15           ; --                        ;
+; conn_core:CONN|LessThan0~10                                                   ; LCCOMB_X37_Y10_N30 ; 33      ; Sync. clear             ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|Selector39~3                                                   ; LCCOMB_X25_Y12_N16 ; 2       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|Selector40~0                                                   ; LCCOMB_X25_Y12_N18 ; 33      ; Sync. clear             ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|async_receiver:RX|BaudTickGen:tickgen|Acc[20]                  ; FF_X31_Y9_N19      ; 9       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|async_receiver:RX|always4~0                                    ; LCCOMB_X28_Y13_N26 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|async_transmitter:TX|Equal0~0                                  ; LCCOMB_X18_Y10_N14 ; 36      ; Sync. load              ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|async_transmitter:TX|TxD_shift[1]~9                            ; LCCOMB_X19_Y10_N26 ; 7       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[105]~39                                                   ; LCCOMB_X36_Y13_N10 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[119]~44                                                   ; LCCOMB_X34_Y11_N14 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[124]~51                                                   ; LCCOMB_X38_Y11_N4  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[135]~29                                                   ; LCCOMB_X39_Y15_N2  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[140]~38                                                   ; LCCOMB_X38_Y12_N0  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[144]~46                                                   ; LCCOMB_X35_Y11_N20 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[152]~52                                                   ; LCCOMB_X38_Y12_N30 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[15]~41                                                    ; LCCOMB_X27_Y13_N0  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[161]~34                                                   ; LCCOMB_X40_Y21_N18 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[173]~40                                                   ; LCCOMB_X37_Y11_N2  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[178]~43                                                   ; LCCOMB_X38_Y13_N2  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[186]~49                                                   ; LCCOMB_X37_Y11_N20 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[194]~54                                                   ; LCCOMB_X39_Y15_N30 ; 7       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[1]~37                                                     ; LCCOMB_X28_Y11_N14 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[206]~57                                                   ; LCCOMB_X39_Y13_N12 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[213]~42                                                   ; LCCOMB_X37_Y12_N18 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[223]~60                                                   ; LCCOMB_X35_Y12_N6  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[231]~55                                                   ; LCCOMB_X35_Y12_N0  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[239]~58                                                   ; LCCOMB_X39_Y12_N8  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[23]~48                                                    ; LCCOMB_X28_Y11_N8  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[240]~45                                                   ; LCCOMB_X35_Y12_N26 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[248]~61                                                   ; LCCOMB_X40_Y18_N26 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[26]~53                                                    ; LCCOMB_X27_Y13_N6  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[35]~31                                                    ; LCCOMB_X40_Y15_N6  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[43]~25                                                    ; LCCOMB_X35_Y12_N12 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[53]~23                                                    ; LCCOMB_X35_Y12_N8  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[63]~24                                                    ; LCCOMB_X35_Y12_N14 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[71]~56                                                    ; LCCOMB_X40_Y15_N10 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[77]~59                                                    ; LCCOMB_X40_Y13_N10 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[86]~47                                                    ; LCCOMB_X39_Y12_N22 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[91]~62                                                    ; LCCOMB_X39_Y11_N8  ; 7       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk1[99]~30                                                    ; LCCOMB_X35_Y12_N20 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk2[0]~4                                                      ; LCCOMB_X15_Y19_N30 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk2[14]~3                                                     ; LCCOMB_X28_Y11_N22 ; 16      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk2[19]~2                                                     ; LCCOMB_X14_Y20_N18 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|blk2[31]~1                                                     ; LCCOMB_X27_Y13_N18 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|counter[24]~82                                                 ; LCCOMB_X35_Y10_N30 ; 32      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|offset[31]~4                                                   ; LCCOMB_X28_Y13_N20 ; 32      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|offset_send[16]~36                                             ; LCCOMB_X25_Y13_N28 ; 32      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|r_SM_Main.s_IDLE                                               ; FF_X25_Y13_N5      ; 13      ; Sync. load              ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|read_state~12                                                  ; LCCOMB_X28_Y13_N2  ; 2       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|to_be_sent[0]~0                                                ; LCCOMB_X25_Y13_N14 ; 42      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; conn_core:CONN|tx_data[0]~30                                                  ; LCCOMB_X25_Y12_N28 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; miner_core:CORE|LessThan1~10                                                  ; LCCOMB_X21_Y13_N28 ; 33      ; Sync. clear             ; no     ; --                   ; --               ; --                        ;
+; miner_core:CORE|Selector0~4                                                   ; LCCOMB_X19_Y12_N12 ; 2       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; miner_core:CORE|counter_perf[16]~0                                            ; LCCOMB_X19_Y13_N26 ; 97      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; miner_core:CORE|global_state.STATE_START                                      ; FF_X19_Y12_N3      ; 8       ; Sync. clear             ; no     ; --                   ; --               ; --                        ;
+; miner_core:CORE|msg[16]~0                                                     ; LCCOMB_X23_Y13_N10 ; 32      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; miner_core:CORE|sha256_core:SHA_INST1|H_we~0                                  ; LCCOMB_X24_Y21_N20 ; 256     ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; miner_core:CORE|sha256_core:SHA_INST1|Selector2~2                             ; LCCOMB_X25_Y20_N8  ; 3       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; miner_core:CORE|sha256_core:SHA_INST1|sha256_ctrl_reg.CTRL_DONE               ; FF_X25_Y20_N17     ; 258     ; Sync. load              ; no     ; --                   ; --               ; --                        ;
+; miner_core:CORE|sha256_core:SHA_INST1|sha256_ctrl_reg.CTRL_ROUNDS             ; FF_X25_Y20_N3      ; 266     ; Sync. clear, Sync. load ; no     ; --                   ; --               ; --                        ;
+; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_ctr_we~0      ; LCCOMB_X24_Y21_N26 ; 262     ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[15][15]~0 ; LCCOMB_X24_Y21_N12 ; 512     ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; miner_core:CORE|sha_1_block[372]~0                                            ; LCCOMB_X20_Y12_N30 ; 512     ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; miner_core:CORE|sha_1_nonce[5]~0                                              ; LCCOMB_X17_Y13_N30 ; 32      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; reset                                                                         ; PIN_E1             ; 583     ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; reset                                                                         ; PIN_E1             ; 1447    ; Async. clear            ; yes    ; Global Clock         ; GCLK2            ; --                        ;
++-------------------------------------------------------------------------------+--------------------+---------+-------------------------+--------+----------------------+------------------+---------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -993,24 +993,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name                 ; Location       ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; CLOCK_50             ; PIN_R8         ; 1035    ; 378                                  ; Global Clock         ; GCLK18           ; --                        ;
-; clk_div:CLK3|clk_out ; FF_X52_Y16_N23 ; 943     ; 207                                  ; Global Clock         ; GCLK9            ; --                        ;
-; clk_div:CLK|clk_out  ; FF_X27_Y1_N29  ; 571     ; 93                                   ; Global Clock         ; GCLK16           ; --                        ;
-; reset                ; PIN_E1         ; 1443    ; 0                                    ; Global Clock         ; GCLK2            ; --                        ;
+; CLOCK_50             ; PIN_R8         ; 1035    ; 191                                  ; Global Clock         ; GCLK18           ; --                        ;
+; clk_div:CLK3|clk_out ; FF_X25_Y32_N29 ; 944     ; 196                                  ; Global Clock         ; GCLK11           ; --                        ;
+; clk_div:CLK|clk_out  ; FF_X27_Y1_N29  ; 575     ; 147                                  ; Global Clock         ; GCLK15           ; --                        ;
+; reset                ; PIN_E1         ; 1447    ; 0                                    ; Global Clock         ; GCLK2            ; --                        ;
 +----------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Non-Global High Fan-Out Signals                                                        ;
-+------------------------------------------------------------------------------+---------+
-; Name                                                                         ; Fan-Out ;
-+------------------------------------------------------------------------------+---------+
-; reset~input                                                                  ; 582     ;
-; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|always2~0      ; 513     ;
-; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][29]~0 ; 512     ;
-; miner_core:CORE|sha_1_block[314]~0                                           ; 512     ;
-; miner_core:CORE|dificult~1280                                                ; 508     ;
-+------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------+
+; Non-Global High Fan-Out Signals                                                         ;
++-------------------------------------------------------------------------------+---------+
+; Name                                                                          ; Fan-Out ;
++-------------------------------------------------------------------------------+---------+
+; reset~input                                                                   ; 582     ;
+; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|always2~0       ; 513     ;
+; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[15][15]~0 ; 512     ;
+; miner_core:CORE|sha_1_block[372]~0                                            ; 512     ;
+; miner_core:CORE|dificult~1280                                                 ; 508     ;
++-------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------------------------------------------+
@@ -1035,62 +1035,62 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------+----------------------------+--------------------+---------------------+--------------------------------+-----------------------+-----------------------+-------------------+-----------------+
 ; Name                                                                 ; Mode                       ; Location           ; Sign Representation ; Has Input Shift Register Chain ; Data A Input Register ; Data B Input Register ; Pipeline Register ; Output Register ;
 +----------------------------------------------------------------------+----------------------------+--------------------+---------------------+--------------------------------+-----------------------+-----------------------+-------------------+-----------------+
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out28     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y4_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult27 ;                            ; DSPMULT_X13_Y4_N0  ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out26     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y5_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult25 ;                            ; DSPMULT_X13_Y5_N0  ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out54     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y1_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult53 ;                            ; DSPMULT_X13_Y1_N0  ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out24     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y6_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult23 ;                            ; DSPMULT_X13_Y6_N0  ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out52     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y2_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult51 ;                            ; DSPMULT_X13_Y2_N0  ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out22     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y7_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult21 ;                            ; DSPMULT_X13_Y7_N0  ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out50     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y27_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult49 ;                            ; DSPMULT_X13_Y27_N0 ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out20     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y8_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult19 ;                            ; DSPMULT_X13_Y8_N0  ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out48     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y3_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult47 ;                            ; DSPMULT_X13_Y3_N0  ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out18     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y9_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult17 ;                            ; DSPMULT_X13_Y9_N0  ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out46     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y25_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult45 ;                            ; DSPMULT_X13_Y25_N0 ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out16     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y14_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult15 ;                            ; DSPMULT_X13_Y14_N0 ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out44     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y10_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult43 ;                            ; DSPMULT_X13_Y10_N0 ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out14     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y12_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult13 ;                            ; DSPMULT_X13_Y12_N0 ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out42     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y11_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult41 ;                            ; DSPMULT_X13_Y11_N0 ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out12     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y13_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult11 ;                            ; DSPMULT_X13_Y13_N0 ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out40     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y23_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult39 ;                            ; DSPMULT_X13_Y23_N0 ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out10     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y19_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult9  ;                            ; DSPMULT_X13_Y19_N0 ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out38     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y16_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult37 ;                            ; DSPMULT_X13_Y16_N0 ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out8      ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y15_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult7  ;                            ; DSPMULT_X13_Y15_N0 ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out28     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y29_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult27 ;                            ; DSPMULT_X13_Y29_N0 ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out26     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y9_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult25 ;                            ; DSPMULT_X13_Y9_N0  ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out54     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y6_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult53 ;                            ; DSPMULT_X13_Y6_N0  ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out24     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y8_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult23 ;                            ; DSPMULT_X13_Y8_N0  ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out52     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y7_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult51 ;                            ; DSPMULT_X13_Y7_N0  ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out22     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y30_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult21 ;                            ; DSPMULT_X13_Y30_N0 ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out50     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y4_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult49 ;                            ; DSPMULT_X13_Y4_N0  ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out20     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y10_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult19 ;                            ; DSPMULT_X13_Y10_N0 ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out48     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y5_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult47 ;                            ; DSPMULT_X13_Y5_N0  ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out18     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y14_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult17 ;                            ; DSPMULT_X13_Y14_N0 ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out46     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y11_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult45 ;                            ; DSPMULT_X13_Y11_N0 ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out16     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y13_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult15 ;                            ; DSPMULT_X13_Y13_N0 ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out44     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y12_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult43 ;                            ; DSPMULT_X13_Y12_N0 ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out14     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y17_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult13 ;                            ; DSPMULT_X13_Y17_N0 ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out42     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y16_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult41 ;                            ; DSPMULT_X13_Y16_N0 ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out12     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y18_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult11 ;                            ; DSPMULT_X13_Y18_N0 ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out40     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y15_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult39 ;                            ; DSPMULT_X13_Y15_N0 ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out10     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y20_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult9  ;                            ; DSPMULT_X13_Y20_N0 ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out38     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y19_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult37 ;                            ; DSPMULT_X13_Y19_N0 ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out8      ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y21_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult7  ;                            ; DSPMULT_X13_Y21_N0 ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
 ; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out36     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y22_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
 ;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult35 ;                            ; DSPMULT_X13_Y22_N0 ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out6      ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y20_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult5  ;                            ; DSPMULT_X13_Y20_N0 ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out34     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y26_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult33 ;                            ; DSPMULT_X13_Y26_N0 ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out4      ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y18_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult3  ;                            ; DSPMULT_X13_Y18_N0 ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out32     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y17_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult31 ;                            ; DSPMULT_X13_Y17_N0 ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out56     ; Simple Multiplier (18-bit) ; DSPOUT_X42_Y4_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult55 ;                            ; DSPMULT_X42_Y4_N0  ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out30     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y21_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult29 ;                            ; DSPMULT_X13_Y21_N0 ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
-; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|w3971w[0]     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y24_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult1  ;                            ; DSPMULT_X13_Y24_N0 ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out6      ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y24_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult5  ;                            ; DSPMULT_X13_Y24_N0 ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out34     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y27_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult33 ;                            ; DSPMULT_X13_Y27_N0 ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out4      ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y23_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult3  ;                            ; DSPMULT_X13_Y23_N0 ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out32     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y25_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult31 ;                            ; DSPMULT_X13_Y25_N0 ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out56     ; Simple Multiplier (18-bit) ; DSPOUT_X42_Y9_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult55 ;                            ; DSPMULT_X42_Y9_N0  ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_out30     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y26_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult29 ;                            ; DSPMULT_X13_Y26_N0 ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
+; miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|w3971w[0]     ; Simple Multiplier (18-bit) ; DSPOUT_X13_Y28_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated|mac_mult1  ;                            ; DSPMULT_X13_Y28_N0 ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
 +----------------------------------------------------------------------+----------------------------+--------------------+---------------------+--------------------------------+-----------------------+-----------------------+-------------------+-----------------+
 
 
@@ -1099,176 +1099,178 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-------------------------+
 ; Routing Resource Type ; Usage                   ;
 +-----------------------+-------------------------+
-; Block interconnects   ; 8,344 / 71,559 ( 12 % ) ;
-; C16 interconnects     ; 131 / 2,597 ( 5 % )     ;
-; C4 interconnects      ; 4,766 / 46,848 ( 10 % ) ;
-; Direct links          ; 1,308 / 71,559 ( 2 % )  ;
+; Block interconnects   ; 8,439 / 71,559 ( 12 % ) ;
+; C16 interconnects     ; 99 / 2,597 ( 4 % )      ;
+; C4 interconnects      ; 4,782 / 46,848 ( 10 % ) ;
+; Direct links          ; 1,397 / 71,559 ( 2 % )  ;
 ; Global clocks         ; 4 / 20 ( 20 % )         ;
-; Local interconnects   ; 2,014 / 24,624 ( 8 % )  ;
-; R24 interconnects     ; 109 / 2,496 ( 4 % )     ;
-; R4 interconnects      ; 5,602 / 62,424 ( 9 % )  ;
+; Local interconnects   ; 2,005 / 24,624 ( 8 % )  ;
+; R24 interconnects     ; 113 / 2,496 ( 5 % )     ;
+; R4 interconnects      ; 5,919 / 62,424 ( 9 % )  ;
 +-----------------------+-------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                          ;
 +---------------------------------------------+-------------------------------+
-; Number of Logic Elements  (Average = 13.26) ; Number of LABs  (Total = 404) ;
+; Number of Logic Elements  (Average = 13.07) ; Number of LABs  (Total = 412) ;
 +---------------------------------------------+-------------------------------+
-; 1                                           ; 15                            ;
-; 2                                           ; 16                            ;
-; 3                                           ; 7                             ;
-; 4                                           ; 7                             ;
+; 1                                           ; 12                            ;
+; 2                                           ; 13                            ;
+; 3                                           ; 13                            ;
+; 4                                           ; 8                             ;
 ; 5                                           ; 8                             ;
-; 6                                           ; 4                             ;
-; 7                                           ; 4                             ;
+; 6                                           ; 2                             ;
+; 7                                           ; 11                            ;
 ; 8                                           ; 6                             ;
-; 9                                           ; 2                             ;
+; 9                                           ; 7                             ;
 ; 10                                          ; 9                             ;
-; 11                                          ; 12                            ;
-; 12                                          ; 6                             ;
-; 13                                          ; 18                            ;
-; 14                                          ; 16                            ;
-; 15                                          ; 34                            ;
-; 16                                          ; 240                           ;
+; 11                                          ; 10                            ;
+; 12                                          ; 13                            ;
+; 13                                          ; 15                            ;
+; 14                                          ; 25                            ;
+; 15                                          ; 27                            ;
+; 16                                          ; 233                           ;
 +---------------------------------------------+-------------------------------+
 
 
 +--------------------------------------------------------------------+
 ; LAB-wide Signals                                                   ;
 +------------------------------------+-------------------------------+
-; LAB-wide Signals  (Average = 1.87) ; Number of LABs  (Total = 404) ;
+; LAB-wide Signals  (Average = 1.84) ; Number of LABs  (Total = 412) ;
 +------------------------------------+-------------------------------+
-; 1 Async. clear                     ; 198                           ;
-; 1 Clock                            ; 202                           ;
+; 1 Async. clear                     ; 193                           ;
+; 1 Clock                            ; 218                           ;
 ; 1 Clock enable                     ; 153                           ;
-; 1 Sync. clear                      ; 8                             ;
-; 1 Sync. load                       ; 54                            ;
-; 2 Clock enables                    ; 59                            ;
-; 2 Clocks                           ; 82                            ;
+; 1 Sync. clear                      ; 7                             ;
+; 1 Sync. load                       ; 52                            ;
+; 2 Clock enables                    ; 56                            ;
+; 2 Clocks                           ; 79                            ;
 +------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Signals Sourced  (Average = 18.83) ; Number of LABs  (Total = 404) ;
+; Number of Signals Sourced  (Average = 18.45) ; Number of LABs  (Total = 412) ;
 +----------------------------------------------+-------------------------------+
-; 0                                            ; 15                            ;
-; 1                                            ; 7                             ;
-; 2                                            ; 17                            ;
-; 3                                            ; 9                             ;
-; 4                                            ; 6                             ;
-; 5                                            ; 3                             ;
-; 6                                            ; 5                             ;
-; 7                                            ; 5                             ;
-; 8                                            ; 5                             ;
-; 9                                            ; 1                             ;
-; 10                                           ; 3                             ;
-; 11                                           ; 5                             ;
-; 12                                           ; 3                             ;
-; 13                                           ; 4                             ;
-; 14                                           ; 8                             ;
-; 15                                           ; 8                             ;
-; 16                                           ; 75                            ;
-; 17                                           ; 7                             ;
-; 18                                           ; 6                             ;
-; 19                                           ; 5                             ;
-; 20                                           ; 6                             ;
-; 21                                           ; 15                            ;
-; 22                                           ; 14                            ;
-; 23                                           ; 13                            ;
-; 24                                           ; 29                            ;
-; 25                                           ; 19                            ;
-; 26                                           ; 17                            ;
-; 27                                           ; 12                            ;
-; 28                                           ; 17                            ;
-; 29                                           ; 15                            ;
+; 0                                            ; 14                            ;
+; 1                                            ; 10                            ;
+; 2                                            ; 8                             ;
+; 3                                            ; 8                             ;
+; 4                                            ; 7                             ;
+; 5                                            ; 4                             ;
+; 6                                            ; 9                             ;
+; 7                                            ; 3                             ;
+; 8                                            ; 7                             ;
+; 9                                            ; 4                             ;
+; 10                                           ; 4                             ;
+; 11                                           ; 1                             ;
+; 12                                           ; 8                             ;
+; 13                                           ; 6                             ;
+; 14                                           ; 9                             ;
+; 15                                           ; 6                             ;
+; 16                                           ; 77                            ;
+; 17                                           ; 8                             ;
+; 18                                           ; 10                            ;
+; 19                                           ; 9                             ;
+; 20                                           ; 11                            ;
+; 21                                           ; 20                            ;
+; 22                                           ; 19                            ;
+; 23                                           ; 18                            ;
+; 24                                           ; 12                            ;
+; 25                                           ; 22                            ;
+; 26                                           ; 13                            ;
+; 27                                           ; 19                            ;
+; 28                                           ; 12                            ;
+; 29                                           ; 8                             ;
 ; 30                                           ; 9                             ;
-; 31                                           ; 14                            ;
-; 32                                           ; 27                            ;
+; 31                                           ; 7                             ;
+; 32                                           ; 30                            ;
 +----------------------------------------------+-------------------------------+
 
 
-+----------------------------------------------------------------------------------+
-; LAB Signals Sourced Out                                                          ;
-+--------------------------------------------------+-------------------------------+
-; Number of Signals Sourced Out  (Average = 10.02) ; Number of LABs  (Total = 404) ;
-+--------------------------------------------------+-------------------------------+
-; 0                                                ; 18                            ;
-; 1                                                ; 28                            ;
-; 2                                                ; 14                            ;
-; 3                                                ; 23                            ;
-; 4                                                ; 22                            ;
-; 5                                                ; 18                            ;
-; 6                                                ; 14                            ;
-; 7                                                ; 12                            ;
-; 8                                                ; 18                            ;
-; 9                                                ; 13                            ;
-; 10                                               ; 12                            ;
-; 11                                               ; 13                            ;
-; 12                                               ; 21                            ;
-; 13                                               ; 23                            ;
-; 14                                               ; 13                            ;
-; 15                                               ; 25                            ;
-; 16                                               ; 97                            ;
-; 17                                               ; 6                             ;
-; 18                                               ; 2                             ;
-; 19                                               ; 2                             ;
-; 20                                               ; 3                             ;
-; 21                                               ; 3                             ;
-; 22                                               ; 2                             ;
-; 23                                               ; 1                             ;
-; 24                                               ; 0                             ;
-; 25                                               ; 0                             ;
-; 26                                               ; 0                             ;
-; 27                                               ; 1                             ;
-+--------------------------------------------------+-------------------------------+
++---------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                         ;
++-------------------------------------------------+-------------------------------+
+; Number of Signals Sourced Out  (Average = 9.80) ; Number of LABs  (Total = 412) ;
++-------------------------------------------------+-------------------------------+
+; 0                                               ; 16                            ;
+; 1                                               ; 26                            ;
+; 2                                               ; 17                            ;
+; 3                                               ; 22                            ;
+; 4                                               ; 23                            ;
+; 5                                               ; 23                            ;
+; 6                                               ; 17                            ;
+; 7                                               ; 12                            ;
+; 8                                               ; 18                            ;
+; 9                                               ; 21                            ;
+; 10                                              ; 17                            ;
+; 11                                              ; 21                            ;
+; 12                                              ; 13                            ;
+; 13                                              ; 18                            ;
+; 14                                              ; 15                            ;
+; 15                                              ; 20                            ;
+; 16                                              ; 97                            ;
+; 17                                              ; 4                             ;
+; 18                                              ; 1                             ;
+; 19                                              ; 2                             ;
+; 20                                              ; 2                             ;
+; 21                                              ; 1                             ;
+; 22                                              ; 2                             ;
+; 23                                              ; 1                             ;
+; 24                                              ; 1                             ;
+; 25                                              ; 0                             ;
+; 26                                              ; 0                             ;
+; 27                                              ; 0                             ;
+; 28                                              ; 1                             ;
+; 29                                              ; 1                             ;
++-------------------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Distinct Inputs  (Average = 19.97) ; Number of LABs  (Total = 404) ;
+; Number of Distinct Inputs  (Average = 19.70) ; Number of LABs  (Total = 412) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
-; 1                                            ; 3                             ;
-; 2                                            ; 6                             ;
-; 3                                            ; 10                            ;
-; 4                                            ; 18                            ;
-; 5                                            ; 5                             ;
-; 6                                            ; 13                            ;
-; 7                                            ; 10                            ;
-; 8                                            ; 8                             ;
-; 9                                            ; 5                             ;
-; 10                                           ; 6                             ;
-; 11                                           ; 12                            ;
-; 12                                           ; 10                            ;
-; 13                                           ; 12                            ;
-; 14                                           ; 10                            ;
-; 15                                           ; 12                            ;
-; 16                                           ; 11                            ;
-; 17                                           ; 7                             ;
+; 1                                            ; 1                             ;
+; 2                                            ; 4                             ;
+; 3                                            ; 11                            ;
+; 4                                            ; 12                            ;
+; 5                                            ; 10                            ;
+; 6                                            ; 18                            ;
+; 7                                            ; 7                             ;
+; 8                                            ; 6                             ;
+; 9                                            ; 6                             ;
+; 10                                           ; 12                            ;
+; 11                                           ; 8                             ;
+; 12                                           ; 16                            ;
+; 13                                           ; 7                             ;
+; 14                                           ; 15                            ;
+; 15                                           ; 14                            ;
+; 16                                           ; 13                            ;
+; 17                                           ; 11                            ;
 ; 18                                           ; 10                            ;
-; 19                                           ; 9                             ;
-; 20                                           ; 11                            ;
-; 21                                           ; 14                            ;
-; 22                                           ; 15                            ;
-; 23                                           ; 22                            ;
+; 19                                           ; 6                             ;
+; 20                                           ; 14                            ;
+; 21                                           ; 11                            ;
+; 22                                           ; 19                            ;
+; 23                                           ; 35                            ;
 ; 24                                           ; 15                            ;
 ; 25                                           ; 11                            ;
-; 26                                           ; 16                            ;
-; 27                                           ; 16                            ;
-; 28                                           ; 14                            ;
-; 29                                           ; 7                             ;
-; 30                                           ; 6                             ;
-; 31                                           ; 4                             ;
-; 32                                           ; 12                            ;
-; 33                                           ; 49                            ;
-; 34                                           ; 3                             ;
-; 35                                           ; 3                             ;
+; 26                                           ; 13                            ;
+; 27                                           ; 11                            ;
+; 28                                           ; 6                             ;
+; 29                                           ; 4                             ;
+; 30                                           ; 7                             ;
+; 31                                           ; 3                             ;
+; 32                                           ; 10                            ;
+; 33                                           ; 53                            ;
+; 34                                           ; 4                             ;
+; 35                                           ; 4                             ;
 ; 36                                           ; 3                             ;
-; 37                                           ; 4                             ;
+; 37                                           ; 1                             ;
 ; 38                                           ; 1                             ;
 +----------------------------------------------+-------------------------------+
 
@@ -1390,8 +1392,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------+----------------------+-------------------+
 ; Source Clock(s)         ; Destination Clock(s) ; Delay Added in ns ;
 +-------------------------+----------------------+-------------------+
-; clk_div:CLK3|clk_out    ; CLOCK_50             ; 15.1              ;
-; clk_div:CLK|clk_out     ; clk_div:CLK3|clk_out ; 8.4               ;
+; clk_div:CLK3|clk_out    ; CLOCK_50             ; 33.8              ;
+; clk_div:CLK|clk_out     ; clk_div:CLK3|clk_out ; 3.8               ;
 ; CLOCK_50,I/O            ; CLOCK_50             ; 1.3               ;
 ; CLOCK_50                ; CLOCK_50             ; 1.2               ;
 ; clk_div:CLK|clk_out,I/O ; clk_div:CLK|clk_out  ; 1.1               ;
@@ -1407,105 +1409,105 @@ This will disable optimization of problematic paths and expose them for further 
 ; Source Register                  ; Destination Register                                                        ; Delay Added in ns ;
 +----------------------------------+-----------------------------------------------------------------------------+-------------------+
 ; clk_div:CLK|clk_out              ; clk_div:CLK|clk_out                                                         ; 2.502             ;
-; clk_div:CLK2|clk_out             ; clk_div:CLK2|clk_out                                                        ; 2.239             ;
+; clk_div:CLK2|clk_out             ; clk_div:CLK2|clk_out                                                        ; 2.248             ;
 ; reset                            ; clk_div:CLK|clk_out                                                         ; 1.252             ;
 ; clk_div:CLK3|clk_out             ; clk_div:CLK3|clk_out                                                        ; 0.755             ;
-; conn_core:CONN|blk1[8]           ; miner_core:CORE|sha_1_block[8]                                              ; 0.400             ;
-; conn_core:CONN|blk1[9]           ; miner_core:CORE|sha_1_block[9]                                              ; 0.400             ;
-; conn_core:CONN|blk1[99]          ; miner_core:CORE|sha_1_block[99]                                             ; 0.349             ;
-; conn_core:CONN|blk1[24]          ; miner_core:CORE|sha_1_block[24]                                             ; 0.349             ;
-; conn_core:CONN|blk1[31]          ; miner_core:CORE|sha_1_block[31]                                             ; 0.349             ;
-; conn_core:CONN|blk1[97]          ; miner_core:CORE|sha_1_block[97]                                             ; 0.349             ;
-; conn_core:CONN|blk1[253]         ; miner_core:CORE|sha_1_block[253]                                            ; 0.348             ;
-; conn_core:CONN|blk1[251]         ; miner_core:CORE|sha_1_block[251]                                            ; 0.348             ;
-; conn_core:CONN|blk1[115]         ; miner_core:CORE|sha_1_block[115]                                            ; 0.348             ;
-; conn_core:CONN|blk1[240]         ; miner_core:CORE|sha_1_block[240]                                            ; 0.348             ;
-; conn_core:CONN|blk1[112]         ; miner_core:CORE|sha_1_block[112]                                            ; 0.348             ;
-; conn_core:CONN|blk1[249]         ; miner_core:CORE|sha_1_block[249]                                            ; 0.348             ;
-; conn_core:CONN|blk1[252]         ; miner_core:CORE|sha_1_block[252]                                            ; 0.348             ;
-; conn_core:CONN|blk1[190]         ; miner_core:CORE|sha_1_block[190]                                            ; 0.341             ;
-; conn_core:CONN|blk1[29]          ; miner_core:CORE|sha_1_block[29]                                             ; 0.341             ;
-; conn_core:CONN|blk1[28]          ; miner_core:CORE|sha_1_block[28]                                             ; 0.341             ;
-; conn_core:CONN|blk1[27]          ; miner_core:CORE|sha_1_block[27]                                             ; 0.341             ;
-; conn_core:CONN|blk1[118]         ; miner_core:CORE|sha_1_block[118]                                            ; 0.340             ;
-; miner_core:CORE|sha_1_block[487] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[0][7]   ; 0.176             ;
-; miner_core:CORE|sha_1_block[262] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][6]   ; 0.176             ;
-; miner_core:CORE|sha_1_block[126] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][30] ; 0.176             ;
-; miner_core:CORE|sha_1_block[158] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][30] ; 0.176             ;
-; miner_core:CORE|sha_1_block[222] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[9][30]  ; 0.176             ;
-; miner_core:CORE|sha_1_block[254] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[8][30]  ; 0.176             ;
-; miner_core:CORE|sha_1_block[187] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[10][27] ; 0.176             ;
-; miner_core:CORE|sha_1_block[84]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[13][20] ; 0.176             ;
-; miner_core:CORE|sha_1_block[116] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][20] ; 0.176             ;
-; miner_core:CORE|sha_1_block[275] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][19]  ; 0.176             ;
-; miner_core:CORE|sha_1_block[113] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][17] ; 0.176             ;
-; miner_core:CORE|sha_1_block[144] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][16] ; 0.176             ;
-; miner_core:CORE|sha_1_block[342] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[5][22]  ; 0.176             ;
-; miner_core:CORE|sha_1_block[374] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[4][22]  ; 0.176             ;
-; miner_core:CORE|sha_1_block[257] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][1]   ; 0.176             ;
-; miner_core:CORE|sha_1_block[289] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[6][1]   ; 0.176             ;
-; miner_core:CORE|sha_1_block[321] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[5][1]   ; 0.176             ;
-; miner_core:CORE|sha_1_block[143] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][15] ; 0.176             ;
-; miner_core:CORE|sha_1_block[175] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[10][15] ; 0.176             ;
-; miner_core:CORE|sha_1_block[89]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[13][25] ; 0.176             ;
-; miner_core:CORE|sha_1_block[121] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][25] ; 0.176             ;
-; miner_core:CORE|sha_1_block[78]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[13][14] ; 0.176             ;
-; miner_core:CORE|sha_1_block[109] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][13] ; 0.176             ;
-; miner_core:CORE|sha_1_block[141] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][13] ; 0.176             ;
-; miner_core:CORE|sha_1_block[173] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[10][13] ; 0.176             ;
-; miner_core:CORE|sha_1_block[264] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][8]   ; 0.176             ;
-; miner_core:CORE|sha_1_block[104] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][8]  ; 0.176             ;
-; miner_core:CORE|sha_1_block[136] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][8]  ; 0.176             ;
-; miner_core:CORE|sha_1_block[168] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[10][8]  ; 0.176             ;
-; miner_core:CORE|sha_1_block[132] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][4]  ; 0.176             ;
-; miner_core:CORE|sha_1_block[164] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[10][4]  ; 0.176             ;
-; miner_core:CORE|sha_1_block[17]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[15][17] ; 0.176             ;
-; miner_core:CORE|sha_1_block[20]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[15][20] ; 0.176             ;
-; miner_core:CORE|sha_1_block[154] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][26] ; 0.176             ;
-; miner_core:CORE|sha_1_block[12]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[15][12] ; 0.176             ;
-; miner_core:CORE|sha_1_block[11]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[15][11] ; 0.176             ;
-; miner_core:CORE|sha_1_block[355] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[4][3]   ; 0.175             ;
-; miner_core:CORE|sha_1_block[103] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][7]  ; 0.175             ;
-; miner_core:CORE|sha_1_block[230] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[8][6]   ; 0.175             ;
-; miner_core:CORE|sha_1_block[70]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[13][6]  ; 0.175             ;
-; miner_core:CORE|sha_1_block[166] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[10][6]  ; 0.175             ;
-; miner_core:CORE|sha_1_block[198] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[9][6]   ; 0.175             ;
-; miner_core:CORE|sha_1_block[127] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][31] ; 0.175             ;
-; miner_core:CORE|sha_1_block[159] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][31] ; 0.175             ;
-; miner_core:CORE|sha_1_block[191] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[10][31] ; 0.175             ;
-; miner_core:CORE|sha_1_block[443] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[2][27]  ; 0.175             ;
-; miner_core:CORE|sha_1_block[283] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][27]  ; 0.175             ;
-; miner_core:CORE|sha_1_block[315] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[6][27]  ; 0.175             ;
-; miner_core:CORE|sha_1_block[152] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][24] ; 0.175             ;
-; miner_core:CORE|sha_1_block[117] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][21] ; 0.175             ;
-; miner_core:CORE|sha_1_block[179] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[10][19] ; 0.175             ;
-; miner_core:CORE|sha_1_block[247] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[8][23]  ; 0.175             ;
-; miner_core:CORE|sha_1_block[375] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[4][23]  ; 0.175             ;
-; miner_core:CORE|sha_1_block[226] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[8][2]   ; 0.175             ;
-; miner_core:CORE|sha_1_block[377] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[4][25]  ; 0.175             ;
-; miner_core:CORE|sha_1_block[316] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[6][28]  ; 0.175             ;
-; miner_core:CORE|sha_1_block[15]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[15][15] ; 0.175             ;
-; miner_core:CORE|sha_1_block[236] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[8][12]  ; 0.175             ;
-; miner_core:CORE|sha_1_block[172] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[10][12] ; 0.175             ;
-; miner_core:CORE|sha_1_block[74]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[13][10] ; 0.175             ;
-; miner_core:CORE|sha_1_block[138] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][10] ; 0.175             ;
-; miner_core:CORE|sha_1_block[87]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[13][23] ; 0.175             ;
-; miner_core:CORE|sha_1_block[119] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][23] ; 0.175             ;
-; miner_core:CORE|sha_1_block[183] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[10][23] ; 0.175             ;
-; miner_core:CORE|sha_1_block[215] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[9][23]  ; 0.175             ;
-; miner_core:CORE|sha_1_block[260] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][4]   ; 0.175             ;
-; miner_core:CORE|sha_1_block[292] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[6][4]   ; 0.175             ;
-; miner_core:CORE|sha_1_block[82]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[13][18] ; 0.175             ;
-; miner_core:CORE|sha_1_block[114] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][18] ; 0.175             ;
-; miner_core:CORE|sha_1_block[146] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][18] ; 0.175             ;
-; miner_core:CORE|sha_1_block[210] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[9][18]  ; 0.175             ;
-; miner_core:CORE|sha_1_block[21]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[15][21] ; 0.175             ;
-; miner_core:CORE|sha_1_block[66]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[13][2]  ; 0.175             ;
-; miner_core:CORE|sha_1_block[98]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][2]  ; 0.175             ;
-; miner_core:CORE|sha_1_block[130] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][2]  ; 0.175             ;
-; miner_core:CORE|sha_1_block[162] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[10][2]  ; 0.175             ;
-; miner_core:CORE|sha_1_block[194] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[9][2]   ; 0.175             ;
-; miner_core:CORE|sha_1_block[39]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[14][7]  ; 0.175             ;
+; miner_core:CORE|sha_1_block[15]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[15][15] ; 0.320             ;
+; miner_core:CORE|sha_1_block[67]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[13][3]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[99]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][3]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[131] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][3]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[323] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[5][3]   ; 0.312             ;
+; miner_core:CORE|sha_1_block[421] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[2][5]   ; 0.312             ;
+; miner_core:CORE|sha_1_block[447] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[2][31]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[511] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[0][31]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[127] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][31] ; 0.312             ;
+; miner_core:CORE|sha_1_block[159] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][31] ; 0.312             ;
+; miner_core:CORE|sha_1_block[191] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[10][31] ; 0.312             ;
+; miner_core:CORE|sha_1_block[287] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][31]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[383] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[4][31]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[508] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[0][28]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[507] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[0][27]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[283] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][27]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[315] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[6][27]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[379] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[4][27]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[472] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[1][24]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[368] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[4][16]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[432] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[2][16]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[258] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][2]   ; 0.312             ;
+; miner_core:CORE|sha_1_block[399] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[3][15]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[441] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[2][25]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[316] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[6][28]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[365] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[4][13]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[397] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[3][13]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[429] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[2][13]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[269] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][13]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[301] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[6][13]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[333] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[5][13]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[266] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][10]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[298] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[6][10]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[330] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[5][10]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[297] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[6][9]   ; 0.312             ;
+; miner_core:CORE|sha_1_block[264] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][8]   ; 0.312             ;
+; miner_core:CORE|sha_1_block[293] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[6][5]   ; 0.312             ;
+; miner_core:CORE|sha_1_block[260] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][4]   ; 0.312             ;
+; miner_core:CORE|sha_1_block[8]   ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[15][8]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[66]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[13][2]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[130] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][2]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[162] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[10][2]  ; 0.312             ;
+; miner_core:CORE|sha_1_block[194] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[9][2]   ; 0.312             ;
+; miner_core:CORE|sha_1_block[31]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[15][31] ; 0.312             ;
+; miner_core:CORE|sha_1_block[11]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[15][11] ; 0.312             ;
+; miner_core:CORE|sha_1_block[94]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[13][30] ; 0.311             ;
+; miner_core:CORE|sha_1_block[158] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][30] ; 0.311             ;
+; miner_core:CORE|sha_1_block[382] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[4][30]  ; 0.311             ;
+; miner_core:CORE|sha_1_block[184] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[10][24] ; 0.311             ;
+; miner_core:CORE|sha_1_block[216] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[9][24]  ; 0.311             ;
+; miner_core:CORE|sha_1_block[122] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][26] ; 0.311             ;
+; miner_core:CORE|sha_1_block[96]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][0]  ; 0.311             ;
+; miner_core:CORE|sha_1_block[128] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][0]  ; 0.311             ;
+; miner_core:CORE|sha_1_block[275] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][19]  ; 0.305             ;
+; miner_core:CORE|sha_1_block[278] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][22]  ; 0.305             ;
+; miner_core:CORE|sha_1_block[374] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[4][22]  ; 0.305             ;
+; miner_core:CORE|sha_1_block[153] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][25] ; 0.305             ;
+; miner_core:CORE|sha_1_block[132] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][4]  ; 0.305             ;
+; miner_core:CORE|sha_1_block[256] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][0]   ; 0.305             ;
+; miner_core:CORE|sha_1_block[134] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][6]  ; 0.303             ;
+; miner_core:CORE|sha_1_block[93]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[13][29] ; 0.303             ;
+; miner_core:CORE|sha_1_block[125] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][29] ; 0.303             ;
+; miner_core:CORE|sha_1_block[157] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][29] ; 0.303             ;
+; miner_core:CORE|sha_1_block[221] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[9][29]  ; 0.303             ;
+; miner_core:CORE|sha_1_block[181] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[10][21] ; 0.303             ;
+; miner_core:CORE|sha_1_block[213] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[9][21]  ; 0.303             ;
+; miner_core:CORE|sha_1_block[245] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[8][21]  ; 0.303             ;
+; miner_core:CORE|sha_1_block[370] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[4][18]  ; 0.303             ;
+; miner_core:CORE|sha_1_block[274] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][18]  ; 0.303             ;
+; miner_core:CORE|sha_1_block[145] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][17] ; 0.303             ;
+; miner_core:CORE|sha_1_block[177] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[10][17] ; 0.303             ;
+; miner_core:CORE|sha_1_block[209] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[9][17]  ; 0.303             ;
+; miner_core:CORE|sha_1_block[247] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[8][23]  ; 0.303             ;
+; miner_core:CORE|sha_1_block[279] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][23]  ; 0.303             ;
+; miner_core:CORE|sha_1_block[343] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[5][23]  ; 0.303             ;
+; miner_core:CORE|sha_1_block[80]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[13][16] ; 0.303             ;
+; miner_core:CORE|sha_1_block[112] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][16] ; 0.303             ;
+; miner_core:CORE|sha_1_block[144] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][16] ; 0.303             ;
+; miner_core:CORE|sha_1_block[86]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[13][22] ; 0.303             ;
+; miner_core:CORE|sha_1_block[118] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][22] ; 0.303             ;
+; miner_core:CORE|sha_1_block[150] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][22] ; 0.303             ;
+; miner_core:CORE|sha_1_block[182] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[10][22] ; 0.303             ;
+; miner_core:CORE|sha_1_block[220] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[9][28]  ; 0.303             ;
+; miner_core:CORE|sha_1_block[205] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[9][13]  ; 0.303             ;
+; miner_core:CORE|sha_1_block[140] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][12] ; 0.303             ;
+; miner_core:CORE|sha_1_block[172] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[10][12] ; 0.303             ;
+; miner_core:CORE|sha_1_block[87]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[13][23] ; 0.303             ;
+; miner_core:CORE|sha_1_block[119] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][23] ; 0.303             ;
+; miner_core:CORE|sha_1_block[183] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[10][23] ; 0.303             ;
+; miner_core:CORE|sha_1_block[23]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[15][23] ; 0.303             ;
+; miner_core:CORE|sha_1_block[6]   ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[15][6]  ; 0.303             ;
+; miner_core:CORE|sha_1_block[82]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[13][18] ; 0.303             ;
+; miner_core:CORE|sha_1_block[114] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[12][18] ; 0.303             ;
+; miner_core:CORE|sha_1_block[146] ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[11][18] ; 0.303             ;
+; miner_core:CORE|sha_1_block[4]   ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[15][4]  ; 0.303             ;
+; miner_core:CORE|sha_1_block[22]  ; miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[15][22] ; 0.303             ;
 +----------------------------------+-----------------------------------------------------------------------------+-------------------+
 Note: This table only shows the top 100 path(s) that have the largest delay added for hold.
 
@@ -1563,29 +1565,29 @@ Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176218): Packed 84 registers into blocks of type Embedded multiplier block
     Extra Info (176220): Created 78 register duplicates
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:04
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:03
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:22
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:21
 Info (170193): Fitter routing operations beginning
-Info (170195): Router estimated average interconnect usage is 7% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 30% of the available device resources in the region that extends from location X21_Y11 to location X31_Y22
+Info (170195): Router estimated average interconnect usage is 8% of the available device resources
+    Info (170196): Router estimated peak interconnect usage is 29% of the available device resources in the region that extends from location X21_Y11 to location X31_Y22
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:08
-Info (11888): Total time spent on timing analysis during the Fitter is 4.99 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:07
+Info (11888): Total time spent on timing analysis during the Fitter is 4.63 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
 Info: Quartus Prime Fitter was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 1734 megabytes
-    Info: Processing ended: Tue Jun 19 21:27:23 2018
-    Info: Elapsed time: 00:00:40
-    Info: Total CPU time (on all processors): 00:01:31
+    Info: Peak virtual memory: 1681 megabytes
+    Info: Processing ended: Tue Jun 19 21:36:38 2018
+    Info: Elapsed time: 00:00:39
+    Info: Total CPU time (on all processors): 00:01:28
 
 
