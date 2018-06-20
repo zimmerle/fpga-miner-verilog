@@ -1,14 +1,31 @@
 
-State Machine - |miner|global_state
-Name global_state.STATE_IDLE global_state.STATE_HASH_OF_HASH global_state.STATE_SECOND_BLOCK global_state.STATE_FIRST_BLOCK global_state.STATE_COMPARING_HASHES 
-global_state.STATE_COMPARING_HASHES 0 0 0 0 0 
-global_state.STATE_FIRST_BLOCK 0 0 0 1 1 
-global_state.STATE_SECOND_BLOCK 0 0 1 0 1 
-global_state.STATE_HASH_OF_HASH 0 1 0 0 1 
-global_state.STATE_IDLE 1 0 0 0 1 
+State Machine - |miner|miner_core:CORE|global_state
+Name global_state.STATE_HASH_OF_HASH_READY global_state.STATE_WAITING_HASH_OF_HASH global_state.STATE_SECOND_BLOCK_READY global_state.STATE_WAITING_SECOND_BLOCK global_state.STATE_FIRST_BLOCK_READY global_state.STATE_WAITING_FIRST_BLOCK global_state.STATE_START global_state.STATE_SLEEPING global_state.STATE_FOUND 
+global_state.STATE_SLEEPING 0 0 0 0 0 0 0 0 0 
+global_state.STATE_START 0 0 0 0 0 0 1 1 0 
+global_state.STATE_WAITING_FIRST_BLOCK 0 0 0 0 0 1 0 1 0 
+global_state.STATE_FIRST_BLOCK_READY 0 0 0 0 1 0 0 1 0 
+global_state.STATE_WAITING_SECOND_BLOCK 0 0 0 1 0 0 0 1 0 
+global_state.STATE_SECOND_BLOCK_READY 0 0 1 0 0 0 0 1 0 
+global_state.STATE_WAITING_HASH_OF_HASH 0 1 0 0 0 0 0 1 0 
+global_state.STATE_HASH_OF_HASH_READY 1 0 0 0 0 0 0 1 0 
+global_state.STATE_FOUND 0 0 0 0 0 0 0 1 1 
 
-State Machine - |miner|sha256_core:SHA_INST1|sha256_ctrl_reg
+State Machine - |miner|miner_core:CORE|sha256_core:SHA_INST1|sha256_ctrl_reg
 Name sha256_ctrl_reg.CTRL_IDLE sha256_ctrl_reg.CTRL_DONE sha256_ctrl_reg.CTRL_ROUNDS 
 sha256_ctrl_reg.CTRL_IDLE 0 0 0 
 sha256_ctrl_reg.CTRL_ROUNDS 1 0 1 
 sha256_ctrl_reg.CTRL_DONE 1 1 0 
+
+State Machine - |miner|conn_core:CONN|read_state
+Name read_state.s_r_LOAD_BLK1 read_state.s_r_LOAD_BLK2 read_state.s_r_IDLE 
+read_state.s_r_IDLE 0 0 0 
+read_state.s_r_LOAD_BLK1 1 0 1 
+read_state.s_r_LOAD_BLK2 0 1 1 
+
+State Machine - |miner|conn_core:CONN|r_SM_Main
+Name r_SM_Main.s_IDLE r_SM_Main.s_SENDING_BUFFER_WAIT r_SM_Main.s_SENDING_DATA r_SM_Main.s_SENDING_BUFFER 
+r_SM_Main.s_SENDING_BUFFER 0 0 0 0 
+r_SM_Main.s_SENDING_DATA 0 0 1 1 
+r_SM_Main.s_SENDING_BUFFER_WAIT 0 1 0 1 
+r_SM_Main.s_IDLE 1 0 0 1 

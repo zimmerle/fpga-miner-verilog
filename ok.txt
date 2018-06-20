@@ -1,0 +1,280 @@
+`timescale 1ns/10ps
+
+module miner_core (
+  input       CLOCK_50,
+  input       CLOCK_3,
+  input       reset,
+  input       enable,
+  output reg  led_processing,
+  output reg  led_found,
+  input  reg  [511:0]  blk1,
+  input  reg  [95:0]   blk2,
+  output wire [1023:0] msg,
+  output wire delivery_msg
+);
+
+
+/* definition of the state for the state machine */
+parameter STATE_SLEEPING = 0;
+parameter STATE_START = 1;
+parameter STATE_WAITING_FIRST_BLOCK = 2;
+parameter STATE_FIRST_BLOCK_READY = 3;
+parameter STATE_WAITING_SECOND_BLOCK = 4;
+parameter STATE_SECOND_BLOCK_READY = 5;
+parameter STATE_WAITING_HASH_OF_HASH = 6;
+parameter STATE_HASH_OF_HASH_READY = 7;
+parameter STATE_WAITING_RESET = 8;
+
+/* sha global definition */
+reg sha_init;
+reg sha_mode;
+reg sha_next;
+
+/* sha instance #1 */
+reg [511:0] sha_1_block;
+wire [0:255] sha_1_digest;
+wire sha_1_digest_valid;
+wire sha_1_ready;
+
+/* nonces */
+reg [63:0] sha_1_nonce;
+
+/* dificult */
+reg [255:0] dificult;
+
+/* global machine state */
+reg [31:0] global_state;
+
+reg [31:0] counter = 0;
+reg [64:0] counter_perf = 0;
+
+sha256_core SHA_INST1 (
+  .clk(CLOCK_50),
+  .reset_n(reset),
+  .init(sha_init),
+  .next(sha_next),
+  .mode(sha_mode),
+  .block(sha_1_block),
+  .ready(sha_1_ready),
+  .digest(sha_1_digest),
+  .digest_valid(sha_1_digest_valid)
+);
+
+
+function [1:0] compare;
+  input [255:0] hash;
+  input [255:0] dificult;
+  reg [255:0] hash_i;
+  begin
+    hash_i[255:248] = hash[7:0];
+    hash_i[247:240] = hash[15:8];
+    hash_i[239:232] = hash[23:16];
+    hash_i[231:224] = hash[31:24];
+    hash_i[223:216] = hash[39:32];
+    hash_i[215:208] = hash[47:40];
+    hash_i[207:200] = hash[55:48];
+    hash_i[199:192] = hash[63:56];
+    hash_i[191:184] = hash[71:64];
+    hash_i[183:176] = hash[79:72];
+    hash_i[175:168] = hash[87:80];
+    hash_i[167:160] = hash[95:88];
+    hash_i[159:152] = hash[103:96];
+    hash_i[151:144] = hash[111:104];
+    hash_i[143:136] = hash[119:112];
+    hash_i[135:128] = hash[127:120];
+    hash_i[127:120] = hash[135:128];
+    hash_i[119:112] = hash[143:136];
+    hash_i[111:104] = hash[151:144];
+    hash_i[103:96] = hash[159:152];
+    hash_i[95:88] = hash[167:160];
+    hash_i[87:80] = hash[175:168];
+    hash_i[79:72] = hash[183:176];
+    hash_i[71:64] = hash[191:184];
+    hash_i[63:56] = hash[199:192];
+    hash_i[55:48] = hash[207:200];
+    hash_i[47:40] = hash[215:208];
+    hash_i[39:32] = hash[223:216];
+    hash_i[31:24] = hash[231:224];
+    hash_i[23:16] = hash[239:232];
+    hash_i[15:8] = hash[247:240];
+    hash_i[7:0] = hash[255:248];
+
+    //$display("::: 0x%064x", hash_i);
+    //$display("::: 0x%064x", dificult);
+    //$display("::: 0x%d", hash_i < dificult);
+    compare = hash_i < dificult;
+  end
+endfunction
+
+task reset_sha();
+begin
+  /* reset sha #n */
+  
+
+  /* reset sha #1 */
+  //sha_reset = 1;
+  //sha_init = 0;
+  //sha_next = 0;
+  //sha_1_block = 512'h00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+  //sha_reset = 0;
+  //#(4 * 2);
+  //sha_reset = 1;
+  sha_1_nonce = 32'h1DAC2B7C; // 7C
+  //sha_1_nonce = 32'h1DAC2B60; // 7C
+  //sha_1_nonce = 32'h00000000; // 7C
+end
+endtask
+
+
+task reset_all();
+begin
+  reset_sha();
+  
+end
+endtask
+
+
+task counter_performance();
+begin
+  counter_perf <= counter_perf + 1;
+  if (counter_perf == 5000000) begin
+    msg = {"^tp"};
+	 delivery_msg <= 1;
+	 counter_perf <= 0;
+  end
+end
+endtask
+
+task counter_blink();
+begin
+  counter <= counter + 1;
+  if (counter > 10000000) begin
+    led_processing <= !led_processing;
+	 counter <= 0;
+  end
+end
+endtask
+
+
+
+always @ (posedge CLOCK_3)
+begin : CORE
+  if (!reset) begin
+    global_state <= STATE_SLEEPING;
+	 led_processing <= 1;
+	 led_found <= 0;
+	 delivery_msg <= 0;
+
+    sha_mode = 1;
+    sha_init = 0;
+    sha_next = 0;
+	 //sha_1_block = blk1;
+    //sha_1_block = 512'h00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+    sha_1_nonce = 32'h1DAC2B7C;
+	 dificult = 255'h0000000000000000000000000000000000000000000000000000000000000000;
+  end
+
+  if (!enable) begin
+    global_state <= STATE_SLEEPING;
+  end
+
+  case (global_state)
+
+  STATE_SLEEPING:
+  begin
+    led_processing <= 0;
+    if (enable) begin
+	   global_state <= STATE_START;
+	 end
+  end
+  
+  STATE_START:
+  begin
+	 led_processing <= 1;
+	 led_found <= 0;
+	 dificult = {blk2[15:8], blk2[23:16], blk2[31:24]} * 2 ** (8*(blk2[7:0]-3));
+	 sha_init = 0;
+    sha_next = 0;
+    sha_mode = 1;
+	 sha_1_block = blk1;
+	 sha_init = 1;
+    global_state <= STATE_WAITING_FIRST_BLOCK;
+
+    //sha_1_block = 512'h00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+//	 //a_1_block = 512'h0100000000000000000000000000000000000000000000000000000000000000000000003BA3EDFD7A7B12B27AC72C3E67768F617FC81BC3888A51323A9FB8AA;
+	 //sha_1_block = 512'h6162636462636465636465666465666765666768666768696768696A68696A6B696A6B6C6A6B6C6D6B6C6D6E6C6D6E6F6D6E6F706E6F70718000000000000000;
+    //sssha_1_block = 512'h61626380000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000018;
+	 //sha_1_block = 512'h61626380000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000018;
+  end
+
+  STATE_WAITING_FIRST_BLOCK:
+  begin
+    if (sha_1_ready && sha_1_digest_valid) begin
+   	$display("1 - Got block: %x", sha_1_block);
+	   global_state <= STATE_FIRST_BLOCK_READY;	
+		sha_init = 0;
+    end
+  end
+  
+  STATE_FIRST_BLOCK_READY:
+  begin
+    sha_1_block =   {96'h4B1E5E4A29AB5F49FFFF001D, 32'h1DAC2B7C, 384'h800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000280};
+    sha_next = 1;
+    global_state <= STATE_WAITING_SECOND_BLOCK;
+
+    //if (!sha_1_ready) begin
+    //sha_1_block = 512'h000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001C0;
+  	 //sha_1_block = 512'h4B1E5E4A29AB5F49FFFF001D1DAC2B7C800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000280;
+	 //end
+  end
+  
+  STATE_WAITING_SECOND_BLOCK:
+  begin
+  	 if (sha_next == 0 && sha_1_ready && sha_1_digest_valid) begin
+		global_state <= STATE_SECOND_BLOCK_READY;
+	 end
+	 sha_next = 0; 
+  end
+
+  STATE_SECOND_BLOCK_READY:
+  begin
+
+    sha_1_block = {sha_1_digest, 256'h8000000000000000000000000000000000000000000000000000000000000100};
+    sha_init = 1;
+    global_state <= STATE_WAITING_HASH_OF_HASH;
+  end
+  
+  STATE_WAITING_HASH_OF_HASH:
+  begin
+  	 if (sha_init == 1 && sha_1_ready && sha_1_digest_valid) begin
+		global_state <= STATE_HASH_OF_HASH_READY;
+  	   msg = {"^==", sha_1_digest, "=="};	
+      delivery_msg <= 1;
+		sha_init = 0;
+	 end
+  end
+  
+  STATE_HASH_OF_HASH_READY:
+  begin
+	  	//msg = {"^", sha_1_digest, " :1--"};	
+      //delivery_msg <= 1;
+/*
+    counter_performance();
+    if (compare(sha_1_digest, dificult) == 1) begin
+	   global_state <= STATE_SLEEPING;
+	   led_found <= 1;
+	 	led_processing <= 0;
+		//msg = {"^", sha_1_nonce, " :dnuof ecnon"};
+		
+		//-delivery_msg <= 1;
+    end else begin
+      sha_1_nonce = sha_1_nonce + 1;
+      global_state <= STATE_START;
+	   counter_blink();
+	 end
+*/
+  end
+  endcase
+
+end
+endmodule

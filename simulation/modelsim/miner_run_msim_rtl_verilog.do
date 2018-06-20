@@ -5,10 +5,15 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
+vlog -vlog01compat -work work +incdir+C:/miner-core/uart {C:/miner-core/uart/uart_tx.v}
+vlog -vlog01compat -work work +incdir+C:/miner-core/uart {C:/miner-core/uart/uart_rx.v}
 vlog -vlog01compat -work work +incdir+C:/miner-core {C:/miner-core/miner.v}
 vlog -vlog01compat -work work +incdir+C:/miner-core/sha2 {C:/miner-core/sha2/sha256_w_mem.v}
 vlog -vlog01compat -work work +incdir+C:/miner-core/sha2 {C:/miner-core/sha2/sha256_k_constants.v}
 vlog -vlog01compat -work work +incdir+C:/miner-core/sha2 {C:/miner-core/sha2/sha256_core.v}
+vlog -vlog01compat -work work +incdir+C:/miner-core {C:/miner-core/led.v}
+vlog -vlog01compat -work work +incdir+C:/miner-core {C:/miner-core/miner_core.v}
+vlog -vlog01compat -work work +incdir+C:/miner-core {C:/miner-core/conn_core.v}
 
 vlog -vlog01compat -work work +incdir+C:/miner-core/tb {C:/miner-core/tb/tb_miner.v}
 

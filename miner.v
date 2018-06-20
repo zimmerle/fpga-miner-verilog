@@ -1,189 +1,90 @@
 
 
 module miner (
-    clock,
-    reset,
-	 tx,
-	 rx,
-    led
+  input  wire CLOCK_50,
+  input  wire reset,
+  output wire [7:0] led,
+  input  wire rx,
+  output wire tx
 );
 
-input clock;
-input reset;
-output led;
-output tx;
-input rx;
+reg  [511:0]  blk1;
+wire [95:0]   blk2;
+reg miner_enabled;
+wire delivery_msg;
+wire [1023:0] msg;
+reg           CLOCK_25;
+reg           CLOCK_12;
+reg           CLOCK_6;
+reg           CLOCK_3;
 
-wire clock;
-wire reset;
-wire led; /* if golden nonce is found */
+clk_div CLK (
+  .clk_in(CLOCK_50),
+  .reset(reset),
+  .clk_out(CLOCK_25)
+);
 
-/* clock related fixed parameter */
-parameter CLK_HALF_PERIOD = 2;
-parameter CLK_PERIOD = 2 * CLK_HALF_PERIOD;
+clk_div CLK2 (
+  .clk_in(CLOCK_25),
+  .reset(reset),
+  .clk_out(CLOCK_12)
+);
 
-/* definition of the state for the state machine */
-parameter STATE_IDLE = 0;
-parameter STATE_FIRST_BLOCK = 1;
-parameter STATE_SECOND_BLOCK = 2;
-parameter STATE_HASH_OF_HASH = 3;
-parameter STATE_COMPARING_HASHES = 4;
-parameter STATE_INCREASE_NONCE = 5;
-parameter STATE_GOLDEN_NONCE_FOUND = 6;
+clk_div CLK3 (
+  .clk_in(CLOCK_12),
+  .reset(reset),
+  .clk_out(CLOCK_6)
+);
 
-/* sha global definition */
-reg sha_init;
-reg sha_mode;
-reg sha_next;
-reg sha_reset;
-
-/* sha instance #1 */
-reg [511:0] sha_1_block;
-wire [255:0] sha_1_digest;
-wire sha_1_digest_valid;
-wire sha_1_ready;
-
-/* global machine state */
-reg [31:0] global_state = STATE_IDLE;
-
-/* hard coded blocks to be computed */
-reg [511:0] blk1;
-reg [511:0] blk2;
-
-/* counter to be used as part of developer process */
-reg [31:0] counter_out;
-
- 
-sha256_core SHA_INST1 (
-  .clk(clock),
-  .reset_n(sha_reset),
-  .init(sha_init),
-  .next(sha_next),
-  .mode(sha_mode),
-  .block(sha_1_block),
-  .ready(sha_1_ready),
-  .digest(sha_1_digest),
-  .digest_valid(sha_1_digest_valid)
+clk_div CLK4 (
+  .clk_in(CLOCK_6),
+  .reset(reset),
+  .clk_out(CLOCK_3)
 );
 
 
-task reset_sha();
-begin
-  /* reset sha #n */
-  sha_mode = 1;
+led LED0 (
+  .CLOCK_50(CLOCK_25),
+  .led(led[0]),
+  .reset(reset)
+);
+led LED5 (
+  .CLOCK_50(CLOCK_25),
+  .led(led[5]),
+  .reset(reset)
+);
+led LED6 (
+  .CLOCK_50(CLOCK_25),
+  .led(led[6]),
+  .reset(reset)
+);
 
-  /* reset sha #1 */
-  sha_reset = 1;
-  sha_init = 0;
-  sha_next = 0;
-  sha_1_block = 512'h00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
-  sha_reset = 0;
-  #(4 * CLK_HALF_PERIOD);
-  sha_reset = 1;
-end
-endtask
+conn_core CONN (
+  .CLOCK_50(CLOCK_25),
+  .reset(reset),
+  .rx_led(led[3]),
+  .rx_pin(rx),
+  .tx_led(led[2]),
+  .tx_pin(tx),
+  .line(led[7]),
+  .blk1(blk1),
+  .blk2(blk2),
+  .miner(miner_enabled),
+  .delivery_msg(delivery_msg),
+  .msg(msg)
+);
 
-
-task reset_all();
-begin
-  reset_sha();
-  global_state = STATE_IDLE;
-end
-endtask
-
-
-task compute_hash_of_hash();
-begin
-  $display(" ** computing second hash....");
-  global_state = STATE_HASH_OF_HASH;
-  
-  sha_1_block = {sha_1_digest, 256'h8000000000000000000000000000000000000000000000000000000000000100};
-  sha_init = 1;
-  #(CLK_PERIOD);
-  sha_init = 0;
-end
-endtask
-
-
-task compute_sha_1st_block();
-begin
-  $display(" ** computing frist block....");
-  global_state = STATE_FIRST_BLOCK;
-  sha_1_block = blk1;
-  sha_init = 1;
-  #(CLK_PERIOD);
-  sha_init = 0;
-end
-endtask
-
-
-task compute_sha_2nd_block();
-begin
-  $display(" ** computing second block....");
-  global_state = STATE_SECOND_BLOCK;
-  sha_1_block = blk2;
-  sha_next = 1;
-  #(CLK_PERIOD);
-  sha_next = 0;
-end
-endtask
-
-
-task compare_hashes();
-begin
-  global_state = STATE_COMPARING_HASHES;
-  //global_state = 5;
-  $display(" ** comparing hashes.... ");
-end
-endtask
-
-
-task increase_nonces();
-begin
-  //global_state = 2;
-end
-endtask
-
-
-always @ (posedge clock)
-begin : COUNTER
-  if (reset == 1'b1) begin
-    counter_out <= #1 0;
-    reset_all();
-  end
-  else begin
-    counter_out <= #1 counter_out + 1;
-  end
-
-  /* reset on start */
-  if (counter_out == 10) begin
-    $display("Simulating data from uart.");
-	 blk1 = 512'h0100000000000000000000000000000000000000000000000000000000000000000000003BA3EDFD7A7B12B27AC72C3E67768F617FC81BC3888A51323A9FB8AA;
-	 blk2 = 512'h4B1E5E4A29AB5F49FFFF001D1DAC2B7C800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000280;
-    compute_sha_1st_block();
-  end
-  if (sha_1_ready && sha_1_digest_valid && global_state == STATE_FIRST_BLOCK) begin
-    $display("Got first  block: 0x%064x", sha_1_digest);
-    compute_sha_2nd_block();
-    #(CLK_PERIOD * 2);
-  end
-  if (sha_1_ready && sha_1_digest_valid && global_state == STATE_SECOND_BLOCK) begin
-    $display("Got second block: 0x%064x", sha_1_digest);
-    compute_hash_of_hash();
-    #(CLK_PERIOD * 2);
-  end
-  if (sha_1_ready && sha_1_digest_valid && global_state == STATE_HASH_OF_HASH) begin
-    $display("Got second hash: 0x%064x", sha_1_digest);
-    compare_hashes();
-  end
-  if (sha_1_ready && sha_1_digest_valid && global_state == STATE_HASH_OF_HASH) begin
-    $display("Got second hash: 0x%064x", sha_1_digest);
-    compare_hashes();
-  end
-
-  //$display("Counter: 0x%04x", counter_out); 
-end
-
-
+miner_core CORE (
+  .CLOCK_50(CLOCK_50),
+  .CLOCK_3(CLOCK_6),
+  .reset(reset),
+  .enable(miner_enabled),
+  .led_processing(led[1]),
+  .led_found(led[4]),
+  .blk1(blk1),
+  .blk2(blk2),
+  .delivery_msg(delivery_msg),
+  .msg(msg)
+);
 
 endmodule

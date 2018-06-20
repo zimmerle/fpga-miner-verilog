@@ -1,6 +1,6 @@
 Analysis & Synthesis report for miner
-Tue Jun 12 00:44:16 2018
-Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+Tue Jun 19 21:26:42 2018
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
 ---------------------
@@ -13,145 +13,161 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |miner|global_state
-  9. State Machine - |miner|sha256_core:SHA_INST1|sha256_ctrl_reg
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: Top-level Entity: |miner
- 15. Parameter Settings for User Entity Instance: sha256_core:SHA_INST1
- 16. Parameter Settings for User Entity Instance: sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
- 19. Analysis & Synthesis Suppressed Messages
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |miner|miner_core:CORE|global_state
+ 10. State Machine - |miner|miner_core:CORE|sha256_core:SHA_INST1|sha256_ctrl_reg
+ 11. State Machine - |miner|conn_core:CONN|read_state
+ 12. State Machine - |miner|conn_core:CONN|r_SM_Main
+ 13. Registers Removed During Synthesis
+ 14. Removed Registers Triggering Further Register Optimizations
+ 15. General Register Statistics
+ 16. Inverted Register Statistics
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Parameter Settings for User Entity Instance: conn_core:CONN
+ 19. Parameter Settings for User Entity Instance: conn_core:CONN|async_transmitter:TX
+ 20. Parameter Settings for User Entity Instance: conn_core:CONN|async_transmitter:TX|BaudTickGen:tickgen
+ 21. Parameter Settings for User Entity Instance: conn_core:CONN|async_receiver:RX
+ 22. Parameter Settings for User Entity Instance: conn_core:CONN|async_receiver:RX|BaudTickGen:tickgen
+ 23. Parameter Settings for User Entity Instance: miner_core:CORE
+ 24. Parameter Settings for User Entity Instance: miner_core:CORE|sha256_core:SHA_INST1
+ 25. Parameter Settings for User Entity Instance: miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst
+ 26. Parameter Settings for Inferred Entity Instance: miner_core:CORE|lpm_mult:Mult0
+ 27. lpm_mult Parameter Settings by Entity Instance
+ 28. Port Connectivity Checks: "conn_core:CONN|async_receiver:RX|BaudTickGen:tickgen"
+ 29. Port Connectivity Checks: "conn_core:CONN|async_receiver:RX"
+ 30. Port Connectivity Checks: "clk_div:CLK4"
+ 31. Post-Synthesis Netlist Statistics for Top Partition
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
+ 34. Analysis & Synthesis Suppressed Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2013 Altera Corporation
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, Altera MegaCore Function License 
-Agreement, or other applicable license agreement, including, 
-without limitation, that your use is for the sole purpose of 
-programming logic devices manufactured by Altera and sold by 
-Altera or its authorized distributors.  Please refer to the 
-applicable agreement for further details.
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                    ;
-+------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 12 00:44:16 2018      ;
-; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
-; Revision Name                      ; miner                                      ;
-; Top-level Entity Name              ; miner                                      ;
-; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 0                                          ;
-;     Total combinational functions  ; 0                                          ;
-;     Dedicated logic registers      ; 0                                          ;
-; Total registers                    ; 0                                          ;
-; Total pins                         ; 5                                          ;
-; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 0                                          ;
-; Embedded Multiplier 9-bit elements ; 0                                          ;
-; Total PLLs                         ; 0                                          ;
-+------------------------------------+--------------------------------------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Jun 19 21:26:42 2018       ;
+; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Revision Name                      ; miner                                       ;
+; Top-level Entity Name              ; miner                                       ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 5,259                                       ;
+;     Total combinational functions  ; 5,083                                       ;
+;     Dedicated logic registers      ; 2,542                                       ;
+; Total registers                    ; 2542                                        ;
+; Total pins                         ; 12                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 56                                          ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                        ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
-; Option                                                                     ; Setting            ; Default Value      ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                     ; EP4CE22F17C6       ;                    ;
-; Top-level entity name                                                      ; miner              ; miner              ;
-; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
-; Use smart compilation                                                      ; Off                ; Off                ;
-; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
-; Enable compact report table                                                ; Off                ; Off                ;
-; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
-; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
-; Preserve fewer node names                                                  ; On                 ; On                 ;
-; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
-; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
-; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
-; State Machine Processing                                                   ; Auto               ; Auto               ;
-; Safe State Machine                                                         ; Off                ; Off                ;
-; Extract Verilog State Machines                                             ; On                 ; On                 ;
-; Extract VHDL State Machines                                                ; On                 ; On                 ;
-; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
-; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
-; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
-; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
-; Parallel Synthesis                                                         ; On                 ; On                 ;
-; DSP Block Balancing                                                        ; Auto               ; Auto               ;
-; NOT Gate Push-Back                                                         ; On                 ; On                 ;
-; Power-Up Don't Care                                                        ; On                 ; On                 ;
-; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
-; Remove Duplicate Registers                                                 ; On                 ; On                 ;
-; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
-; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
-; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
-; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
-; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
-; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
-; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
-; Optimization Technique                                                     ; Balanced           ; Balanced           ;
-; Carry Chain Length                                                         ; 70                 ; 70                 ;
-; Auto Carry Chains                                                          ; On                 ; On                 ;
-; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
-; Auto ROM Replacement                                                       ; On                 ; On                 ;
-; Auto RAM Replacement                                                       ; On                 ; On                 ;
-; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
-; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
-; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
-; Strict RAM Replacement                                                     ; Off                ; Off                ;
-; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
-; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
-; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
-; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
-; Auto Resource Sharing                                                      ; Off                ; Off                ;
-; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
-; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
-; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
-; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
-; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
-; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
-; Report Parameter Settings                                                  ; On                 ; On                 ;
-; Report Source Assignments                                                  ; On                 ; On                 ;
-; Report Connectivity Checks                                                 ; On                 ; On                 ;
-; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
-; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
-; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
-; HDL message level                                                          ; Level2             ; Level2             ;
-; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
-; Clock MUX Protection                                                       ; On                 ; On                 ;
-; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
-; Block Design Naming                                                        ; Auto               ; Auto               ;
-; SDC constraint protection                                                  ; Off                ; Off                ;
-; Synthesis Effort                                                           ; Auto               ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
-; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
-; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
-; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
-; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
-; Synthesis Seed                                                             ; 1                  ; 1                  ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                            ; miner              ; miner              ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Verilog Show LMF Mapping Messages                                ; Off                ;                    ;
+; Verilog Version                                                  ; SystemVerilog_2005 ; Verilog_2001       ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation              ; 4                  ; 4                  ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
 
 
 +------------------------------------------+
@@ -159,86 +175,143 @@ applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 2           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.2%      ;
+;     Processor 3            ;   0.2%      ;
+;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                          ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path            ; Library ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------+---------+
-; miner.v                          ; yes             ; User Verilog HDL File  ; C:/miner-core/miner.v                   ;         ;
-; sha2/sha256_w_mem.v              ; yes             ; User Verilog HDL File  ; C:/miner-core/sha2/sha256_w_mem.v       ;         ;
-; sha2/sha256_k_constants.v        ; yes             ; User Verilog HDL File  ; C:/miner-core/sha2/sha256_k_constants.v ;         ;
-; sha2/sha256_core.v               ; yes             ; User Verilog HDL File  ; C:/miner-core/sha2/sha256_core.v        ;         ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
+; uart/async.v                     ; yes             ; User Verilog HDL File        ; /home/zimmerle/core-cin/abel/miner/uart/async.v                  ;         ;
+; miner.v                          ; yes             ; User Verilog HDL File        ; /home/zimmerle/core-cin/abel/miner/miner.v                       ;         ;
+; sha2/sha256_w_mem.v              ; yes             ; User Verilog HDL File        ; /home/zimmerle/core-cin/abel/miner/sha2/sha256_w_mem.v           ;         ;
+; sha2/sha256_k_constants.v        ; yes             ; User Verilog HDL File        ; /home/zimmerle/core-cin/abel/miner/sha2/sha256_k_constants.v     ;         ;
+; sha2/sha256_core.v               ; yes             ; User Verilog HDL File        ; /home/zimmerle/core-cin/abel/miner/sha2/sha256_core.v            ;         ;
+; led.v                            ; yes             ; User Verilog HDL File        ; /home/zimmerle/core-cin/abel/miner/led.v                         ;         ;
+; miner_core.v                     ; yes             ; User Verilog HDL File        ; /home/zimmerle/core-cin/abel/miner/miner_core.v                  ;         ;
+; conn_core.v                      ; yes             ; User Verilog HDL File        ; /home/zimmerle/core-cin/abel/miner/conn_core.v                   ;         ;
+; clk_div.v                        ; yes             ; User Verilog HDL File        ; /home/zimmerle/core-cin/abel/miner/clk_div.v                     ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; /opt/altera/18.0/quartus/libraries/megafunctions/lpm_mult.tdf    ;         ;
+; aglobal180.inc                   ; yes             ; Megafunction                 ; /opt/altera/18.0/quartus/libraries/megafunctions/aglobal180.inc  ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; /opt/altera/18.0/quartus/libraries/megafunctions/lpm_add_sub.inc ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; /opt/altera/18.0/quartus/libraries/megafunctions/multcore.inc    ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; /opt/altera/18.0/quartus/libraries/megafunctions/bypassff.inc    ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; /opt/altera/18.0/quartus/libraries/megafunctions/altshift.inc    ;         ;
+; db/mult_kgt.tdf                  ; yes             ; Auto-Generated Megafunction  ; /home/zimmerle/core-cin/abel/miner/db/mult_kgt.tdf               ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-;                                             ;           ;
-; Total combinational functions               ; 0         ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 0         ;
-;     -- 3 input functions                    ; 0         ;
-;     -- <=2 input functions                  ; 0         ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 0         ;
-;     -- arithmetic mode                      ; 0         ;
-;                                             ;           ;
-; Total registers                             ; 0         ;
-;     -- Dedicated logic registers            ; 0         ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 5         ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-; Maximum fan-out node                        ; tx~output ;
-; Maximum fan-out                             ; 1         ;
-; Total fan-out                               ; 5         ;
-; Average fan-out                             ; 0.50      ;
-+---------------------------------------------+-----------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 5,259       ;
+;                                             ;             ;
+; Total combinational functions               ; 5083        ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 1559        ;
+;     -- 3 input functions                    ; 2392        ;
+;     -- <=2 input functions                  ; 1132        ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 3276        ;
+;     -- arithmetic mode                      ; 1807        ;
+;                                             ;             ;
+; Total registers                             ; 2542        ;
+;     -- Dedicated logic registers            ; 2542        ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 12          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 56          ;
+;                                             ;             ;
+; Maximum fan-out node                        ; reset~input ;
+; Maximum fan-out                             ; 2017        ;
+; Total fan-out                               ; 25477       ;
+; Average fan-out                             ; 3.31        ;
++---------------------------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |miner                     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 5    ; 0            ; |miner              ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                              ;
++------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                              ; Entity Name        ; Library Name ;
++------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+--------------------+--------------+
+; |miner                                         ; 5083 (1)            ; 2542 (0)                  ; 0           ; 56           ; 0       ; 28        ; 12   ; 0            ; |miner                                                                           ; miner              ; work         ;
+;    |clk_div:CLK2|                              ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|clk_div:CLK2                                                              ; clk_div            ; work         ;
+;    |clk_div:CLK3|                              ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|clk_div:CLK3                                                              ; clk_div            ; work         ;
+;    |clk_div:CLK|                               ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|clk_div:CLK                                                               ; clk_div            ; work         ;
+;    |conn_core:CONN|                            ; 699 (574)           ; 559 (443)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|conn_core:CONN                                                            ; conn_core          ; work         ;
+;       |async_receiver:RX|                      ; 41 (20)             ; 42 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|conn_core:CONN|async_receiver:RX                                          ; async_receiver     ; work         ;
+;          |BaudTickGen:tickgen|                 ; 21 (21)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|conn_core:CONN|async_receiver:RX|BaudTickGen:tickgen                      ; BaudTickGen        ; work         ;
+;       |async_transmitter:TX|                   ; 44 (23)             ; 33 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|conn_core:CONN|async_transmitter:TX                                       ; async_transmitter  ; work         ;
+;          |BaudTickGen:tickgen|                 ; 21 (21)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|conn_core:CONN|async_transmitter:TX|BaudTickGen:tickgen                   ; BaudTickGen        ; work         ;
+;       |led:LED_line|                           ; 40 (40)             ; 41 (41)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|conn_core:CONN|led:LED_line                                               ; led                ; work         ;
+;    |led:LED0|                                  ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|led:LED0                                                                  ; led                ; work         ;
+;    |led:LED5|                                  ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|led:LED5                                                                  ; led                ; work         ;
+;    |led:LED6|                                  ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|led:LED6                                                                  ; led                ; work         ;
+;    |miner_core:CORE|                           ; 4380 (1588)         ; 1977 (943)                ; 0           ; 56           ; 0       ; 28        ; 0    ; 0            ; |miner|miner_core:CORE                                                           ; miner_core         ; work         ;
+;       |lpm_mult:Mult0|                         ; 696 (0)             ; 0 (0)                     ; 0           ; 56           ; 0       ; 28        ; 0    ; 0            ; |miner|miner_core:CORE|lpm_mult:Mult0                                            ; lpm_mult           ; work         ;
+;          |mult_kgt:auto_generated|             ; 696 (696)           ; 0 (0)                     ; 0           ; 56           ; 0       ; 28        ; 0    ; 0            ; |miner|miner_core:CORE|lpm_mult:Mult0|mult_kgt:auto_generated                    ; mult_kgt           ; work         ;
+;       |sha256_core:SHA_INST1|                  ; 2096 (874)          ; 1034 (516)                ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|miner_core:CORE|sha256_core:SHA_INST1                                     ; sha256_core        ; work         ;
+;          |sha256_k_constants:k_constants_inst| ; 189 (189)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|miner_core:CORE|sha256_core:SHA_INST1|sha256_k_constants:k_constants_inst ; sha256_k_constants ; work         ;
+;          |sha256_w_mem:w_mem_inst|             ; 1033 (1033)         ; 518 (518)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |miner|miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst             ; sha256_w_mem       ; work         ;
++------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 28          ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 56          ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 28          ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
 Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |miner|global_state                                                                                                                                                                      ;
-+-------------------------------------+-------------------------+---------------------------------+---------------------------------+--------------------------------+-------------------------------------+
-; Name                                ; global_state.STATE_IDLE ; global_state.STATE_HASH_OF_HASH ; global_state.STATE_SECOND_BLOCK ; global_state.STATE_FIRST_BLOCK ; global_state.STATE_COMPARING_HASHES ;
-+-------------------------------------+-------------------------+---------------------------------+---------------------------------+--------------------------------+-------------------------------------+
-; global_state.STATE_COMPARING_HASHES ; 0                       ; 0                               ; 0                               ; 0                              ; 0                                   ;
-; global_state.STATE_FIRST_BLOCK      ; 0                       ; 0                               ; 0                               ; 1                              ; 1                                   ;
-; global_state.STATE_SECOND_BLOCK     ; 0                       ; 0                               ; 1                               ; 0                              ; 1                                   ;
-; global_state.STATE_HASH_OF_HASH     ; 0                       ; 1                               ; 0                               ; 0                              ; 1                                   ;
-; global_state.STATE_IDLE             ; 1                       ; 0                               ; 0                               ; 0                              ; 1                                   ;
-+-------------------------------------+-------------------------+---------------------------------+---------------------------------+--------------------------------+-------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |miner|miner_core:CORE|global_state                                                                                                                                                                                                                                                                                                                             ;
++-----------------------------------------+---------------------------------------+-----------------------------------------+---------------------------------------+-----------------------------------------+--------------------------------------+----------------------------------------+--------------------------+-----------------------------+--------------------------+
+; Name                                    ; global_state.STATE_HASH_OF_HASH_READY ; global_state.STATE_WAITING_HASH_OF_HASH ; global_state.STATE_SECOND_BLOCK_READY ; global_state.STATE_WAITING_SECOND_BLOCK ; global_state.STATE_FIRST_BLOCK_READY ; global_state.STATE_WAITING_FIRST_BLOCK ; global_state.STATE_START ; global_state.STATE_SLEEPING ; global_state.STATE_FOUND ;
++-----------------------------------------+---------------------------------------+-----------------------------------------+---------------------------------------+-----------------------------------------+--------------------------------------+----------------------------------------+--------------------------+-----------------------------+--------------------------+
+; global_state.STATE_SLEEPING             ; 0                                     ; 0                                       ; 0                                     ; 0                                       ; 0                                    ; 0                                      ; 0                        ; 0                           ; 0                        ;
+; global_state.STATE_START                ; 0                                     ; 0                                       ; 0                                     ; 0                                       ; 0                                    ; 0                                      ; 1                        ; 1                           ; 0                        ;
+; global_state.STATE_WAITING_FIRST_BLOCK  ; 0                                     ; 0                                       ; 0                                     ; 0                                       ; 0                                    ; 1                                      ; 0                        ; 1                           ; 0                        ;
+; global_state.STATE_FIRST_BLOCK_READY    ; 0                                     ; 0                                       ; 0                                     ; 0                                       ; 1                                    ; 0                                      ; 0                        ; 1                           ; 0                        ;
+; global_state.STATE_WAITING_SECOND_BLOCK ; 0                                     ; 0                                       ; 0                                     ; 1                                       ; 0                                    ; 0                                      ; 0                        ; 1                           ; 0                        ;
+; global_state.STATE_SECOND_BLOCK_READY   ; 0                                     ; 0                                       ; 1                                     ; 0                                       ; 0                                    ; 0                                      ; 0                        ; 1                           ; 0                        ;
+; global_state.STATE_WAITING_HASH_OF_HASH ; 0                                     ; 1                                       ; 0                                     ; 0                                       ; 0                                    ; 0                                      ; 0                        ; 1                           ; 0                        ;
+; global_state.STATE_HASH_OF_HASH_READY   ; 1                                     ; 0                                       ; 0                                     ; 0                                       ; 0                                    ; 0                                      ; 0                        ; 1                           ; 0                        ;
+; global_state.STATE_FOUND                ; 0                                     ; 0                                       ; 0                                     ; 0                                       ; 0                                    ; 0                                      ; 0                        ; 1                           ; 1                        ;
++-----------------------------------------+---------------------------------------+-----------------------------------------+---------------------------------------+-----------------------------------------+--------------------------------------+----------------------------------------+--------------------------+-----------------------------+--------------------------+
 
 
 Encoding Type:  One-Hot
 +-------------------------------------------------------------------------------------------------------------------+
-; State Machine - |miner|sha256_core:SHA_INST1|sha256_ctrl_reg                                                      ;
+; State Machine - |miner|miner_core:CORE|sha256_core:SHA_INST1|sha256_ctrl_reg                                      ;
 +-----------------------------+---------------------------+---------------------------+-----------------------------+
 ; Name                        ; sha256_ctrl_reg.CTRL_IDLE ; sha256_ctrl_reg.CTRL_DONE ; sha256_ctrl_reg.CTRL_ROUNDS ;
 +-----------------------------+---------------------------+---------------------------+-----------------------------+
@@ -248,72 +321,255 @@ Encoding Type:  One-Hot
 +-----------------------------+---------------------------+---------------------------+-----------------------------+
 
 
-+--------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                         ;
-+---------------------------------------------------+----------------------------------------+
-; Register name                                     ; Reason for Removal                     ;
-+---------------------------------------------------+----------------------------------------+
-; sha_reset                                         ; Stuck at VCC due to stuck port data_in ;
-; sha_next                                          ; Stuck at GND due to stuck port data_in ;
-; sha_init                                          ; Stuck at GND due to stuck port data_in ;
-; sha256_core:SHA_INST1|digest_valid_reg            ; Stuck at VCC due to stuck port data_in ;
-; global_state~7                                    ; Lost fanout                            ;
-; global_state~8                                    ; Lost fanout                            ;
-; global_state~10                                   ; Lost fanout                            ;
-; global_state~11                                   ; Lost fanout                            ;
-; global_state~12                                   ; Lost fanout                            ;
-; global_state~13                                   ; Lost fanout                            ;
-; global_state~14                                   ; Lost fanout                            ;
-; global_state~15                                   ; Lost fanout                            ;
-; global_state~16                                   ; Lost fanout                            ;
-; global_state~17                                   ; Lost fanout                            ;
-; global_state~18                                   ; Lost fanout                            ;
-; global_state~19                                   ; Lost fanout                            ;
-; global_state~20                                   ; Lost fanout                            ;
-; global_state~21                                   ; Lost fanout                            ;
-; global_state~22                                   ; Lost fanout                            ;
-; global_state~23                                   ; Lost fanout                            ;
-; global_state~24                                   ; Lost fanout                            ;
-; global_state~25                                   ; Lost fanout                            ;
-; global_state~26                                   ; Lost fanout                            ;
-; global_state~27                                   ; Lost fanout                            ;
-; global_state~28                                   ; Lost fanout                            ;
-; global_state~29                                   ; Lost fanout                            ;
-; global_state~30                                   ; Lost fanout                            ;
-; global_state~31                                   ; Lost fanout                            ;
-; global_state~32                                   ; Lost fanout                            ;
-; global_state~33                                   ; Lost fanout                            ;
-; global_state~34                                   ; Lost fanout                            ;
-; global_state~35                                   ; Lost fanout                            ;
-; global_state~36                                   ; Lost fanout                            ;
-; global_state~37                                   ; Lost fanout                            ;
-; global_state~38                                   ; Lost fanout                            ;
-; counter_out[0..31]                                ; Lost fanout                            ;
-; sha256_core:SHA_INST1|t_ctr_reg[0..5]             ; Lost fanout                            ;
-; global_state.STATE_COMPARING_HASHES               ; Lost fanout                            ;
-; global_state.STATE_FIRST_BLOCK                    ; Lost fanout                            ;
-; global_state.STATE_SECOND_BLOCK                   ; Lost fanout                            ;
-; global_state.STATE_HASH_OF_HASH                   ; Lost fanout                            ;
-; global_state.STATE_IDLE                           ; Lost fanout                            ;
-; sha256_core:SHA_INST1|sha256_ctrl_reg.CTRL_ROUNDS ; Lost fanout                            ;
-; sha256_core:SHA_INST1|sha256_ctrl_reg.CTRL_DONE   ; Lost fanout                            ;
-; sha256_core:SHA_INST1|sha256_ctrl_reg.CTRL_IDLE   ; Lost fanout                            ;
-; Total Number of Removed Registers = 81            ;                                        ;
-+---------------------------------------------------+----------------------------------------+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------+
+; State Machine - |miner|conn_core:CONN|read_state                                                     ;
++--------------------------+--------------------------+--------------------------+---------------------+
+; Name                     ; read_state.s_r_LOAD_BLK1 ; read_state.s_r_LOAD_BLK2 ; read_state.s_r_IDLE ;
++--------------------------+--------------------------+--------------------------+---------------------+
+; read_state.s_r_IDLE      ; 0                        ; 0                        ; 0                   ;
+; read_state.s_r_LOAD_BLK1 ; 1                        ; 0                        ; 1                   ;
+; read_state.s_r_LOAD_BLK2 ; 0                        ; 1                        ; 1                   ;
++--------------------------+--------------------------+--------------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                          ;
-+----------------+---------------------------+-------------------------------------------------------------------------+
-; Register name  ; Reason for Removal        ; Registers Removed due to This Register                                  ;
-+----------------+---------------------------+-------------------------------------------------------------------------+
-; sha_reset      ; Stuck at VCC              ; sha256_core:SHA_INST1|digest_valid_reg, counter_out[0], counter_out[1], ;
-;                ; due to stuck port data_in ; sha256_core:SHA_INST1|t_ctr_reg[5], sha256_core:SHA_INST1|t_ctr_reg[4], ;
-;                ;                           ; sha256_core:SHA_INST1|t_ctr_reg[3],                                     ;
-;                ;                           ; sha256_core:SHA_INST1|sha256_ctrl_reg.CTRL_ROUNDS                       ;
-; global_state~7 ; Lost Fanouts              ; global_state.STATE_FIRST_BLOCK, global_state.STATE_HASH_OF_HASH,        ;
-;                ;                           ; sha256_core:SHA_INST1|sha256_ctrl_reg.CTRL_IDLE                         ;
-+----------------+---------------------------+-------------------------------------------------------------------------+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |miner|conn_core:CONN|r_SM_Main                                                                                              ;
++---------------------------------+------------------+---------------------------------+--------------------------+----------------------------+
+; Name                            ; r_SM_Main.s_IDLE ; r_SM_Main.s_SENDING_BUFFER_WAIT ; r_SM_Main.s_SENDING_DATA ; r_SM_Main.s_SENDING_BUFFER ;
++---------------------------------+------------------+---------------------------------+--------------------------+----------------------------+
+; r_SM_Main.s_SENDING_BUFFER      ; 0                ; 0                               ; 0                        ; 0                          ;
+; r_SM_Main.s_SENDING_DATA        ; 0                ; 0                               ; 1                        ; 1                          ;
+; r_SM_Main.s_SENDING_BUFFER_WAIT ; 0                ; 1                               ; 0                        ; 1                          ;
+; r_SM_Main.s_IDLE                ; 1                ; 0                               ; 0                        ; 1                          ;
++---------------------------------+------------------+---------------------------------+--------------------------+----------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                                                                                   ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+; Register name                                                                                                                                                                                               ; Reason for Removal                                                                     ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+; conn_core:CONN|blk1[505..511]                                                                                                                                                                               ; Stuck at GND due to stuck port clock                                                   ;
+; conn_core:CONN|blk1[504]                                                                                                                                                                                    ; Stuck at VCC due to stuck port data_in                                                 ;
+; conn_core:CONN|blk1[256..503]                                                                                                                                                                               ; Stuck at GND due to stuck port clock                                                   ;
+; conn_core:CONN|rx_led                                                                                                                                                                                       ; Stuck at GND due to stuck port data_in                                                 ;
+; miner_core:CORE|sha256_core:SHA_INST1|t_ctr_reg[5]                                                                                                                                                          ; Merged with miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_ctr_reg[5] ;
+; miner_core:CORE|sha256_core:SHA_INST1|t_ctr_reg[4]                                                                                                                                                          ; Merged with miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_ctr_reg[4] ;
+; miner_core:CORE|sha256_core:SHA_INST1|t_ctr_reg[3]                                                                                                                                                          ; Merged with miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_ctr_reg[3] ;
+; miner_core:CORE|sha256_core:SHA_INST1|t_ctr_reg[2]                                                                                                                                                          ; Merged with miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_ctr_reg[2] ;
+; miner_core:CORE|sha256_core:SHA_INST1|t_ctr_reg[1]                                                                                                                                                          ; Merged with miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_ctr_reg[1] ;
+; miner_core:CORE|sha256_core:SHA_INST1|t_ctr_reg[0]                                                                                                                                                          ; Merged with miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_ctr_reg[0] ;
+; led:LED0|PWM_width[6]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[6]                                   ;
+; led:LED5|PWM_width[6]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[6]                                   ;
+; led:LED6|PWM_width[6]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[6]                                   ;
+; conn_core:CONN|to_be_sent[1,6,14]                                                                                                                                                                           ; Merged with conn_core:CONN|to_be_sent[11]                                              ;
+; conn_core:CONN|to_be_sent[54,64,72,75,77,78,81..83,85,86,88,90,93,94,97,101,102,109,113,114,116..118,124,125,129..131,133,136,140,141,145..147,149,150,153..156,158]                                        ; Merged with conn_core:CONN|to_be_sent[100]                                             ;
+; conn_core:CONN|to_be_sent[7,10,12,15,49..52,55,57..60,62,63,69,71,73,74,76,79,80,84,87,89,91,92,95,96,98,99,104..108,110..112,115,119..123,126..128,132,134,135,137..139,142..144,148,151,152,157,159..247] ; Merged with conn_core:CONN|to_be_sent[103]                                             ;
+; conn_core:CONN|to_be_sent[53,61,66,67,70]                                                                                                                                                                   ; Merged with conn_core:CONN|to_be_sent[48]                                              ;
+; conn_core:CONN|to_be_sent[5,65,68]                                                                                                                                                                          ; Merged with conn_core:CONN|to_be_sent[56]                                              ;
+; conn_core:CONN|to_be_sent[9]                                                                                                                                                                                ; Merged with conn_core:CONN|to_be_sent[3]                                               ;
+; led:LED0|PWM_width[5]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[5]                                   ;
+; led:LED5|PWM_width[5]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[5]                                   ;
+; led:LED6|PWM_width[5]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[5]                                   ;
+; led:LED0|PWM_width[4]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[4]                                   ;
+; led:LED5|PWM_width[4]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[4]                                   ;
+; led:LED6|PWM_width[4]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[4]                                   ;
+; led:LED0|PWM_width[3]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[3]                                   ;
+; led:LED5|PWM_width[3]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[3]                                   ;
+; led:LED6|PWM_width[3]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[3]                                   ;
+; led:LED0|PWM_width[2]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[2]                                   ;
+; led:LED5|PWM_width[2]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[2]                                   ;
+; led:LED6|PWM_width[2]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[2]                                   ;
+; led:LED0|PWM_width[1]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[1]                                   ;
+; led:LED5|PWM_width[1]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[1]                                   ;
+; led:LED6|PWM_width[1]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[1]                                   ;
+; led:LED0|PWM_adj[0]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|PWM_adj[0]                                     ;
+; led:LED5|PWM_adj[0]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|PWM_adj[0]                                     ;
+; led:LED6|PWM_adj[0]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|PWM_adj[0]                                     ;
+; led:LED0|PWM_adj[5]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|PWM_adj[5]                                     ;
+; led:LED5|PWM_adj[5]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|PWM_adj[5]                                     ;
+; led:LED6|PWM_adj[5]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|PWM_adj[5]                                     ;
+; led:LED0|PWM_adj[4]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|PWM_adj[4]                                     ;
+; led:LED5|PWM_adj[4]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|PWM_adj[4]                                     ;
+; led:LED6|PWM_adj[4]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|PWM_adj[4]                                     ;
+; led:LED0|PWM_adj[3]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|PWM_adj[3]                                     ;
+; led:LED5|PWM_adj[3]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|PWM_adj[3]                                     ;
+; led:LED6|PWM_adj[3]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|PWM_adj[3]                                     ;
+; led:LED0|PWM_adj[2]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|PWM_adj[2]                                     ;
+; led:LED5|PWM_adj[2]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|PWM_adj[2]                                     ;
+; led:LED6|PWM_adj[2]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|PWM_adj[2]                                     ;
+; led:LED0|PWM_adj[1]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|PWM_adj[1]                                     ;
+; led:LED5|PWM_adj[1]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|PWM_adj[1]                                     ;
+; led:LED6|PWM_adj[1]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|PWM_adj[1]                                     ;
+; led:LED0|PWM_width[0]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[0]                                   ;
+; led:LED5|PWM_width[0]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[0]                                   ;
+; led:LED6|PWM_width[0]                                                                                                                                                                                       ; Merged with conn_core:CONN|led:LED_line|PWM_width[0]                                   ;
+; miner_core:CORE|msg[1..4,6,7,9..12,14,15,49..52,54,55,57..60,62..64,69,71..99,101..247]                                                                                                                     ; Merged with miner_core:CORE|msg[100]                                                   ;
+; miner_core:CORE|msg[5,8,13,48,53,56,61,65..68,70]                                                                                                                                                           ; Merged with miner_core:CORE|msg[0]                                                     ;
+; led:LED0|counter[20]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[20]                                    ;
+; led:LED5|counter[20]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[20]                                    ;
+; led:LED6|counter[20]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[20]                                    ;
+; led:LED0|counter[26]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[26]                                    ;
+; led:LED5|counter[26]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[26]                                    ;
+; led:LED6|counter[26]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[26]                                    ;
+; led:LED0|counter[25]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[25]                                    ;
+; led:LED5|counter[25]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[25]                                    ;
+; led:LED6|counter[25]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[25]                                    ;
+; led:LED0|counter[24]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[24]                                    ;
+; led:LED5|counter[24]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[24]                                    ;
+; led:LED6|counter[24]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[24]                                    ;
+; led:LED0|counter[23]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[23]                                    ;
+; led:LED5|counter[23]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[23]                                    ;
+; led:LED6|counter[23]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[23]                                    ;
+; led:LED0|counter[22]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[22]                                    ;
+; led:LED5|counter[22]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[22]                                    ;
+; led:LED6|counter[22]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[22]                                    ;
+; led:LED0|counter[21]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[21]                                    ;
+; led:LED5|counter[21]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[21]                                    ;
+; led:LED6|counter[21]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[21]                                    ;
+; led:LED0|counter[33]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[33]                                    ;
+; led:LED5|counter[33]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[33]                                    ;
+; led:LED6|counter[33]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[33]                                    ;
+; led:LED0|counter[32]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[32]                                    ;
+; led:LED5|counter[32]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[32]                                    ;
+; led:LED6|counter[32]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[32]                                    ;
+; led:LED0|counter[31]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[31]                                    ;
+; led:LED5|counter[31]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[31]                                    ;
+; led:LED6|counter[31]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[31]                                    ;
+; led:LED0|counter[30]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[30]                                    ;
+; led:LED5|counter[30]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[30]                                    ;
+; led:LED6|counter[30]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[30]                                    ;
+; led:LED0|counter[29]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[29]                                    ;
+; led:LED5|counter[29]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[29]                                    ;
+; led:LED6|counter[29]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[29]                                    ;
+; led:LED0|counter[28]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[28]                                    ;
+; led:LED5|counter[28]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[28]                                    ;
+; led:LED6|counter[28]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[28]                                    ;
+; led:LED0|counter[27]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[27]                                    ;
+; led:LED5|counter[27]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[27]                                    ;
+; led:LED6|counter[27]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[27]                                    ;
+; led:LED0|counter[19]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[19]                                    ;
+; led:LED5|counter[19]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[19]                                    ;
+; led:LED6|counter[19]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[19]                                    ;
+; led:LED0|counter[18]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[18]                                    ;
+; led:LED5|counter[18]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[18]                                    ;
+; led:LED6|counter[18]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[18]                                    ;
+; led:LED0|counter[17]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[17]                                    ;
+; led:LED5|counter[17]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[17]                                    ;
+; led:LED6|counter[17]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[17]                                    ;
+; led:LED0|counter[16]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[16]                                    ;
+; led:LED5|counter[16]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[16]                                    ;
+; led:LED6|counter[16]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[16]                                    ;
+; led:LED0|counter[15]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[15]                                    ;
+; led:LED5|counter[15]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[15]                                    ;
+; led:LED6|counter[15]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[15]                                    ;
+; led:LED0|counter[14]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[14]                                    ;
+; led:LED5|counter[14]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[14]                                    ;
+; led:LED6|counter[14]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[14]                                    ;
+; led:LED0|counter[13]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[13]                                    ;
+; led:LED5|counter[13]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[13]                                    ;
+; led:LED6|counter[13]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[13]                                    ;
+; led:LED0|counter[12]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[12]                                    ;
+; led:LED5|counter[12]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[12]                                    ;
+; led:LED6|counter[12]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[12]                                    ;
+; led:LED0|counter[11]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[11]                                    ;
+; led:LED5|counter[11]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[11]                                    ;
+; led:LED6|counter[11]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[11]                                    ;
+; led:LED0|counter[10]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[10]                                    ;
+; led:LED5|counter[10]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[10]                                    ;
+; led:LED6|counter[10]                                                                                                                                                                                        ; Merged with conn_core:CONN|led:LED_line|counter[10]                                    ;
+; led:LED0|counter[9]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[9]                                     ;
+; led:LED5|counter[9]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[9]                                     ;
+; led:LED6|counter[9]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[9]                                     ;
+; led:LED0|counter[8]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[8]                                     ;
+; led:LED5|counter[8]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[8]                                     ;
+; led:LED6|counter[8]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[8]                                     ;
+; led:LED0|counter[7]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[7]                                     ;
+; led:LED5|counter[7]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[7]                                     ;
+; led:LED6|counter[7]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[7]                                     ;
+; led:LED0|counter[6]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[6]                                     ;
+; led:LED5|counter[6]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[6]                                     ;
+; led:LED6|counter[6]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[6]                                     ;
+; led:LED0|counter[5]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[5]                                     ;
+; led:LED5|counter[5]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[5]                                     ;
+; led:LED6|counter[5]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[5]                                     ;
+; led:LED0|counter[4]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[4]                                     ;
+; led:LED5|counter[4]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[4]                                     ;
+; led:LED6|counter[4]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[4]                                     ;
+; led:LED0|counter[3]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[3]                                     ;
+; led:LED5|counter[3]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[3]                                     ;
+; led:LED6|counter[3]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[3]                                     ;
+; led:LED0|counter[2]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[2]                                     ;
+; led:LED5|counter[2]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[2]                                     ;
+; led:LED6|counter[2]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[2]                                     ;
+; led:LED0|counter[1]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[1]                                     ;
+; led:LED5|counter[1]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[1]                                     ;
+; led:LED6|counter[1]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[1]                                     ;
+; led:LED0|counter[0]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[0]                                     ;
+; led:LED5|counter[0]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[0]                                     ;
+; led:LED6|counter[0]                                                                                                                                                                                         ; Merged with conn_core:CONN|led:LED_line|counter[0]                                     ;
+; miner_core:CORE|msg[100]                                                                                                                                                                                    ; Stuck at GND due to stuck port data_in                                                 ;
+; conn_core:CONN|to_be_sent[103]                                                                                                                                                                              ; Stuck at GND due to stuck port data_in                                                 ;
+; miner_core:CORE|sha_mode                                                                                                                                                                                    ; Stuck at VCC due to stuck port data_in                                                 ;
+; miner_core:CORE|msg[0]                                                                                                                                                                                      ; Stuck at VCC due to stuck port data_in                                                 ;
+; conn_core:CONN|to_be_sent[13]                                                                                                                                                                               ; Stuck at VCC due to stuck port data_in                                                 ;
+; miner_core:CORE|global_state~11                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~12                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~13                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~14                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~16                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~17                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~18                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~19                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~20                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~21                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~22                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~23                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~24                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~25                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~26                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~27                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~28                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~29                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~30                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~31                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~32                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~33                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~34                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~35                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~36                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~37                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~38                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~39                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~40                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~41                                                                                                                                                                             ; Lost fanout                                                                            ;
+; miner_core:CORE|global_state~42                                                                                                                                                                             ; Lost fanout                                                                            ;
+; conn_core:CONN|read_state~7                                                                                                                                                                                 ; Lost fanout                                                                            ;
+; conn_core:CONN|read_state~8                                                                                                                                                                                 ; Lost fanout                                                                            ;
+; conn_core:CONN|r_SM_Main~8                                                                                                                                                                                  ; Lost fanout                                                                            ;
+; conn_core:CONN|r_SM_Main~9                                                                                                                                                                                  ; Lost fanout                                                                            ;
+; conn_core:CONN|r_SM_Main~10                                                                                                                                                                                 ; Lost fanout                                                                            ;
+; conn_core:CONN|r_SM_Main~11                                                                                                                                                                                 ; Lost fanout                                                                            ;
+; conn_core:CONN|to_be_sent[100]                                                                                                                                                                              ; Merged with conn_core:CONN|to_be_sent[0]                                               ;
+; conn_core:CONN|to_be_sent[56]                                                                                                                                                                               ; Merged with conn_core:CONN|to_be_sent[11]                                              ;
+; conn_core:CONN|to_be_sent[48]                                                                                                                                                                               ; Merged with conn_core:CONN|to_be_sent[2]                                               ;
+; conn_core:CONN|led:LED_line|counter[27..33]                                                                                                                                                                 ; Lost fanout                                                                            ;
+; Total Number of Removed Registers = 875                                                                                                                                                                     ;                                                                                        ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                   ;
++--------------------------+---------------------------+----------------------------------------+
+; Register name            ; Reason for Removal        ; Registers Removed due to This Register ;
++--------------------------+---------------------------+----------------------------------------+
+; miner_core:CORE|msg[100] ; Stuck at GND              ; conn_core:CONN|to_be_sent[103]         ;
+;                          ; due to stuck port data_in ;                                        ;
+; miner_core:CORE|msg[0]   ; Stuck at VCC              ; conn_core:CONN|to_be_sent[13]          ;
+;                          ; due to stuck port data_in ;                                        ;
++--------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -321,81 +577,459 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Total registers                              ; 2542  ;
+; Number of registers using Synchronous Clear  ; 103   ;
+; Number of registers using Synchronous Load   ; 498   ;
+; Number of registers using Asynchronous Clear ; 1435  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 1922  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |miner|global_state        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++----------------------------------------------------------+
+; Inverted Register Statistics                             ;
++------------------------------------------------+---------+
+; Inverted Register                              ; Fan out ;
++------------------------------------------------+---------+
+; conn_core:CONN|to_be_sent[11]                  ; 6       ;
+; conn_core:CONN|to_be_sent[40]                  ; 1       ;
+; conn_core:CONN|to_be_sent[16]                  ; 1       ;
+; conn_core:CONN|to_be_sent[8]                   ; 1       ;
+; conn_core:CONN|to_be_sent[32]                  ; 1       ;
+; conn_core:CONN|async_receiver:RX|RxD_bit       ; 4       ;
+; conn_core:CONN|to_be_sent[46]                  ; 1       ;
+; conn_core:CONN|to_be_sent[22]                  ; 1       ;
+; conn_core:CONN|to_be_sent[30]                  ; 1       ;
+; conn_core:CONN|to_be_sent[38]                  ; 1       ;
+; conn_core:CONN|to_be_sent[45]                  ; 1       ;
+; conn_core:CONN|to_be_sent[21]                  ; 1       ;
+; conn_core:CONN|to_be_sent[29]                  ; 1       ;
+; conn_core:CONN|to_be_sent[37]                  ; 1       ;
+; conn_core:CONN|to_be_sent[20]                  ; 1       ;
+; conn_core:CONN|to_be_sent[28]                  ; 1       ;
+; conn_core:CONN|to_be_sent[43]                  ; 1       ;
+; conn_core:CONN|to_be_sent[26]                  ; 1       ;
+; conn_core:CONN|to_be_sent[34]                  ; 1       ;
+; conn_core:CONN|to_be_sent[17]                  ; 1       ;
+; conn_core:CONN|to_be_sent[41]                  ; 1       ;
+; conn_core:CONN|blk2[24]                        ; 14      ;
+; conn_core:CONN|blk2[25]                        ; 14      ;
+; conn_core:CONN|blk2[26]                        ; 14      ;
+; conn_core:CONN|blk2[27]                        ; 14      ;
+; conn_core:CONN|blk2[28]                        ; 14      ;
+; conn_core:CONN|blk2[29]                        ; 14      ;
+; conn_core:CONN|blk2[30]                        ; 14      ;
+; conn_core:CONN|blk2[31]                        ; 14      ;
+; conn_core:CONN|blk2[16]                        ; 14      ;
+; conn_core:CONN|blk2[17]                        ; 14      ;
+; conn_core:CONN|blk2[18]                        ; 14      ;
+; conn_core:CONN|blk2[19]                        ; 14      ;
+; conn_core:CONN|blk2[20]                        ; 14      ;
+; conn_core:CONN|blk2[21]                        ; 14      ;
+; conn_core:CONN|blk2[22]                        ; 14      ;
+; conn_core:CONN|blk2[23]                        ; 14      ;
+; conn_core:CONN|blk2[2]                         ; 1       ;
+; conn_core:CONN|blk2[0]                         ; 13      ;
+; conn_core:CONN|blk2[3]                         ; 1       ;
+; conn_core:CONN|blk2[4]                         ; 1       ;
+; conn_core:CONN|async_receiver:RX|Filter_cnt[0] ; 3       ;
+; conn_core:CONN|async_receiver:RX|Filter_cnt[1] ; 3       ;
+; miner_core:CORE|sha_1_nonce[8]                 ; 3       ;
+; miner_core:CORE|sha_1_nonce[16]                ; 3       ;
+; conn_core:CONN|blk1[199]                       ; 1       ;
+; conn_core:CONN|blk1[49]                        ; 1       ;
+; conn_core:CONN|blk1[198]                       ; 1       ;
+; conn_core:CONN|blk1[55]                        ; 1       ;
+; conn_core:CONN|blk1[197]                       ; 1       ;
+; conn_core:CONN|blk1[196]                       ; 1       ;
+; conn_core:CONN|blk1[46]                        ; 1       ;
+; conn_core:CONN|blk1[195]                       ; 1       ;
+; conn_core:CONN|blk1[194]                       ; 1       ;
+; conn_core:CONN|blk1[44]                        ; 1       ;
+; conn_core:CONN|blk1[51]                        ; 1       ;
+; conn_core:CONN|blk1[192]                       ; 1       ;
+; conn_core:CONN|blk1[167]                       ; 1       ;
+; conn_core:CONN|blk1[71]                        ; 1       ;
+; conn_core:CONN|blk1[7]                         ; 1       ;
+; conn_core:CONN|blk1[102]                       ; 1       ;
+; conn_core:CONN|blk1[70]                        ; 1       ;
+; conn_core:CONN|blk1[133]                       ; 1       ;
+; conn_core:CONN|blk1[101]                       ; 1       ;
+; conn_core:CONN|blk1[37]                        ; 1       ;
+; conn_core:CONN|blk1[165]                       ; 1       ;
+; conn_core:CONN|blk1[5]                         ; 1       ;
+; conn_core:CONN|blk1[36]                        ; 1       ;
+; conn_core:CONN|blk1[132]                       ; 1       ;
+; conn_core:CONN|blk1[164]                       ; 1       ;
+; conn_core:CONN|blk1[131]                       ; 1       ;
+; conn_core:CONN|blk1[3]                         ; 1       ;
+; conn_core:CONN|blk1[130]                       ; 1       ;
+; conn_core:CONN|blk1[33]                        ; 1       ;
+; conn_core:CONN|blk1[129]                       ; 1       ;
+; conn_core:CONN|blk1[161]                       ; 1       ;
+; conn_core:CONN|blk1[65]                        ; 1       ;
+; conn_core:CONN|blk1[1]                         ; 1       ;
+; conn_core:CONN|blk1[96]                        ; 1       ;
+; conn_core:CONN|blk1[64]                        ; 1       ;
+; conn_core:CONN|blk1[207]                       ; 1       ;
+; conn_core:CONN|blk1[206]                       ; 1       ;
+; conn_core:CONN|blk1[63]                        ; 1       ;
+; conn_core:CONN|blk1[205]                       ; 1       ;
+; conn_core:CONN|blk1[203]                       ; 1       ;
+; conn_core:CONN|blk1[202]                       ; 1       ;
+; conn_core:CONN|blk1[59]                        ; 1       ;
+; conn_core:CONN|blk1[200]                       ; 1       ;
+; conn_core:CONN|blk1[111]                       ; 1       ;
+; conn_core:CONN|blk1[15]                        ; 1       ;
+; miner_core:CORE|sha_1_nonce[14]                ; 3       ;
+; miner_core:CORE|sha_1_nonce[13]                ; 3       ;
+; conn_core:CONN|blk1[141]                       ; 1       ;
+; conn_core:CONN|blk1[13]                        ; 1       ;
+; miner_core:CORE|sha_1_nonce[12]                ; 3       ;
+; conn_core:CONN|blk1[76]                        ; 1       ;
+; conn_core:CONN|blk1[172]                       ; 1       ;
+; conn_core:CONN|blk1[12]                        ; 1       ;
+; conn_core:CONN|blk1[139]                       ; 1       ;
+; conn_core:CONN|blk1[107]                       ; 1       ;
+; Total number of inverted registers = 181*      ;         ;
++------------------------------------------------+---------+
+* Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
 
 
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |miner ;
-+--------------------------+-------+------------------------------------+
-; Parameter Name           ; Value ; Type                               ;
-+--------------------------+-------+------------------------------------+
-; CLK_HALF_PERIOD          ; 2     ; Signed Integer                     ;
-; CLK_PERIOD               ; 4     ; Signed Integer                     ;
-; STATE_IDLE               ; 0     ; Signed Integer                     ;
-; STATE_FIRST_BLOCK        ; 1     ; Signed Integer                     ;
-; STATE_SECOND_BLOCK       ; 2     ; Signed Integer                     ;
-; STATE_HASH_OF_HASH       ; 3     ; Signed Integer                     ;
-; STATE_COMPARING_HASHES   ; 4     ; Signed Integer                     ;
-; STATE_INCREASE_NONCE     ; 5     ; Signed Integer                     ;
-; STATE_GOLDEN_NONCE_FOUND ; 6     ; Signed Integer                     ;
-+--------------------------+-------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |miner|conn_core:CONN|async_transmitter:TX|TxD_shift[4]                           ;
+; 3:1                ; 512 bits  ; 1024 LEs      ; 1024 LEs             ; 0 LEs                  ; Yes        ; |miner|miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w_mem[7][29] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk2[1]                                                     ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[223]                                                   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[211]                                                   ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[201]                                                   ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[48]                                                    ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[41]                                                    ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[35]                                                    ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[57]                                                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[253]                                                   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[184]                                                   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[159]                                                   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[123]                                                   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[31]                                                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[246]                                                   ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[183]                                                   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[148]                                                   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[112]                                                   ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[84]                                                    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[21]                                                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[234]                                                   ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[173]                                                   ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[142]                                                   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[108]                                                   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[78]                                                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[14]                                                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[224]                                                   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[163]                                                   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[135]                                                   ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[103]                                                   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[69]                                                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[6]                                                     ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |miner|miner_core:CORE|sha_1_nonce[30]                                            ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |miner|conn_core:CONN|to_be_sent[3]                                               ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |miner|conn_core:CONN|to_be_sent[19]                                              ;
+; 4:1                ; 124 bits  ; 248 LEs       ; 248 LEs              ; 0 LEs                  ; Yes        ; |miner|miner_core:CORE|sha256_core:SHA_INST1|d_reg[31]                            ;
+; 4:1                ; 132 bits  ; 264 LEs       ; 264 LEs              ; 0 LEs                  ; Yes        ; |miner|miner_core:CORE|sha256_core:SHA_INST1|f_reg[0]                             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |miner|conn_core:CONN|offset[20]                                                  ;
+; 5:1                ; 224 bits  ; 672 LEs       ; 448 LEs              ; 224 LEs                ; Yes        ; |miner|miner_core:CORE|sha_1_block[314]                                           ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |miner|miner_core:CORE|sha_1_block[414]                                           ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |miner|miner_core:CORE|sha_1_block[255]                                           ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |miner|conn_core:CONN|offset_send[27]                                             ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk2[4]                                                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk2[28]                                                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk2[18]                                                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |miner|conn_core:CONN|blk2[13]                                                    ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[221]                                                   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[209]                                                   ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[207]                                                   ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[197]                                                   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[49]                                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[46]                                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[36]                                                    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[59]                                                    ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[187]                                                   ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[158]                                                   ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[122]                                                   ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[92]                                                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[25]                                                    ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[179]                                                   ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[150]                                                   ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[114]                                                   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[87]                                                    ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[16]                                                    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[169]                                                   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[139]                                                   ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[105]                                                   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[75]                                                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[13]                                                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[161]                                                   ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[130]                                                   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[96]                                                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[70]                                                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |miner|conn_core:CONN|blk1[7]                                                     ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |miner|miner_core:CORE|sha_1_nonce[21]                                            ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |miner|conn_core:CONN|to_be_sent[100]                                             ;
+; 4:1                ; 21 bits   ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; Yes        ; |miner|conn_core:CONN|to_be_sent[46]                                              ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |miner|miner_core:CORE|ShiftLeft0                                                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |miner|miner_core:CORE|ShiftLeft0                                                 ;
+; 17:1               ; 32 bits   ; 352 LEs       ; 352 LEs              ; 0 LEs                  ; No         ; |miner|miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst|w[12]        ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |miner|conn_core:CONN|read_state                                                  ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |miner|conn_core:CONN|Selector40                                                  ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |miner|conn_core:CONN|Selector41                                                  ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; No         ; |miner|miner_core:CORE|Selector7                                                  ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |miner|miner_core:CORE|Selector2                                                  ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |miner|miner_core:CORE|Selector8                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: conn_core:CONN ;
++-----------------------+-------+-----------------------------+
+; Parameter Name        ; Value ; Type                        ;
++-----------------------+-------+-----------------------------+
+; s_IDLE                ; 000   ; Unsigned Binary             ;
+; s_SEND_DATA           ; 001   ; Unsigned Binary             ;
+; s_SENDING_DATA        ; 011   ; Unsigned Binary             ;
+; s_SENDING_BUFFER      ; 111   ; Unsigned Binary             ;
+; s_SENDING_BUFFER_WAIT ; 100   ; Unsigned Binary             ;
+; s_r_IDLE              ; 000   ; Unsigned Binary             ;
+; s_r_LOAD_BLK1         ; 001   ; Unsigned Binary             ;
+; s_r_LOAD_BLK2         ; 011   ; Unsigned Binary             ;
++-----------------------+-------+-----------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: sha256_core:SHA_INST1  ;
-+----------------+----------------------------------+-----------------+
-; Parameter Name ; Value                            ; Type            ;
-+----------------+----------------------------------+-----------------+
-; SHA224_H0_0    ; 11000001000001011001111011011000 ; Unsigned Binary ;
-; SHA224_H0_1    ; 00110110011111001101010100000111 ; Unsigned Binary ;
-; SHA224_H0_2    ; 00110000011100001101110100010111 ; Unsigned Binary ;
-; SHA224_H0_3    ; 11110111000011100101100100111001 ; Unsigned Binary ;
-; SHA224_H0_4    ; 11111111110000000000101100110001 ; Unsigned Binary ;
-; SHA224_H0_5    ; 01101000010110000001010100010001 ; Unsigned Binary ;
-; SHA224_H0_6    ; 01100100111110011000111110100111 ; Unsigned Binary ;
-; SHA224_H0_7    ; 10111110111110100100111110100100 ; Unsigned Binary ;
-; SHA256_H0_0    ; 01101010000010011110011001100111 ; Unsigned Binary ;
-; SHA256_H0_1    ; 10111011011001111010111010000101 ; Unsigned Binary ;
-; SHA256_H0_2    ; 00111100011011101111001101110010 ; Unsigned Binary ;
-; SHA256_H0_3    ; 10100101010011111111010100111010 ; Unsigned Binary ;
-; SHA256_H0_4    ; 01010001000011100101001001111111 ; Unsigned Binary ;
-; SHA256_H0_5    ; 10011011000001010110100010001100 ; Unsigned Binary ;
-; SHA256_H0_6    ; 00011111100000111101100110101011 ; Unsigned Binary ;
-; SHA256_H0_7    ; 01011011111000001100110100011001 ; Unsigned Binary ;
-; SHA256_ROUNDS  ; 63                               ; Signed Integer  ;
-; CTRL_IDLE      ; 0                                ; Signed Integer  ;
-; CTRL_ROUNDS    ; 1                                ; Signed Integer  ;
-; CTRL_DONE      ; 2                                ; Signed Integer  ;
-+----------------+----------------------------------+-----------------+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: conn_core:CONN|async_transmitter:TX ;
++----------------+----------+------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                 ;
++----------------+----------+------------------------------------------------------+
+; ClkFrequency   ; 25000000 ; Signed Integer                                       ;
+; Baud           ; 9600     ; Signed Integer                                       ;
++----------------+----------+------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst ;
-+----------------+-------+-------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                              ;
-+----------------+-------+-------------------------------------------------------------------+
-; CTRL_IDLE      ; 0     ; Signed Integer                                                    ;
-; CTRL_UPDATE    ; 1     ; Signed Integer                                                    ;
-+----------------+-------+-------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: conn_core:CONN|async_transmitter:TX|BaudTickGen:tickgen ;
++----------------+----------+--------------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                                     ;
++----------------+----------+--------------------------------------------------------------------------+
+; ClkFrequency   ; 25000000 ; Signed Integer                                                           ;
+; Baud           ; 9600     ; Signed Integer                                                           ;
+; Oversampling   ; 1        ; Signed Integer                                                           ;
++----------------+----------+--------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: conn_core:CONN|async_receiver:RX ;
++----------------+----------+---------------------------------------------------+
+; Parameter Name ; Value    ; Type                                              ;
++----------------+----------+---------------------------------------------------+
+; ClkFrequency   ; 25000000 ; Signed Integer                                    ;
+; Baud           ; 9600     ; Signed Integer                                    ;
+; Oversampling   ; 8        ; Signed Integer                                    ;
++----------------+----------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: conn_core:CONN|async_receiver:RX|BaudTickGen:tickgen ;
++----------------+----------+-----------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                                  ;
++----------------+----------+-----------------------------------------------------------------------+
+; ClkFrequency   ; 25000000 ; Signed Integer                                                        ;
+; Baud           ; 9600     ; Signed Integer                                                        ;
+; Oversampling   ; 8        ; Signed Integer                                                        ;
++----------------+----------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: miner_core:CORE ;
++----------------------------+-------+-------------------------+
+; Parameter Name             ; Value ; Type                    ;
++----------------------------+-------+-------------------------+
+; STATE_SLEEPING             ; 0     ; Signed Integer          ;
+; STATE_START                ; 1     ; Signed Integer          ;
+; STATE_WAITING_FIRST_BLOCK  ; 2     ; Signed Integer          ;
+; STATE_FIRST_BLOCK_READY    ; 3     ; Signed Integer          ;
+; STATE_WAITING_SECOND_BLOCK ; 4     ; Signed Integer          ;
+; STATE_SECOND_BLOCK_READY   ; 5     ; Signed Integer          ;
+; STATE_WAITING_HASH_OF_HASH ; 6     ; Signed Integer          ;
+; STATE_HASH_OF_HASH_READY   ; 7     ; Signed Integer          ;
+; STATE_WAITING_RESET        ; 8     ; Signed Integer          ;
+; STATE_FOUND                ; 19    ; Signed Integer          ;
++----------------------------+-------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: miner_core:CORE|sha256_core:SHA_INST1 ;
++----------------+----------------------------------+--------------------------------+
+; Parameter Name ; Value                            ; Type                           ;
++----------------+----------------------------------+--------------------------------+
+; SHA224_H0_0    ; 11000001000001011001111011011000 ; Unsigned Binary                ;
+; SHA224_H0_1    ; 00110110011111001101010100000111 ; Unsigned Binary                ;
+; SHA224_H0_2    ; 00110000011100001101110100010111 ; Unsigned Binary                ;
+; SHA224_H0_3    ; 11110111000011100101100100111001 ; Unsigned Binary                ;
+; SHA224_H0_4    ; 11111111110000000000101100110001 ; Unsigned Binary                ;
+; SHA224_H0_5    ; 01101000010110000001010100010001 ; Unsigned Binary                ;
+; SHA224_H0_6    ; 01100100111110011000111110100111 ; Unsigned Binary                ;
+; SHA224_H0_7    ; 10111110111110100100111110100100 ; Unsigned Binary                ;
+; SHA256_H0_0    ; 01101010000010011110011001100111 ; Unsigned Binary                ;
+; SHA256_H0_1    ; 10111011011001111010111010000101 ; Unsigned Binary                ;
+; SHA256_H0_2    ; 00111100011011101111001101110010 ; Unsigned Binary                ;
+; SHA256_H0_3    ; 10100101010011111111010100111010 ; Unsigned Binary                ;
+; SHA256_H0_4    ; 01010001000011100101001001111111 ; Unsigned Binary                ;
+; SHA256_H0_5    ; 10011011000001010110100010001100 ; Unsigned Binary                ;
+; SHA256_H0_6    ; 00011111100000111101100110101011 ; Unsigned Binary                ;
+; SHA256_H0_7    ; 01011011111000001100110100011001 ; Unsigned Binary                ;
+; SHA256_ROUNDS  ; 63                               ; Signed Integer                 ;
+; CTRL_IDLE      ; 0                                ; Signed Integer                 ;
+; CTRL_ROUNDS    ; 1                                ; Signed Integer                 ;
+; CTRL_DONE      ; 2                                ; Signed Integer                 ;
++----------------+----------------------------------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; CTRL_IDLE      ; 0     ; Signed Integer                                                                    ;
+; CTRL_UPDATE    ; 1     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: miner_core:CORE|lpm_mult:Mult0     ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 24           ; Untyped             ;
+; LPM_WIDTHB                                     ; 249          ; Untyped             ;
+; LPM_WIDTHP                                     ; 273          ; Untyped             ;
+; LPM_WIDTHR                                     ; 273          ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_kgt     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                         ;
++---------------------------------------+--------------------------------+
+; Name                                  ; Value                          ;
++---------------------------------------+--------------------------------+
+; Number of entity instances            ; 1                              ;
+; Entity Instance                       ; miner_core:CORE|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 24                             ;
+;     -- LPM_WIDTHB                     ; 249                            ;
+;     -- LPM_WIDTHP                     ; 273                            ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                             ;
+;     -- USE_EAB                        ; OFF                            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                             ;
++---------------------------------------+--------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "conn_core:CONN|async_receiver:RX|BaudTickGen:tickgen" ;
++--------+-------+----------+------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                              ;
++--------+-------+----------+------------------------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                                         ;
++--------+-------+----------+------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "conn_core:CONN|async_receiver:RX"                                                                                   ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                                                  ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; RxD_idle        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; RxD_endofpacket ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clk_div:CLK4"                                                                          ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; clk_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 12                          ;
+; cycloneiii_ff         ; 2542                        ;
+;     CLR               ; 42                          ;
+;     CLR SLD           ; 1                           ;
+;     ENA               ; 465                         ;
+;     ENA CLR           ; 878                         ;
+;     ENA CLR SCLR      ; 38                          ;
+;     ENA CLR SLD       ; 476                         ;
+;     ENA SCLR          ; 65                          ;
+;     SLD               ; 21                          ;
+;     plain             ; 556                         ;
+; cycloneiii_lcell_comb ; 5083                        ;
+;     arith             ; 1807                        ;
+;         2 data inputs ; 439                         ;
+;         3 data inputs ; 1368                        ;
+;     normal            ; 3276                        ;
+;         0 data inputs ; 5                           ;
+;         1 data inputs ; 171                         ;
+;         2 data inputs ; 517                         ;
+;         3 data inputs ; 1024                        ;
+;         4 data inputs ; 1559                        ;
+; cycloneiii_mac_mult   ; 28                          ;
+; cycloneiii_mac_out    ; 28                          ;
+;                       ;                             ;
+; Max LUT depth         ; 28.50                       ;
+; Average LUT depth     ; 9.57                        ;
++-----------------------+-----------------------------+
 
 
 +-------------------------------+
@@ -403,7 +1037,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:08     ;
 +----------------+--------------+
 
 
@@ -411,55 +1045,90 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Jun 12 00:44:13 2018
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Tue Jun 19 21:26:25 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off miner -c miner
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20032): Parallel compilation is enabled and will use up to 4 processors
+Info (12021): Found 4 design units, including 4 entities, in source file uart/async.v
+    Info (12023): Found entity 1: async_transmitter File: /home/zimmerle/core-cin/abel/miner/uart/async.v Line: 13
+    Info (12023): Found entity 2: async_receiver File: /home/zimmerle/core-cin/abel/miner/uart/async.v Line: 74
+    Info (12023): Found entity 3: ASSERTION_ERROR File: /home/zimmerle/core-cin/abel/miner/uart/async.v Line: 179
+    Info (12023): Found entity 4: BaudTickGen File: /home/zimmerle/core-cin/abel/miner/uart/async.v Line: 184
 Info (12021): Found 1 design units, including 1 entities, in source file miner.v
-    Info (12023): Found entity 1: miner
+    Info (12023): Found entity 1: miner File: /home/zimmerle/core-cin/abel/miner/miner.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file sha2/sha256_w_mem.v
-    Info (12023): Found entity 1: sha256_w_mem
+    Info (12023): Found entity 1: sha256_w_mem File: /home/zimmerle/core-cin/abel/miner/sha2/sha256_w_mem.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file sha2/sha256_stream.v
-    Info (12023): Found entity 1: sha256_stream
+    Info (12023): Found entity 1: sha256_stream File: /home/zimmerle/core-cin/abel/miner/sha2/sha256_stream.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file sha2/sha256_k_constants.v
-    Info (12023): Found entity 1: sha256_k_constants
+    Info (12023): Found entity 1: sha256_k_constants File: /home/zimmerle/core-cin/abel/miner/sha2/sha256_k_constants.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file sha2/sha256_core.v
-    Info (12023): Found entity 1: sha256_core
+    Info (12023): Found entity 1: sha256_core File: /home/zimmerle/core-cin/abel/miner/sha2/sha256_core.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file sha2/sha256.v
-    Info (12023): Found entity 1: sha256
+    Info (12023): Found entity 1: sha256 File: /home/zimmerle/core-cin/abel/miner/sha2/sha256.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file led.v
+    Info (12023): Found entity 1: led File: /home/zimmerle/core-cin/abel/miner/led.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file miner_core.v
+    Info (12023): Found entity 1: miner_core File: /home/zimmerle/core-cin/abel/miner/miner_core.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file conn_core.v
+    Info (12023): Found entity 1: conn_core File: /home/zimmerle/core-cin/abel/miner/conn_core.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file clk_div.v
+    Info (12023): Found entity 1: clk_div File: /home/zimmerle/core-cin/abel/miner/clk_div.v Line: 2
 Info (12127): Elaborating entity "miner" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at miner.v(47): object "sha_1_state" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at miner.v(48): object "sha_done" assigned a value but never read
-Warning (10034): Output port "tx" at miner.v(14) has no driver
-Warning (10034): Output port "led" at miner.v(13) has no driver
-Info (12128): Elaborating entity "sha256_core" for hierarchy "sha256_core:SHA_INST1"
-Info (12128): Elaborating entity "sha256_k_constants" for hierarchy "sha256_core:SHA_INST1|sha256_k_constants:k_constants_inst"
-Info (12128): Elaborating entity "sha256_w_mem" for hierarchy "sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst"
+Info (12128): Elaborating entity "clk_div" for hierarchy "clk_div:CLK" File: /home/zimmerle/core-cin/abel/miner/miner.v Line: 25
+Info (12128): Elaborating entity "led" for hierarchy "led:LED0" File: /home/zimmerle/core-cin/abel/miner/miner.v Line: 50
+Info (12128): Elaborating entity "conn_core" for hierarchy "conn_core:CONN" File: /home/zimmerle/core-cin/abel/miner/miner.v Line: 75
+Info (12128): Elaborating entity "async_transmitter" for hierarchy "conn_core:CONN|async_transmitter:TX" File: /home/zimmerle/core-cin/abel/miner/conn_core.v Line: 73
+Info (12128): Elaborating entity "BaudTickGen" for hierarchy "conn_core:CONN|async_transmitter:TX|BaudTickGen:tickgen" File: /home/zimmerle/core-cin/abel/miner/uart/async.v Line: 36
+Info (12128): Elaborating entity "async_receiver" for hierarchy "conn_core:CONN|async_receiver:RX" File: /home/zimmerle/core-cin/abel/miner/conn_core.v Line: 81
+Info (12128): Elaborating entity "BaudTickGen" for hierarchy "conn_core:CONN|async_receiver:RX|BaudTickGen:tickgen" File: /home/zimmerle/core-cin/abel/miner/uart/async.v Line: 108
+Info (12128): Elaborating entity "miner_core" for hierarchy "miner_core:CORE" File: /home/zimmerle/core-cin/abel/miner/miner.v Line: 88
+Info (12128): Elaborating entity "sha256_core" for hierarchy "miner_core:CORE|sha256_core:SHA_INST1" File: /home/zimmerle/core-cin/abel/miner/miner_core.v Line: 64
+Info (12128): Elaborating entity "sha256_k_constants" for hierarchy "miner_core:CORE|sha256_core:SHA_INST1|sha256_k_constants:k_constants_inst" File: /home/zimmerle/core-cin/abel/miner/sha2/sha256_core.v Line: 167
+Info (12128): Elaborating entity "sha256_w_mem" for hierarchy "miner_core:CORE|sha256_core:SHA_INST1|sha256_w_mem:w_mem_inst" File: /home/zimmerle/core-cin/abel/miner/sha2/sha256_core.v Line: 179
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "miner_core:CORE|Mult0" File: /home/zimmerle/core-cin/abel/miner/miner_core.v Line: 125
+Info (12130): Elaborated megafunction instantiation "miner_core:CORE|lpm_mult:Mult0" File: /home/zimmerle/core-cin/abel/miner/miner_core.v Line: 125
+Info (12133): Instantiated megafunction "miner_core:CORE|lpm_mult:Mult0" with the following parameter: File: /home/zimmerle/core-cin/abel/miner/miner_core.v Line: 125
+    Info (12134): Parameter "LPM_WIDTHA" = "24"
+    Info (12134): Parameter "LPM_WIDTHB" = "249"
+    Info (12134): Parameter "LPM_WIDTHP" = "273"
+    Info (12134): Parameter "LPM_WIDTHR" = "273"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_kgt.tdf
+    Info (12023): Found entity 1: mult_kgt File: /home/zimmerle/core-cin/abel/miner/db/mult_kgt.tdf Line: 30
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13014): Ignored 1940 buffer(s)
+    Info (13019): Ignored 1940 SOFT buffer(s)
+Info (13000): Registers with preset signals will power-up high File: /home/zimmerle/core-cin/abel/miner/conn_core.v Line: 105
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "tx" is stuck at GND
-    Warning (13410): Pin "led" is stuck at GND
-Info (17049): 77 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file C:/miner-core/output_files/miner.map.smsg
+    Warning (13410): Pin "led[3]" is stuck at GND File: /home/zimmerle/core-cin/abel/miner/miner.v Line: 6
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 44 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file /home/zimmerle/core-cin/abel/miner/output_files/miner.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "rx"
-    Warning (15610): No output dependent on input pin "reset"
-    Warning (15610): No output dependent on input pin "clock"
-Info (21057): Implemented 5 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5334 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 2 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 4650 megabytes
-    Info: Processing ended: Tue Jun 12 00:44:16 2018
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+    Info (21059): Implemented 9 output pins
+    Info (21061): Implemented 5266 logic cells
+    Info (21062): Implemented 56 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 1058 megabytes
+    Info: Processing ended: Tue Jun 19 21:26:42 2018
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:29
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/miner-core/output_files/miner.map.smsg.
+The suppressed messages can be found in /home/zimmerle/core-cin/abel/miner/output_files/miner.map.smsg.
 
 

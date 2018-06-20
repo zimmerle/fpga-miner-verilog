@@ -11,17 +11,17 @@
 module tb_miner ();
 
 
-reg           tb_clk;
-reg           tb_reset_n;
+reg tb_clk;
+reg tb_reset;
 //output [3:0]   tb_counter_out;
 parameter CLK_HALF_PERIOD = 2;
 parameter CLK_PERIOD = 2 * CLK_HALF_PERIOD;
 
-wire tb_led;
+wire [7:0] tb_led;
 
 miner dut(
-  .clock(tb_clk),
-  .reset(tb_reset_n),
+  .CLOCK_50(tb_clk),
+  .reset(tb_reset),
   .led(tb_led)
 );
 
@@ -38,12 +38,24 @@ end
 initial
 begin : tb_miner
   tb_clk = 0;
-  tb_reset_n = 1;
+  //tb_reset_n = 1;
   #CLK_PERIOD;
-  tb_reset_n = 0;
   $display("   -- Testbench for miner started --");
-end
-
+  tb_reset = 1;
+  #40
+  tb_reset = 0;
+  #500
+  tb_reset = 1;
+  #30
+  tb_reset = 0;
+  #500
+  tb_reset = 0;
+  #500
+  //while(1) begin
+  //$display(" %b", tb_led);
+  //end
+  $display("test passed");
+  end
 
 
 endmodule

@@ -1,0 +1,251 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\miner-core\simulation\modelsim
+vconn_core
+I6Mm:?a=?]l<8^6;_mSBTL2
+VLE0YIJC]KI9OO?[_P:QK90
+Z1 dC:\miner-core\simulation\modelsim
+w1529183627
+8C:/miner-core/conn_core.v
+FC:/miner-core/conn_core.v
+L0 3
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work +incdir+C:/miner-core -O0
+!i10b 1
+!s100 Ya0ZSJd[_Rd8JFM_05bTk1
+!s85 0
+!s108 1529185196.181000
+!s107 C:/miner-core/conn_core.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/miner-core|C:/miner-core/conn_core.v|
+!s101 -O0
+vled
+I4O_`RQhgj@7F34d8Wh90k2
+Vj`O?4>5o7PR8cjbPo;Ze71
+R1
+w1529119838
+8C:/miner-core/led.v
+FC:/miner-core/led.v
+L0 2
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 leT:i[Gg8]_QjhNhZ6;5k3
+!s85 0
+!s108 1529185195.872000
+!s107 C:/miner-core/led.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/miner-core|C:/miner-core/led.v|
+!s101 -O0
+vminer
+!i10b 1
+!s100 FkDMKhHaR:aMQ[TGcE=]<0
+IaR3K3Q4M0^3Jm86dOYcCa0
+VERcLHCCK2aA4MCN32cmK>0
+R1
+Z5 w1529185045
+FC:/miner-core/tb/../miner.v
+Z6 8C:/miner-core/tb/tb_miner.v
+Z7 FC:/miner-core/tb/tb_miner.v
+L0 3
+R2
+r1
+!s85 0
+31
+Z8 !s108 1529185196.355000
+Z9 !s107 C:/miner-core/tb/../sha2/sha256.v|C:/miner-core/tb/../sha2/sha256_core.v|C:/miner-core/tb/../sha2/sha256_k_constants.v|C:/miner-core/tb/../sha2/sha256_stream.v|C:/miner-core/tb/../sha2/sha256_w_mem.v|C:/miner-core/tb/../miner.v|C:/miner-core/tb/tb_miner.v|
+Z10 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/miner-core/tb|C:/miner-core/tb/tb_miner.v|
+!s101 -O0
+R3
+Z11 !s92 -vlog01compat -work work +incdir+C:/miner-core/tb -O0
+vminer_core
+I8>:nhIIFD4mQTCXK0UDI?0
+VhnGGGRh`cjP=55P?O<0j03
+R1
+w1529185134
+8C:/miner-core/miner_core.v
+FC:/miner-core/miner_core.v
+L0 3
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 z?H[TWbPb=FjYkoE9P[L21
+!s85 0
+!s108 1529185196.017000
+!s107 C:/miner-core/miner_core.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/miner-core|C:/miner-core/miner_core.v|
+!s101 -O0
+vsha256
+!i10b 1
+!s100 `dXdY1YMR1=JBIFS52@o:3
+I<@f2zXo2nGLJ=NQR=0mz=1
+VL?7JX_nLOA]=EYA]Y?5H10
+R1
+R5
+FC:/miner-core/tb/../sha2/sha256.v
+R6
+R7
+L0 40
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!s101 -O0
+R3
+R11
+vsha256_core
+!i10b 1
+!s100 bOao=WOBARMkzmIB=Y>LH2
+INlPK==MSUXm2Bgjb3jT>B0
+VcC5@]WH5DjBSX]5L@1b?e3
+R1
+R5
+FC:/miner-core/tb/../sha2/sha256_core.v
+R6
+R7
+L0 40
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!s101 -O0
+R3
+R11
+vsha256_k_constants
+!i10b 1
+!s100 >Ejd4Z_Pk8b6a1ONeoUdc0
+IL]VUDA^fzjP9e8ffEFkL@3
+Va^dIeF57PzaolD^KbYn^O3
+R1
+R5
+FC:/miner-core/tb/../sha2/sha256_k_constants.v
+R6
+R7
+L0 39
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!s101 -O0
+R3
+R11
+vsha256_stream
+!i10b 1
+!s100 GRO=AA[OAcgKZ?6EiK2SM1
+I=T[:3fkRc0=YnC7Wm_>6C3
+VAHOzXA@_3```B[3V;[5PU2
+R1
+R5
+FC:/miner-core/tb/../sha2/sha256_stream.v
+R6
+R7
+L0 40
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!s101 -O0
+R3
+R11
+vsha256_w_mem
+!i10b 1
+!s100 1W:8^NGdGYUSK`d^E:^]f3
+IRWch]3:HYWiZEXWhKmo>_1
+VNA;0`dK?<>;RkQAE_:@3L2
+R1
+R5
+FC:/miner-core/tb/../sha2/sha256_w_mem.v
+R6
+R7
+L0 40
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!s101 -O0
+R3
+R11
+vtb_miner
+!i10b 1
+!s100 QLF`h;z1Cl0T_?S4GcclS2
+I`4b0FQ7KGjBTzjAMc=Az>0
+VZiQC4gQJ>cP]`am0GN8VP1
+R1
+R5
+R6
+R7
+L0 11
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!s101 -O0
+R3
+R11
+vuart_rx
+IRK]Jcc7f_]W^0hiz4PajY3
+V375?]21RPjP5@cB[;7X9f2
+R1
+w1526149605
+8C:/miner-core/uart/uart_rx.v
+FC:/miner-core/uart/uart_rx.v
+L0 14
+R2
+r1
+31
+R3
+Z12 !s92 -vlog01compat -work work +incdir+C:/miner-core/uart -O0
+!i10b 1
+!s100 OhG@BkNG;G;<DNIB7>5>X0
+!s85 0
+!s108 1529185195.175000
+!s107 C:/miner-core/uart/uart_rx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/miner-core/uart|C:/miner-core/uart/uart_rx.v|
+!s101 -O0
+vuart_tx
+IN^`i_V2P>]fm9UKZCBD3>0
+VLImI8l>cm>zdaY8dV4aJV1
+R1
+w1526149646
+8C:/miner-core/uart/uart_tx.v
+FC:/miner-core/uart/uart_tx.v
+L0 14
+R2
+r1
+31
+R3
+R12
+!i10b 1
+!s100 ;XDgiLd4o=?ZVbzz:k@3l3
+!s85 0
+!s108 1529185195.064000
+!s107 C:/miner-core/uart/uart_tx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/miner-core/uart|C:/miner-core/uart/uart_tx.v|
+!s101 -O0
